@@ -9,39 +9,8 @@
     <atom:link href="https://systemannounce.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Fri, 12 May 2023 08:19:54 GMT</pubDate>
+    <pubDate>Wed, 10 May 2023 16:59:43 GMT</pubDate>
     <generator>http://hexo.io/</generator>
-    
-    <item>
-      <title>使用hexo和Pages服务搭建个人博客</title>
-      <link>https://systemannounce.github.io/2023/05/12/hexoblogsinit/</link>
-      <guid>https://systemannounce.github.io/2023/05/12/hexoblogsinit/</guid>
-      <pubDate>Fri, 12 May 2023 06:11:15 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h2&gt;&lt;p&gt;你是否想过以最低成本拥有一个属于自己的个人网站、一个可以记录一些东西的地方？&lt;/p&gt;
-&lt;p&gt;本教程可以做到让你不用买服务器，</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>你是否想过以最低成本拥有一个属于自己的个人网站、一个可以记录一些东西的地方？</p><p>本教程可以做到让你不用买服务器，不必实名认证，尽可能简单地搭建一个博客网站。</p><p>相信你已经看到我的个人博客网站了，下面是一些其他的个人博客：</p><p><a href="https://argvchs.github.io/">Argvchs の小窝</a></p><p><a href="https://www.tangyuxian.com/">糖羽仙 (tangyuxian.com)</a></p><p><a href="https://shen-yu.gitee.io/">岛 (gitee.io)</a></p><p>他们都是基于hexo来搭建的博客，虽然还有基于其他甚至是空气的，我们这里选用hexo来进行教程。</p><h2 id="二、环境安装"><a href="#二、环境安装" class="headerlink" title="二、环境安装"></a>二、环境安装</h2><h3 id="1-安装nodejs"><a href="#1-安装nodejs" class="headerlink" title="1. 安装nodejs"></a>1. 安装nodejs</h3><blockquote><p>下载地址：<a href="https://nodejs.cn/download/">https://nodejs.cn/download/</a></p></blockquote><p>由于能来看我这篇教程大部分人的人最常用的系统都是Windows，所以本教程以及接下来的平台都是基于Windows。</p><p>这里选择Windows的msi安装包进行安装，版本选自己系统的版本。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-12%20151206.png"></p><p>接下来我们运行安装包，默认安装在C盘。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/Snipaste_2020-02-29_08-49-21.png"></p><p>记得在这一步选择上Add  to PATH，然后接着下一步。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/Snipaste_2020-02-29_08-49-39.png"></p><h3 id="2-安装GIT"><a href="#2-安装GIT" class="headerlink" title="2. 安装GIT"></a>2. 安装GIT</h3><blockquote><p>下载地址：<a href="https://git-scm.com/">https://git-scm.com/</a></p><p>备用下载地址(2.40.1)：<a href="https://wwox.lanzout.com/b028mcskd">https://wwox.lanzout.com/b028mcskd</a><br>密码 : fdww</p></blockquote><p>官网点击这里即可下载最新版</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-12%20152722.png"></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-12%20152823.png"></p><p>接着运行下载到的安装包(安装位置可以选个自己喜欢的)</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/Snipaste_2020-02-29_09-01-49.png"></p><p>这里后面的步骤不需要过多配置，全部默认点next就行。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/jqTCDk6YSbwQOVz.png"></p><p>安装完后，打开PowerShell或者cmd，输入 <code>git -v</code> 回车，如果返回了安装的git的版本号没有报错那就是安装成功了。</p><p>或者，你可以在桌面右键，查看一下有没有Git Bash Here的选项，如果有那就应该是没有问题的。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-12%20154619.png"></p><h3 id="3-检测安装"><a href="#3-检测安装" class="headerlink" title="3. 检测安装"></a>3. 检测安装</h3><p>这里推荐如果你系统版本较新，有一个名为Terminal(终端)的应用安装在你电脑上面，最简单的检查办法还是桌面右键如图所示：在终端中打开。</p><p><strong>如果你有，那么建议你直接用这个应用取代掉这以后所有需要用到Git Bash的地方。</strong></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-12%20154619.png"></p><p>如果你没有想要使用那也可以去Microsoft store下载一个，也可以直接用Git Bash的窗口。</p><p><strong>接下来继续正事</strong></p><p>打开桌面右键打开Git Bash窗口，分别执行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure><p>如果如图所示成功输出了版本号，那就证明以上安装步骤成功。如果没有则要再安装一次，记得勾选<code>Add  to PATH</code>，或者手动为nodejs添加环境变量，安装完后记得重启你的Git Bash窗口。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-12%20160620.png"></p><h3 id="4-安装cnpm"><a href="#4-安装cnpm" class="headerlink" title="4. 安装cnpm"></a>4. 安装cnpm</h3><blockquote><p>这个操作是为了以后安装时避免国内安装速度过慢加上去的，如果你的网络环境”非常好”，可以考虑直接跳过该步骤。<strong>并且下文所有命令最前面是cnpm的可以替换成npm。</strong></p></blockquote><p>在上面窗口继续执行下面的命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure><p>安装完后再输入一下 <code>cnpm -v</code> 验证一下安装是否成功，如果正常输出了cnpm的版本号那么恭喜你安装成功。</p><h2 id="三、安装HEXO并成功启动本地博客网站"><a href="#三、安装HEXO并成功启动本地博客网站" class="headerlink" title="三、安装HEXO并成功启动本地博客网站"></a>三、安装HEXO并成功启动本地博客网站</h2><h3 id="1-安装HEXO"><a href="#1-安装HEXO" class="headerlink" title="1. 安装HEXO"></a>1. 安装HEXO</h3><p>在Git Bash窗口输入下面的命令行直接安装HEXO：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>没有报错即是成功。警告不算报错。</p><h3 id="2-初始化博客"><a href="#2-初始化博客" class="headerlink" title="2. 初始化博客"></a>2. 初始化博客</h3>]]></content:encoded>
-      
-      
-      <category domain="https://systemannounce.github.io/categories/%E6%95%99%E7%A8%8B/">教程</category>
-      
-      
-      <category domain="https://systemannounce.github.io/tags/%E6%8C%87%E5%8D%97/">指南</category>
-      
-      <category domain="https://systemannounce.github.io/tags/%E9%81%BF%E5%9D%91/">避坑</category>
-      
-      <category domain="https://systemannounce.github.io/tags/%E5%AE%9E%E7%94%A8/">实用</category>
-      
-      
-      <comments>https://systemannounce.github.io/2023/05/12/hexoblogsinit/#disqus_thread</comments>
-      
-    </item>
     
     <item>
       <title>了解一只广东野槌蛇</title>
