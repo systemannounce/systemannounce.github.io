@@ -9,8 +9,27 @@
     <atom:link href="https://systemannounce.cn/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>你醒啦？已经到天际省了</description>
-    <pubDate>Mon, 22 May 2023 16:28:28 GMT</pubDate>
+    <pubDate>Thu, 25 May 2023 05:51:46 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>GAME RECORD</title>
+      <link>https://systemannounce.cn/2023/05/25/gamerecord/</link>
+      <guid>https://systemannounce.cn/2023/05/25/gamerecord/</guid>
+      <pubDate>Thu, 25 May 2023 05:12:01 GMT</pubDate>
+      
+      <description>&lt;p&gt;INFO  Validating config&lt;br&gt;INFO  Start processing&lt;br&gt;INFO  Hexo is running at &lt;a href=&quot;http://localhost:4000/&quot;&gt;http://localhost:4000/&lt;/a&gt; . Press Ctrl+C to stop.&lt;br&gt;INFO  感谢使用 Kratos-Rebirth 主题，您的版本是 v2.1.5&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>INFO  Validating config<br>INFO  Start processing<br>INFO  Hexo is running at <a href="http://localhost:4000/">http://localhost:4000/</a> . Press Ctrl+C to stop.<br>INFO  感谢使用 Kratos-Rebirth 主题，您的版本是 v2.1.5</p><span id="more"></span><p>INFO  如有任何疑问，您可以查阅文档，或是去 <a href="https://github.com/Candinya/Kratos-Rebirth/issues">https://github.com/Candinya/Kratos-Rebirth/issues</a> 提出对应的 issue 。<br>INFO  预祝您使用愉快。</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://systemannounce.cn/2023/05/25/gamerecord/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Markdown基础语法</title>
@@ -32,11 +51,11 @@
       <category domain="https://systemannounce.cn/categories/%E6%95%99%E7%A8%8B/">教程</category>
       
       
-      <category domain="https://systemannounce.cn/tags/%E5%AE%9E%E7%94%A8/">实用</category>
-      
       <category domain="https://systemannounce.cn/tags/%E8%AF%AD%E6%B3%95/">语法</category>
       
       <category domain="https://systemannounce.cn/tags/%E6%BC%94%E7%A4%BA/">演示</category>
+      
+      <category domain="https://systemannounce.cn/tags/%E5%AE%9E%E7%94%A8/">实用</category>
       
       
       <comments>https://systemannounce.cn/2023/05/14/MarkdownText/#disqus_thread</comments>
@@ -60,11 +79,11 @@
       <category domain="https://systemannounce.cn/categories/%E6%95%99%E7%A8%8B/">教程</category>
       
       
+      <category domain="https://systemannounce.cn/tags/%E5%AE%9E%E7%94%A8/">实用</category>
+      
       <category domain="https://systemannounce.cn/tags/%E6%8C%87%E5%8D%97/">指南</category>
       
       <category domain="https://systemannounce.cn/tags/%E9%81%BF%E5%9D%91/">避坑</category>
-      
-      <category domain="https://systemannounce.cn/tags/%E5%AE%9E%E7%94%A8/">实用</category>
       
       
       <comments>https://systemannounce.cn/2023/05/12/hexoblogsinit/#disqus_thread</comments>
