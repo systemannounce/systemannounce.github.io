@@ -1,50 +1,38 @@
 <?php
-
-$url = 'https://api.mlyai.com/reply';
-$apiKey = '7170ijtl7ksxtz34';
-$apiSecret = 's3sdf34353';
-$message = $_POST['info']; // 消息内容
-$header = array(
-    "Api-Key: {$apiKey}",
-    "Api-Secret: {$apiSecret}",
+//获得聊天
+$appkey = '这里填写APIKey';
+$talkContent = ""; 
+$info=addslashes($_POST['info']);
+$userid=addslashes($_POST['userid']);
+function send_post($url, $post_data) {  
+  
+  $postdata = http_build_query($post_data);  
+  $options = array(  
+    'http' => array(  
+      'method' => 'POST',  
+      'header' => 'Content-type:application/x-www-form-urlencoded',  
+      'content' => $postdata,  
+      'timeout' => 15 * 60 // 超时时间（单位:s）  
+    )  
+  );  
+  $context = stream_context_create($options);  
+  $result = file_get_contents($url, false, $context);  
+  
+  return $result;  
+}  
+  
+//使用方法  
+$post_data = array(  
+  'key' => $appkey,  
+  'info' => $info,
+  'userid' => $userid,
 );
-$body = json_encode([
-    'content' => $message,
-    'type' => 2,
-    'from' => '123456',
-    'fromName' => $_POST['userid'],
-    'to' => '1234567',
-    'toName' => '王五',
-]);
-$curl = curl_init();
-curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_HEADER, 0);
-curl_setopt($curl, CURLOPT_TIMEOUT, 1);
-curl_setopt($curl, CURLOPT_TIMEOUT_MS, 3000);
-curl_setopt($curl, CURLOPT_HTTPHEADER, array_merge($header, array(
-        'Content-Type: application/json',
-        'Content-Length: ' . strlen($body)),
-));
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-curl_setopt($curl, CURLOPT_POST, 1);
-curl_setopt($curl, CURLOPT_POSTFIELDS, $body);
-$data = curl_exec($curl);
-curl_close($curl);
-
-$result = json_decode($data);
-if ($result->code != "00000") {
-    exit($result->message);
-} else {
-    $content = "";
-    $replys = $result->data;
-    for ($i = 0; $i < count($replys); $i ++) {
-        if (strlen($content) > 0) {
-            $content .= "\n";
-        }
-        $content .= $replys[$i]->content;
-    }
-    exit($content);
+if($appkey==""){
+	$talkContent = '{"code":"500","text":"我还没学会聊天功能，快和站长联系吧！"}';
 }
-                    
+else{
+	$talkContent = send_post('http://www.tuling123.com/openapi/api', $post_data);
+}
+header('Content-type:text/json');
+echo $talkContent;
+?>

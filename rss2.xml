@@ -9,8 +9,39 @@
     <atom:link href="https://systemannounce.cn/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>你醒啦？已经到天际省了</description>
-    <pubDate>Thu, 25 May 2023 15:30:17 GMT</pubDate>
+    <pubDate>Sat, 27 May 2023 08:14:17 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>域名注册和解析</title>
+      <link>https://systemannounce.cn/2023/05/26/domain/</link>
+      <guid>https://systemannounce.cn/2023/05/26/domain/</guid>
+      <pubDate>Fri, 26 May 2023 15:58:44 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;本教程只做基本的指南，属于要有一点基础，不会详细到介绍每个按钮和每一步操作。&lt;/p&gt;
+&lt;p&gt;只是说明该干什么，哪里干什么会怎么样之类的说明。</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本教程只做基本的指南，属于要有一点基础，不会详细到介绍每个按钮和每一步操作。</p><p>只是说明该干什么，哪里干什么会怎么样之类的说明。</p><p>以及一些我已经踩过的坑的详细分析。</p><h2 id="域名注册"><a href="#域名注册" class="headerlink" title="域名注册"></a>域名注册</h2><blockquote><p>这里一般自己找域名提供商。大多数人会选择国内的。</p><p>国内的域名提供商需要实名认证，注册域名不备案也可以。</p><p>国外的优点就是不用实名认证了，有些提供商域名价格比国内更低。</p></blockquote><div class="panel panel-info">    <div class="panel-title">域名类型</div>    <div class="panel-body">        <p>这里科普一下简单域名知识</p><p><code>example.cn</code>是一个顶级域名。</p><p><code>xxx.example.cn</code>是一个二级域名</p><p><code>xxx.yyy.example.cn</code>是一个三级域名</p><p>我们一般注册的是顶级域名，这个顶级域名下面的其他二级域名都可以用。</p>    </div>    </div><p><strong>选择合适的域名注册商，写一个你喜欢的域名，查询看有没有占用，没有就可以正常注册了。</strong></p><div class="alert alert-danger"><div class="icon"><i class="fa fa-exclamation"></i></div><div class="text"><p>这里尤其要看清后续续费的价格</p><p>别看大多数首年优惠就觉得这个域名很便宜，后期续费价格很要命的</p><p>国内常见的域名注册商都带有基础域名解析，免费的SSL证书和一些其他相关的服务，不需要额外购买</p></div></div>  <div class="panel panel-success">    <div class="panel-title">推荐的一些便宜实惠域名类型</div>    <div class="panel-body">        <p>.cn</p><p>.vip</p><p>.com.cn</p><p>.ltd</p>    </div>    </div>  <p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-27%20092832.png"></p><p>这部分没什么好说的，根据域名注册商的教程，基本上算是保姆型，生怕你不会那种。</p><p>注册完交完钱就可以拥有自己的域名了。不需要网站备案那种时间长又难搞的东西。</p><p>这里不需要强制备案是因为域名也可以拿来注册邮箱，而邮箱不需要备案。</p><p>如果对于这个邮箱功能有需求的可以自行去摸索一下方法，或者叫这个懒狗–&gt;Felix_SANA更新一篇博客。</p><h2 id="设置域名功能"><a href="#设置域名功能" class="headerlink" title="设置域名功能"></a>设置域名功能</h2><h3 id="解析功能说明"><a href="#解析功能说明" class="headerlink" title="解析功能说明"></a>解析功能说明</h3><div class="alert alert-info"><div class="icon"><i class="fa fa-info"></i></div><div class="text"><p>下面我统一以你注册了<code>example.cn</code>域名作为例子</p></div></div><p>这个时候默认你已经部署好了netlify或者GitHub Pages服务，你就有了一个可以访问你博客的网址了。</p><p>现在去DNS提供商处添加域名解析，如果是国内的话DNS提供商就集成在你的域名那一块，点击解析或者DNS之类的按钮就可以跳转到域名解析页了。</p><p>解析页添加域名解析记录一般有几个参数需要写，<strong>主机记录</strong>，<strong>记录类型</strong>，<strong>记录值</strong>。</p><ul><li><p><strong>主机类型</strong>一般都是域名的前缀，填写<code>@</code>就是表示<code>://example.cn</code>，填写<code>www</code>就是<code>://www.example.cn</code>，填写其他的比如<code>gg</code>就是相当于<code>://gg.example.cn</code>。</p></li><li><p><strong>记录类型</strong>就是你这条记录是用来干什么的，这里简单说一些记录：<code>CNAME</code>就是把你的某个域名转移到其他域名上面去，<code>A</code>就是把你的域名转到某个ipv4地址上面，<code>AAAA</code>就是转到ipv6地址上面，下面附各个类型说明。</p><div class="xControl">    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>域名解析记录类型</span></div>    <div class="xContent"><div class="inner">        <table><thead><tr><th align="center">记录类型</th><th align="left">使用目的</th></tr></thead><tbody><tr><td align="center">A 记录</td><td align="left">将域名指向一个 IP 地址。</td></tr><tr><td align="center">CNAME 记录</td><td align="left">将域名指向另一个域名，再由另一个域名提供 IP 地址（外网地址）。</td></tr><tr><td align="center">MX 记录</td><td align="left">设置邮箱，让邮箱能收到邮件。</td></tr><tr><td align="center">NS 记录</td><td align="left">将子域名交给其他 DNS 服务商解析。</td></tr><tr><td align="center">SPF 记录</td><td align="left">将域名指向发送邮件的服务器，是一种以IP地址认证电子邮件发件人身份的技术，是非常高效的垃圾邮件解决方案。</td></tr><tr><td align="center">AAAA 记录</td><td align="left">将域名指向一个 IPv6 地址。</td></tr><tr><td align="center">SRV 记录</td><td align="left">用来标识某台服务器使用了某个服务，常见于微软系统的目录管理。</td></tr><tr><td align="center">TXT 记录</td><td align="left">对域名进行标识和说明，绝大多数的 TXT 记录是用来做 SPF 记录（反垃圾邮件）。</td></tr><tr><td align="center">CAA 记录</td><td align="left">授权指定 CA 机构为域名签发 SSL 证书，以防止 SSL 证书错误签发。</td></tr><tr><td align="center">HTTPS 记录</td><td align="left">将域名指向另一个域名指定值，再由另一个域名提供 IP 地址，就需要添加 HTTPS 记录。</td></tr><tr><td align="center">SVCB 记录</td><td align="left">新型服务绑定记录类型，允许服务指向多个客户端，并关联自定义参数值。</td></tr><tr><td align="center">隐、显性 URL 记录</td><td align="left">将一个域名指向另外一个已经存在的站点。</td></tr></tbody></table>     </div></div>    </div>  </li><li><p><strong>记录值</strong>就是你需要进行操作的目标，拿简单的<code>A</code>解析就是填一个ipv4地址，<code>CNAME</code>就是填一个你想要重定向到的域名。</p><div class="panel panel-info">    <div class="panel-title">提示</div>    <div class="panel-body">        <p>如果你后面都不打算用CDN加速或者对于地址栏显示哪个网址都无所谓的话，可以直接添加两条<code>CNAME</code>记录转到你对应的GitHub网址和netlify网址就行。</p><p>如果你打算活用你的域名，接下来的操作你可以为GitHub和netlify添加自定义域名。</p>    </div>    </div></li></ul><h3 id="解析到你的GitHub网页"><a href="#解析到你的GitHub网页" class="headerlink" title="解析到你的GitHub网页"></a>解析到你的GitHub网页</h3><ol><li><p>在 GitHub 上，导航到您站点的存储库。</p></li><li><p>在您的存储库名称下，单击 <strong>Settings</strong>。如果您看不到“设置”选项卡，请选择下拉菜单，然后单击<strong>“设置”</strong>。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-27%20145946.png"></p></li><li><p>在边栏的“代码和自动化”部分，单击<strong>Pages</strong>。</p></li><li><p>在<strong>“Custom domain”</strong>下，输入您的自定义域，然后单击<strong>“Save”</strong>。如果您从分支发布站点，这将创建一个提交，将文件添加<code>CNAME</code>到源分支的根目录，如果你还没有做第5步那么这里DNS检查大概率报错，把第5步做完等一段时间刷新就可以发现正常了。</p><blockquote><p><strong>一般情况下注册的域名都不需要理会下面这个注意</strong></p><p><strong>注意：</strong>如果您的自定义域是国际化域名，则必须输入 Punycode 编码版本。</p><p>有关 Punycodes 的更多信息，请参阅<a href="https://en.wikipedia.org/wiki/Internationalized_domain_name">国际化域名</a>。</p></blockquote></li><li><p>导航到您的 DNS 提供商并创建一条<code>CNAME</code>记录，将您的子域指向您站点的默认域。例如，如果您想为您的用户站点使用子域，<code>www.example.com</code>请创建一个<code>CNAME</code>指向<code>username.github.io</code></p></li></ol><h3 id="解析到你的netlify网页"><a href="#解析到你的netlify网页" class="headerlink" title="解析到你的netlify网页"></a>解析到你的netlify网页</h3><p>同样，你可以在你的netlify控制台首页很轻松地找到你对应站点的domain settings，而操作和上面基本差不多，同样是添加CNAME解析和配置自定义域名。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-27%20152427.png"></p><h2 id="启用HTTPS"><a href="#启用HTTPS" class="headerlink" title="启用HTTPS"></a>启用HTTPS</h2><p>如果你已经见过你的网站被浏览器认成了这样，那么大概率就是HTTPS出了问题。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/R.png"></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-27%20153919.png"></p><p>首先去你的域名注册商那里申请一个SSL证书，一般都有附带免费SSL证书服务。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-27%20160526.png"></p><p>申请通过后自行绑定到对应域名处，一般情况下都会自动配置，在我们的演示里面只有netlify在使用自定义域名时需要手动配置证书，如果你是用他那边的域名则不需要。</p><p>在自定义域名最下面有个自定义证书，把你刚刚申请的免费证书下载下来，里面的<code>.crt</code>或者<code>.pem</code>文件用记事本打开就是你的证书，<code>.key</code>文件就是你的私钥，全部上传就可以配置好netlify的证书，一些服务器也同理。</p><div class="alert alert-success"><div class="icon"><i class="fa fa-check"></i></div><div class="text"><p>恭喜你已经完成了本次教程所有内容</p><p>由于内容太多，下次才会更新CDN相关内容</p></div></div>]]></content:encoded>
+      
+      
+      <category domain="https://systemannounce.cn/categories/%E6%95%99%E7%A8%8B/">教程</category>
+      
+      
+      <category domain="https://systemannounce.cn/tags/%E5%9F%9F%E5%90%8D/">域名</category>
+      
+      <category domain="https://systemannounce.cn/tags/%E8%A7%A3%E6%9E%90/">解析</category>
+      
+      <category domain="https://systemannounce.cn/tags/%E9%81%BF%E5%9D%91/">避坑</category>
+      
+      
+      <comments>https://systemannounce.cn/2023/05/26/domain/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>ANIME RECORD</title>
@@ -107,9 +138,9 @@
       
       <category domain="https://systemannounce.cn/tags/%E5%AE%9E%E7%94%A8/">实用</category>
       
-      <category domain="https://systemannounce.cn/tags/%E6%8C%87%E5%8D%97/">指南</category>
-      
       <category domain="https://systemannounce.cn/tags/%E9%81%BF%E5%9D%91/">避坑</category>
+      
+      <category domain="https://systemannounce.cn/tags/%E6%8C%87%E5%8D%97/">指南</category>
       
       
       <comments>https://systemannounce.cn/2023/05/12/hexoblogsinit/#disqus_thread</comments>
