@@ -1,0 +1,62 @@
+{
+    "mouseover": [
+        {
+            "selector": "#showInfoBtn",
+            "text": ["查看最新吐槽和站内信息"]
+        },
+		{
+            "selector": "#showTalkBtn",
+            "text": ["要和我聊天吗？"]
+        },
+		{
+            "selector": "#hideButton",
+            "text": ["隐藏伊斯特瓦尔，希望隐藏后我们还能再见面！"]
+        },
+		{
+            "selector": "#musicButton",
+            "text": ["想给页面加点音乐吗？<br>可以点左下角的播放器哦。"]
+        },
+        {
+            "selector": "#youduButton",
+            "text": ["按钮有毒，癫痫患者不要开启！！！<br>点一下开启，再点一下可以关闭。"]
+        },
+		{
+            "selector": ".kratos-entry-title-new",
+            "text": ["要看看 {text} 么？"]
+        },
+        {
+            "selector": "canvas",
+            "text": ["要查什么可以和我伊斯特瓦尔这个万事通说哦<br>因为我是这个站的史书嘛"]
+        },
+        {
+            "selector": "div.textarea",
+            "text": ["要来留下一些历史吗？"]
+        },
+        {
+            "selector": "span.fa.fa-snowflake-o",
+            "text": ["下雪的样子好看吗？"]
+        },
+        {
+            "selector": "span.fa.fa-adjust",
+            "text": ["用我的力量帮你反转世界吧"]
+        },
+        {
+            "selector": "span.fa.fa-search",
+            "text": ["有什么需要我帮忙搜索的吗<br>只需要三天就可以找到了哦"]
+        },
+        {
+            "selector": "span.fa.fa-chevron-up",
+            "text": ["抓住我，我带你去上面"]
+        },
+        {
+            "selector": "i.fa.fa-envelope",
+            "text": ["可以直接联系到作者。"]
+        }
+    ],
+    "click": [
+        {
+            "selector": "#landlord #live2d",
+            "text": ["不要动手动脚的！快把手拿开~~", "真…真的是不知羞耻！","Hentai！", "再摸的话我可要报警了！", "110吗，这里有个变态！" , "你怎么对我这个AI这么感兴趣？" , "有这种时间不如去干你该干的事情" , "说实话，你只比Neptune好一点点"]
+        }
+    ]
+}

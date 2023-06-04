@@ -1,0 +1,45 @@
+title:
+  archive: アーカイブ
+  category: カテゴリー
+  tag: タグ
+  search: 検索
+  not_found: このページは見つかりませんでした...
+  status: 最新情報を表示
+categories_list: カテゴリーリスト
+read_more: 続きを読む
+read_full: 全文を読む
+search: 検索
+search_notice: 何かお探しですか？o(￣▽￣)ブ
+search_submit: 検索する~
+search_notice_page: こちらは %s の検索エンジンです~
+search_notice_keys: 複数のキーワードを検索する場合はスペースで区切ってください。例 「%s」のように；
+search_notice_tags: これらのタグも試してみることができますよ〜
+tag: タグ
+tagcloud: タグクラウド
+prev: 前のページ
+next: 次のページ
+comment: コメント
+archive: 記事のアーカイブ
+archive_count: 現在、%d件の記事があります (゜-゜)つロ 干杯~
+page: 第%dページ
+recent_posts: 最新の記事
+newer: 前の記事
+older: 次の記事
+share: 共有
+rss_feed: RSSフィード
+category: カテゴリー
+category_in: カテゴリー：
+copyright: 著作権所有
+author: 作者
+read_count: '%s 回読まれました'
+comments_count: '%s 件のコメント'
+last_modify: 最終編集：
+last_modify_alert: この記事は %s 以前に編集されたものであり、内容が更新される可能性があります。
+reward: リワード
+no_title: タイトルなし
+use_cc4_license: この作品は<a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">クリエイティブ・コモンズ・ライセンス 表示 - 継承 4.0 国際</a>で提供されています
+toc: 目次
+words: 文字数
+post: 記事
+tags_count: 現在、%d個のタグがあります (゜-゜)つロ 干杯~
+categories_count: 現在、%d種類のカテゴリーがあります (゜-゜)つロ 干杯~

@@ -1,0 +1,31 @@
+先格式化，友链script下方：
+
+                                            <p>欢迎光临，Felix最重要的好友都在这里</p>
+                                            <p>如果你也想要和我互换友链，指南在这里：</p>
+                                            <p>将下面内容写在评论区或者发我邮箱<a
+                                                    href="mailto:systemannounce.outlook.com">systemannounce@outlook.com</a>。
+                                            </p>
+                                            <p><strong>格式如下：</strong></p>
+                                            <blockquote>
+                                                <p>Name:</p>
+                                                <p>bio:</p>
+                                                <p>avatar:</p>
+                                                <p>link:</p>
+                                            </blockquote>
+                                            <p><strong>我的友链：</strong></p>
+                                            <blockquote>
+                                                <p>Name : Felix_SANA</p>
+                                                <p>bio : 好き</p>
+                                                <p>avatar : <a target="_blank" rel="noopener"
+                                                        href="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/66364037_p0.png">https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/66364037_p0.png</a>
+                                                </p>
+                                                <p>link : <a target="_blank" rel="noopener"
+                                                        href="https://systemannounce.cn/">https://systemannounce.cn/</a>
+                                                </p>
+                                            </blockquote>
+                                            <div class="alert alert-primary">
+                                                <div class="icon"><i class="fa fa-refresh"></i></div>
+                                                <div class="text">
+                                                    <p>欢迎你的加入o(<em>￣▽￣</em>)ブ</p>
+                                                </div>
+                                            </div>

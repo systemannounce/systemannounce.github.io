@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
+.deploy_git
+.github/dependabot.yml
+scaffolds/draft.md
+scaffolds/page.md
+scaffolds/post.md
+_config.landscape.yml
+package.json
+yarn.lock
