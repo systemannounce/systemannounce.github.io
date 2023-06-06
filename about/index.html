@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>了解一只广东野槌蛇 | Felix_SANA &#39;S BLOG</title>
+        <meta name="author" content="Felix_SANA" />
+        <meta name="description" content="你醒啦？已经到天际省了" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="Felix_SANA 'S BLOG" type="application/rss+xml">
+</head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>FELIX_SANA &#39;S BLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;FELIX_SANA &#39;S BLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>了解一只广东野槌蛇</h1>
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><p>一个普普通通大学生</p>
+<p>应该会不断更新这个blog，技术，生活，近况等。</p>
+<p>现在在学习一些很杂的东西，基本上感兴趣的就会想办法弄弄，比如这个blog网站就是学习之余摸出来的。</p>
+<span id="more"></span>
+
+<p>秉承着利用我一切的空余时间把东西弄到最好的习惯，你现在看到的东西就是消耗我差不多所有空闲时间弄出来的。虽然不怎么样，但是却是我的最好。</p>
+<p>互联网上绝不吵架，你要是和我吵我马上删评，你说的都对，纯社恐一个。</p>
+<p>ACG爱好者， <i class="fa fa-check"/></i> <a target="_blank" rel="noopener" href="https://bangumi.tv/user/systemannounce">bangumi</a>可以看到我2023年以后的状态，有兴趣可以 <i class="fa fa-gamepad"/></i> <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/systemannouncement/">steam</a>扩个列，让我看看你在玩什么游戏啊。</p>
+<h2 id="Hold"><a href="#Hold" class="headerlink" title="Hold"></a>Hold</h2><h3 id="PC"><a href="#PC" class="headerlink" title="PC :"></a>PC :</h3><blockquote>
+<p><strong>DELL G15 5511</strong></p>
+<p>CPU : i7-11800H</p>
+<p>GPU : RTX 3060 Laptop</p>
+</blockquote>
+<h3 id="其他设备"><a href="#其他设备" class="headerlink" title="其他设备 :"></a>其他设备 :</h3><p><strong>SWITCH续航版</strong></p>
+<p><strong>一大堆没什么用的塑料小人</strong></p>
+<p><strong>异常混乱的大脑</strong>  </p>
+<p>最后还有一点的游戏卡带。</p>
+<h2 id="Like"><a href="#Like" class="headerlink" title="Like"></a>Like</h2><p>纯单机党，偶尔玩一些PVE，PVP暂时只能接受喷射战士3，我是又菜又社恐。</p>
+<p>喜欢2d游戏，尤其是剧情画风好的横版过关。还喜欢探索游戏，探索未知真的很爽好吧，所以我什么时候才能玩到下一个星际拓荒呢？</p>
+<p>喜欢搞点新奇的东西，成功了会很开心。</p>
+<h2 id="如何找到这只野槌蛇？"><a href="#如何找到这只野槌蛇？" class="headerlink" title="如何找到这只野槌蛇？"></a>如何找到这只野槌蛇？</h2><p>高强度出现在<a target="_blank" rel="noopener" href="https://www.xiaoheihe.cn/community/user/18274663">小黑盒</a>，有时会出现在<a target="_blank" rel="noopener" href="https://space.bilibili.com/200704172">B站</a>，不过要是想强行捕捉的话可能会让它从这个区域跑掉就再也见不到了。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2023 Felix_SANA &#39;S BLOG
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Felix_SANA
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+        <div>
+            备案号：
+            
+            <a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20231634">萌ICP备20231634号</a>
+            
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>
