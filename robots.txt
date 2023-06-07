@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /friends/
+Disallow: /2023/05/10/info/AboutME/
+Disallow: /live2d/
+Disallow: /download/
