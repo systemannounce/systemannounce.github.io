@@ -3,12 +3,21 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
+          <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JKZ3LJVCD"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-9JKZ3LJVCD');
+                </script>
         <title>GAME RECORD | Felix_SANA &#39;S BLOG</title>
         <meta name="author" content="Felix_SANA" />
         <meta name="description" content="你醒啦？已经到天际省了" />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-        <link rel="icon" href="/images/favicon.png" />
+        <link rel="icon" href="/images/ico.jpg" />
         <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
 <link rel="stylesheet" href="/css/fonts.min.css" />
@@ -38,11 +47,22 @@
 
 
 
+<script src="https://cdn.staticfile.org/waline/2.14.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.14.8/waline.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.14.8/waline-meta.min.css" />
+
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
+            
+        
+        <!-- 站点验证相关 -->
+            <meta name="baidu-site-verification" content="codeva-yy6Ea5pHMl" />
+            
+        <!-- live2dhere -->
+        <link rel="stylesheet" href="/live2d/css/live2d.css" />
     <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="Felix_SANA 'S BLOG" type="application/rss+xml">
 </head>
     <body>
@@ -95,6 +115,11 @@
         <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/systemannouncement">
             <i class="fa-brands fa-steam fa-fw"></i>
             <span>&ensp;STEAM</span>
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://5244-f7b45234abbc4b1da38f571823485b0d.onpatr.cloud/">
+            <i class="fa-solid fa-hard-drive fa-fw"></i>
+            <span>&ensp;NetworkDisk</span>
         </a>
         
         <a href="/rss2.xml">
@@ -171,6 +196,15 @@
                             <i class="fa-brands fa-steam fa-fw"></i>
                         </div>
                         <div style="min-width: 100px; max-width: 150%; width: 20%">STEAM</div>
+                    </div>
+                </a>
+                
+                <a target="_blank" rel="noopener" href="https://5244-f7b45234abbc4b1da38f571823485b0d.onpatr.cloud/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-hard-drive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">NetworkDisk</div>
                     </div>
                 </a>
                 
@@ -280,6 +314,10 @@
     
     
     
+    <div id="comment">
+        <div id="waline-container"></div>
+    </div>
+    
     
     
 </div>
@@ -317,12 +355,60 @@
                     <img id="preview-content" ref="previewContent" />
                 </div>
             </transition>
+
+            <!-- live2dhere -->
+            <div id="landlord" style="left:5px;bottom:0px;">
+                <div class="message" style="opacity:0"></div>
+                <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+                <div class="live_talk_input_body">
+                    <div class="live_talk_input_name_body">
+                        <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+                    </div>
+                    <div class="live_talk_input_text_body">
+                        <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
+                        <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+                    </div>
+                </div>
+                <input name="live_talk" id="live_talk" value="1" type="hidden" />
+                <div class="live_ico_box">
+                    <div class="live_ico_item type_info" id="showInfoBtn"></div>
+                    <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+                    <div class="live_ico_item type_quit" id="hideButton"></div>
+                    <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+                </div>
+            </div>
+            <div id="open_live2d">召唤伊斯特瓦尔</div>
+
+            <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
+            <script>
+            var message_Path = '/live2d/';//资源目录，如果目录不对请更改
+            var talkAPI = "";//如果有类似图灵机器人的聊天接口请填写接口路径
+            </script>
+            <script type="text/javascript" src="/live2d/js/live2d.js"></script>
+            <script type="text/javascript" src="/live2d/js/message.js"></script>
             
         </div>
         <script src="/js/main.js"></script>
         
         
 
+
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "https://blogvercel-two.vercel.app/",
+        commentCount: true,
+        pageview: true,
+        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
+        meta: "nick,mail,link".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "zh-CN",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "enable",
+        
+    });
+</script>
 
 
 
