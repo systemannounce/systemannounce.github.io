@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9JKZ3LJVCD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9JKZ3LJVCD');
+</script>
+
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="/images/ico.jpg">
+  
+  <title>Python爬虫基础② | Felix_SANA &#39;S BLOG</title>
+  
+  <meta name="author" content="Felix_SANA" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="python, 初阶, 数据解析" />
+  
+  <meta name="description" content="前言本篇的内容接上一篇，主要讲的是AJAX，JSON解析和正则表达式。 我这里不重复注意事项，如果你有不明确的请去看一下上一篇爬虫基础。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬虫基础②">
+<meta property="og:url" content="https://www.systemannounce.cn/2023/06/10/learning/Python/crawler2/index.html">
+<meta property="og:site_name" content="Felix_SANA &#39;S BLOG">
+<meta property="og:description" content="前言本篇的内容接上一篇，主要讲的是AJAX，JSON解析和正则表达式。 我这里不重复注意事项，如果你有不明确的请去看一下上一篇爬虫基础。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.systemannounce.cn/2023/06/10/learning/Python/crawler2/images/Markdown/headimg/pythoncrawler2.png">
+<meta property="article:published_time" content="2023-06-10T06:35:14.000Z">
+<meta property="article:modified_time" content="2023-06-19T01:55:45.265Z">
+<meta property="article:author" content="Felix_SANA">
+<meta property="article:tag" content="初阶">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="数据解析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.systemannounce.cn/2023/06/10/learning/Python/crawler2/images/Markdown/headimg/pythoncrawler2.png">
+  <link rel="alternate" href="rss2.xml" type="application/atom+xml">
+  <!-- 站点验证相关 -->
+  
+    
+    
+      <meta name="baidu-site-verification" content="codeva-yy6Ea5pHMl" />
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <!-- <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/all.min.css" media="all"></script> -->
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+    
+  </style>
+  
+  
+  <link rel="stylesheet" href="/live2d/css/live2d.css" />
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JKZ3LJVCD"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9JKZ3LJVCD');
+    </script>
+    
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li>
+                                            
+                                                <a href="/">
+                                            
+                                                
+                                                    <i class="fa fa-home"></i>
+                                                
+                                                首页
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-file"></i>
+                                                
+                                                伊斯特瓦尔
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a href="/archives/">
+                                                                
+                                                                    <i class="fa fa-book"></i>
+                                                                
+                                                                总览
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/search">
+                                                                
+                                                                    <i class="fa fa-search"></i>
+                                                                
+                                                                搜索
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/2023/05/25/record/gamerecord/">
+                                                                
+                                                                    <i class="fa fa-gamepad"></i>
+                                                                
+                                                                游戏生涯记录
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/2023/05/25/record/animerecord/">
+                                                                
+                                                                    <i class="fa fa-tv"></i>
+                                                                
+                                                                番剧生涯记录
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/friends/">
+                                            
+                                                
+                                                    <i class="fa fa-users"></i>
+                                                
+                                                友链
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/2023/05/10/info/AboutME/">
+                                            
+                                                
+                                                    <i class="fa fa-paper-plane-o"></i>
+                                                
+                                                关于我
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a target="_blank" rel="noopener" href="https://gpt.systemannounce.cn">
+                                            
+                                                
+                                                    <i class="fa fa-comments"></i>
+                                                
+                                                ChatGPT(apikey版)
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-server"></i>
+                                                
+                                                NetDisk
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://cloud.systemannounce.cn">
+                                                                
+                                                                    <i class="fa fa-hdd-o"></i>
+                                                                
+                                                                地址1
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://air3.systemannounce.repl.co">
+                                                                
+                                                                    <i class="fa fa-cloud"></i>
+                                                                
+                                                                地址2
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://drive.systemannounce.cn">
+                                                                
+                                                                    <i class="fa fa-cloud-download"></i>
+                                                                
+                                                                地址3
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a target="_blank" rel="noopener" href="https://status.systemannounce.cn">
+                                            
+                                                
+                                                    <i class="fa fa-video-camera"></i>
+                                                
+                                                Server Status
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/rss2.xml">
+                                            
+                                                
+                                                    <i class="fa fa-rss"></i>
+                                                
+                                                RSS订阅
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-link"></i>
+                                                
+                                                外链
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://github.com/systemannounce">
+                                                                
+                                                                    <i class="fa fa-github"></i>
+                                                                
+                                                                GitHub
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://music.163.com/#/user/home?id=512603380">
+                                                                
+                                                                    <i class="fa fa-music"></i>
+                                                                
+                                                                网抑云
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/systemannouncement">
+                                                                
+                                                                    <i class="fa fa-steam"></i>
+                                                                
+                                                                Steam
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://space.bilibili.com/200704172">
+                                                                
+                                                                    <i class="fa fa-youtube-play"></i>
+                                                                
+                                                                bilibili
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://bangumi.tv/user/systemannounce">
+                                                                
+                                                                    <i class="fa fa-mixcloud"></i>
+                                                                
+                                                                BGM
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">Felix_SANA &#39;S BLOG</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Felix_SANA &#39;S BLOG</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://www.systemannounce.cn/2023/06/10/learning/Python/crawler2/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">Python爬虫基础②</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2023-06-10T06:35:14.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2023-06-10</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Felix_SANA</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~4.44K
+                        
+                        字
+                    </li>
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1687139745265"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+            <hr />
+            <div itemprop="articleBody"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇的内容接上一篇，主要讲的是AJAX，JSON解析和正则表达式。</p>
+<div class="alert alert-info"><div class="icon"><i class="fa fa-info"></i></div><div class="text"><p>我这里不重复注意事项，如果你有不明确的请去看一下上一篇爬虫基础。</p>
+</div></div>
+
+<span id="more"></span>
+
+<p><strong>AJAX</strong>交互：在使用网页中，有时候需要获取的信息放在对面服务器里并不会直接给你，而是需要你通过查询的方式才会返回相应的数据，返回的不是一整个网页，而是你所需要的数据，这样子可以减少服务器的带宽占用。</p>
+<p><strong>JSON</strong>是一种轻量级资料交换格式，其内容由属性和值所组成，因此也有易于阅读和处理的优势，所以大多数服务器的数据发送接收都采用JSON格式。</p>
+<p><strong>正则表达式</strong>作为用简单字符串来描述、匹配文中全部匹配指定格式的字符串，现在很多文本编辑器都支持用正则表达式搜索、取代匹配指定格式的字符串，检索效率能快不少。</p>
+<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><blockquote>
+<p>传统的Web允许用户端填写表单（form），当提交表单时就向网页服务器发送一个请求。服务器接收并处理传来的表单，然后送回一个新的网页，但这个做法浪费了许多带宽，因为在前后两个页面中的大部分HTML码往往是相同的。由于每次应用的沟通都需要向服务器发送请求，应用的回应时间依赖于服务器的回应时间。这导致了用户界面的回应比本机应用慢得多。</p>
+<p>与此不同，AJAX应用可以仅向服务器发送并取回必须的数据，而不是整个网页，并在客户端采用JavaScript处理来自服务器的回应。因为在服务器和浏览器之间交换的数据大量减少，服务器回应更快了。同时，很多的处理工作可以在发出请求的客户端机器上完成，因此Web服务器的负荷也减少了。</p>
+</blockquote>
+<div class="panel panel-info">
+    <div class="panel-title">tips</div>
+    <div class="panel-body">
+        <p>我们这里以<a target="_blank" rel="noopener" href="http://www.kfc.com.cn/kfccda/storelist/index.aspx">肯德基餐厅信息查询</a>网站作为示例，演示AJAX的特征和交互方式，以及数据获取方式。</p>
+<p>其他很多网站都是大同小异，你还可以去一些国家政务网站资料查询那里尝试，不过一次请求就够了别短时间爬取太多次，记住之前说的注意事项就行。</p>
+
+    </div>
+    </div>  
+
+<div class="xControl">
+    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>怎么识别是不是AJAX呢</span></div>
+    <div class="xContent"><div class="inner">
+        <p>当你进行一次请求或者刷新操作时，网页只有一部分内容发生了变化，网址没有变化。</p>
+<p>类似于这样</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20162753.png"></p>
+<p>或者说网址变化了，但是你用爬虫请求该网页时，发现本该出现的数据没有出现。</p>
+<p>例如</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20163632.png"></p>
+ 
+    </div></div>
+    </div>  
+
+<p>我们先打开<a target="_blank" rel="noopener" href="http://www.kfc.com.cn/kfccda/storelist/index.aspx">肯德基餐厅信息查询</a>网站，然后打开浏览器控制台，然后在搜索框做一次请求，在网络选项卡下面就可以看到我们做的请求了，如果请求过多不好定位，可以在类别筛选里面选择<code>AJAX</code>或者叫<code>Fetch/XHR</code>来快速找到对应请求。</p>
+<p>这里可以看到我们做出查询的关键词来定位我们的请求。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20165054.png"></p>
+<p>在响应里面可以找到服务器返回给我们的数据。</p>
+<p>因为太多这里只展示一部分。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;Table&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;rowcount&quot;</span><span class="punctuation">:</span> <span class="number">192</span></span><br><span class="line">	<span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">	<span class="attr">&quot;Table1&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;rownum&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;storeName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;开发区上海路&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;addressDetail&quot;</span><span class="punctuation">:</span> <span class="string">&quot;开发区上海路80号利群时代超市一楼&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;pro&quot;</span><span class="punctuation">:</span> <span class="string">&quot;24小时,Wi-Fi,点唱机,店内参观,礼品卡,手机点餐&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;provinceName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;江苏省&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;cityName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;南通市&quot;</span></span><br><span class="line">	<span class="punctuation">&#125;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>接下来我们回到标头可以看到我们请求的网址，请求方法是<code>POST</code>还是<code>GET</code>，以及携带的表单，或者叫数据。这些数据向我们展示了如何规范地向服务区索取对应的数据，网址，格式，页码，参数等等。我们接下来的爬虫程序跟着做就行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20170001.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20165926.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20170237.png"></p>
+<p>在前面的基础上面我们只需要对我们的请求加一点东西即可完成AJAX请求，可以看到，我们这次请求方法是<code>POST</code>，网址是</p>
+<p><code>http://www.kfc.com.cn/kfccda/ashx/GetStoreList.ashx?op=keyword</code>，数据如上。如果要请求相同到的东西，我们只需要写出下面的代码即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">kfc = <span class="string">&#x27;http://www.kfc.com.cn/kfccda/ashx/GetStoreList.ashx?op=keyword&#x27;</span></span><br><span class="line">header = &#123;</span><br><span class="line">    <span class="string">&#x27;user-agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">data = &#123;</span><br><span class="line">    cname: ,</span><br><span class="line">    pid: ,</span><br><span class="line">    keyword: 上海,</span><br><span class="line">    pageIndex: <span class="number">11</span>,</span><br><span class="line">    pageSize: <span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line">r = requests.post(url = kfc , headers = header , data = data)</span><br></pre></td></tr></table></figure>
+
+<p><strong>这里的header上次讲过了，data的参数在POST里对应的就是你要向服务器提交的表单。URL对应的是上面POST请求的URL，不是你网址栏的URL</strong></p>
+<p>这样子，你就成功拿到了你想要的数据。</p>
+<h2 id="JSON解析"><a href="#JSON解析" class="headerlink" title="JSON解析"></a>JSON解析</h2><p>上面我们成功拿到了数据，但是是JSON字符串格式的，我们只需要里面某个类别的数据，比如所有餐馆的名字，那该怎么办呢？</p>
+<p>现在就是让我们解析JSON格式数据输出的时候了。</p>
+<p>想要使用官方自带的JSON库，我们照例还是得添加一行导入。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br></pre></td></tr></table></figure>
+
+<p>然后我们得把获取到的JSON数据转化为字典。</p>
+<blockquote>
+<p>我把下面JSON格式化只是让你们看清楚层级关系，你们拿到手的JSON文本都被压缩成了一整行，想要像这样子的话网络上面有很多格式化网站可供使用。</p>
+<p>这样子很清楚能看到层级关系，方便数据解析操作。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">js = <span class="string">&#x27;&#x27;&#x27;&#123;</span></span><br><span class="line"><span class="string">	&quot;Table&quot;: [&#123;</span></span><br><span class="line"><span class="string">		&quot;rowcount&quot;: 192</span></span><br><span class="line"><span class="string">	&#125;],</span></span><br><span class="line"><span class="string">	&quot;Table1&quot;: [&#123;</span></span><br><span class="line"><span class="string">		&quot;rownum&quot;: 1,</span></span><br><span class="line"><span class="string">		&quot;storeName&quot;: &quot;开发区上海路&quot;,</span></span><br><span class="line"><span class="string">		&quot;addressDetail&quot;: &quot;开发区上海路80号利群时代超市一楼&quot;,</span></span><br><span class="line"><span class="string">		&quot;pro&quot;: &quot;24小时,Wi-Fi,点唱机,店内参观,礼品卡,手机点餐&quot;,</span></span><br><span class="line"><span class="string">		&quot;provinceName&quot;: &quot;江苏省&quot;,</span></span><br><span class="line"><span class="string">		&quot;cityName&quot;: &quot;南通市&quot;</span></span><br><span class="line"><span class="string">	&#125;]</span></span><br><span class="line"><span class="string">&#125;&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">r = json.loads(js)</span><br></pre></td></tr></table></figure>
+
+<p>这样子<code>r</code>这个变量就变成了存储JSON的字典，按照PYTHON字典的方式控制即可</p>
+<p>例如下面的代码就是把里面详细地址的值打印出来。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(r[<span class="string">&quot;Table1&quot;</span>][<span class="number">0</span>][<span class="string">&quot;addressDetail&quot;</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>由于讲起来可是一门很深的学问，而且挺难的，所以这里就不细讲，主要也是因为自己水平也不过关，主要说最常用的匹配操作。</p>
+<p>​    <span class="blur">以后看各位需要再看要不要跟这次爬虫一样拆成几次讲完。</span></p>
+<p>这个作为强大的处理工具，按理来说你使用熟练的话可以取代掉很多其他工具的数据解析工作。比如之前的lxml，JSON，bs等等。</p>
+<p>在Python里，用<code>re</code>模块来导入相应的库。</p>
+<p>接下来书写正则表达式</p>
+<p>例子：(把下面的google链接提取出来)</p>
+<p>可以这样写程序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">text = <span class="string">&#x27;&#x27;&#x27;&lt;script async=&quot;&quot; defer=&quot;&quot; </span></span><br><span class="line"><span class="string">src=&quot;https://launchpad.privacymanager.io/1/launchpad.bundle.js&quot;&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;script async=&quot;&quot; src=&quot;https://www.googletagmanager.com/gtag/js?id=G-9JKZ3LJVCD&quot;&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;script&gt;</span></span><br><span class="line"><span class="string">  window.dataLayer = window.dataLayer || [];</span></span><br><span class="line"><span class="string">  function gtag()&#123;dataLayer.push(arguments);&#125;</span></span><br><span class="line"><span class="string">  gtag(&#x27;js&#x27;, new Date());</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  gtag(&#x27;config&#x27;, &#x27;G-9JKZ3LJVCD&#x27;);</span></span><br><span class="line"><span class="string">&lt;/script&gt;&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">ex = <span class="string">&#x27;&lt;script async=.*?async=&quot;&quot; src=&quot;(.*?)&quot;&gt;&lt;/script&gt;.*?&lt;/script&gt;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(re.findall(ex , text , re.S)[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async=.*?async=&quot;&quot; src=&quot;(.*?)&quot;&gt;&lt;/script&gt;.*?&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这句表达式里面，上面一共有三个<code>.*?</code>，他们连在一起代表匹配多个任意字符</p>
+<p>如果你把普通字符写在正则里面代表匹配特定字符。上面表达式的效果，匹配字符串中在<code>async=&quot;&quot; src=&quot;</code>和<code>&quot;&gt;&lt;/script&gt;</code>中间的内容，也就是<code>https://www.googletagmanager.com/gtag/js?id=G-9JKZ3LJVCD</code></p>
+<p>带括号的代表你要查找的部分。<code>re.S</code>代表查找模式，一般数据解析只需要用这个模式就行。</p>
+<div class="alert alert-success"><div class="icon"><i class="fa fa-check"></i></div><div class="text"><p>这就是本篇所有内容了，感谢你的观看，如果有建议或者错误请指出，感谢。</p>
+</div></div></div>
+        </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://www.systemannounce.cn/2023/06/10/learning/Python/crawler2/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://www.systemannounce.cn/2023/06/10/learning/Python/crawler2/";
+            const title         = "「Python爬虫基础②」";
+            const excerpt       = `前言本篇的内容接上一篇，主要讲的是AJAX，JSON解析和正则表达式。
+我这里不重复注意事项，如果你有不明确的请去看一下上一篇爬虫基础。`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/python/" rel="tag">python</a>, <a class="tag-none-link" href="/tags/%E5%88%9D%E9%98%B6/" rel="tag">初阶</a>, <a class="tag-none-link" href="/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/" rel="tag">数据解析</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2023-06-19T01:55:45.265Z" itemprop="dateModified">最后编辑：2023-06-19</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 孤独摇滚图片分享" href="/2023/06/08/img/bocchi/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" Wallpaper Engine壁纸推荐①" href="/2023/06/16/wallpaper/wallpapere1/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+        <div id="disqus_thread" class="post-comments lazy-load bg-image"></div>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://www.systemannounce.cn/2023/06/10/learning/Python/crawler2/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = '2023/06/10/learning/Python/crawler2/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    var load_comm = () => {
+        if (typeof DISQUS === 'undefined') {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://felixsana.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        } else {
+            DISQUS.reset({
+                reload: true,
+                config: function () {  
+                    this.page.url = 'https://www.systemannounce.cn/2023/06/10/learning/Python/crawler2/';  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = '2023/06/10/learning/Python/crawler2/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                }
+            });
+        }
+    };
+    
+</script>
+<script async id="dsq-count-scr" src="//felixsana.disqus.com/count.js"></script>
+
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/66364037_p0.png" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">你醒啦？已经到天际省了</p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                14
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                6
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                25
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Steam/">Steam</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%AB%99/">网站</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%B4%E6%98%8E/">说明</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%B4%E6%98%8E/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a><span class="category-list-count">1</span></li></ul></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Markdown/" style="font-size: 0.6em;">Markdown</a> <a href="/tags/Steam/" style="font-size: 0.6em;">Steam</a> <a href="/tags/blog/" style="font-size: 0.6em;">blog</a> <a href="/tags/cdn/" style="font-size: 0.6em;">cdn</a> <a href="/tags/hexo/" style="font-size: 0.6em;">hexo</a> <a href="/tags/python/" style="font-size: 0.73em;">python</a> <a href="/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/" style="font-size: 0.6em;">二次元</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 0.6em;">人物</a> <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 0.6em;">介绍</a> <a href="/tags/%E5%88%9D%E9%98%B6/" style="font-size: 0.8em;">初阶</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 0.6em;">动漫</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 0.6em;">图片</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 0.67em;">域名</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 0.6em;">存储</a> <a href="/tags/%E5%AE%9E%E7%94%A8/" style="font-size: 0.6em;">实用</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/" style="font-size: 0.73em;">数据解析</a> <a href="/tags/%E6%B5%81%E9%87%8F%E8%AD%A6%E5%91%8A/" style="font-size: 0.6em;">流量警告</a> <a href="/tags/%E7%BD%91%E7%9B%98/" style="font-size: 0.6em;">网盘</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2023/07/23/learning/alist/alist1/"><i class="fa  fa-book"></i> Alist网盘部署①</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/07/07/learning/Python/crawler3/"><i class="fa  fa-book"></i> Python爬虫基础③</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/06/16/wallpaper/wallpapere1/"><i class="fa  fa-book"></i> Wallpaper Engine壁纸推荐①</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/06/10/learning/Python/crawler2/"><i class="fa  fa-book"></i> Python爬虫基础②</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/06/08/img/bocchi/"><i class="fa  fa-book"></i> 孤独摇滚图片分享</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
+                        
+                        <li><a href="mailto:systemannounce@outlook.com"><i class="fa fa-envelope"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/systemannounce"><i class="fa fa-telegram"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://twitter.com/systemannounce"><i class="fa fa-twitter"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://www.facebook.com/systemannounce"><i class="fa fa-facebook-official"></i></a></li>
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/systemannounce"><i class="fa fa-github"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="/rss2.xml"><i class="fa fa-rss"></i></a></li>
+                        <!-- New links -->
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2023 Felix_SANA 'S BLOG 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Felix_SANA.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a target="_blank" rel="noopener" href="https://systemannounce.github.io">Github Pages</a>  &  <a target="_blank" rel="noopener" href="https://systemannounce.netlify.app">Netlify</a>  &  <a target="_blank" rel="noopener" href="https://cloud.tencent.com/">tencentcloud</a></li>
+                        </div>
+                        <div>
+                            <li><a href="https://beian.miit.gov.cn" rel="external nofollow" target="_blank"><a href="https://icp.gov.moe/?keyword=20232112" target="_blank">萌ICP备20232112号</a></a></li>
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="snow-switch">
+                        <span class="fa fa-snowflake-o"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async src="/js/snow.min.js"></script>
+    </div>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="8410660170"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+        <div id="landlord" style="left:35px;bottom:75px;">
+            <div class="message" style="opacity:0"></div>
+            <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+            <div class="live_talk_input_body">
+                <div class="live_talk_input_name_body">
+                    <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+                </div>
+                <div class="live_talk_input_text_body">
+                    <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
+                    <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+                </div>
+            </div>
+            <input name="live_talk" id="live_talk" value="1" type="hidden" />
+            <div class="live_ico_box">
+                <div class="live_ico_item type_info" id="showInfoBtn"></div>
+                <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+                <div class="live_ico_item type_music" id="musicButton"></div>
+                <div class="live_ico_item type_youdu" id="youduButton"></div>
+                <div class="live_ico_item type_quit" id="hideButton"></div>
+                <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+                <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+                <input name="live2dBGM" value="音乐地址，建议别碰" type="hidden">
+                <input id="duType" value="douqilai,l2d_caihong" type="hidden">
+            </div>
+        </div>
+        <div id="open_live2d">召唤伊斯特瓦尔</div>
+
+        <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script>
+        var message_Path = '/live2d/';//资源目录，如果目录不对请更改
+        var talkAPI = "";//如果有类似图灵机器人的聊天接口请填写接口路径
+        </script>
+        <script type="text/javascript" src="/live2d/js/live2d.js"></script>
+        <script type="text/javascript" src="/live2d/js/message.js"></script>
+
+    </body>
+</html>
