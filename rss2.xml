@@ -9,8 +9,30 @@
     <atom:link href="https://www.systemannounce.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>你醒啦？已经到天际省了</description>
-    <pubDate>Sat, 09 Sep 2023 03:09:58 GMT</pubDate>
+    <pubDate>Fri, 15 Sep 2023 14:47:36 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title></title>
+      <link>https://www.systemannounce.com/2023/09/15/other/hevc-av1/</link>
+      <guid>https://www.systemannounce.com/2023/09/15/other/hevc-av1/</guid>
+      <pubDate>Fri, 15 Sep 2023 14:49:33 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;记录微软商店HEVC和AV1的视频编码扩展&quot;&gt;&lt;a href=&quot;#记录微软商店HEVC和AV1的视频编码扩展&quot; class=&quot;headerlink&quot; title=&quot;记录微软商店HEVC和AV1的视频编码扩展&quot;&gt;&lt;/a&gt;记录微软商店HEVC和AV1的视频编码扩展&lt;/</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="记录微软商店HEVC和AV1的视频编码扩展"><a href="#记录微软商店HEVC和AV1的视频编码扩展" class="headerlink" title="记录微软商店HEVC和AV1的视频编码扩展"></a>记录微软商店HEVC和AV1的视频编码扩展</h2><blockquote><p>需要的应该秒懂，如果你不知道这是什么，那估计你应该不需要这玩意</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-15%20224506.png"></p><p>HEVC : <a href="https://www.microsoft.com/store/productid/9N4WGH0Z6VHQ?ocid=pdpshare">https://www.microsoft.com/store/productid/9N4WGH0Z6VHQ?ocid=pdpshare</a></p><p>AV1 : <a href="https://www.microsoft.com/store/productid/9MVZQVXJBQ9V?ocid=pdpshare">https://www.microsoft.com/store/productid/9MVZQVXJBQ9V?ocid=pdpshare</a></p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://www.systemannounce.com/2023/09/15/other/hevc-av1/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Alist网盘部署②</title>
@@ -261,13 +283,13 @@
       <category domain="https://www.systemannounce.com/categories/%E7%BD%91%E7%AB%99/">网站</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/%E5%9F%9F%E5%90%8D/">域名</category>
-      
-      <category domain="https://www.systemannounce.com/tags/%E9%81%BF%E5%9D%91/">避坑</category>
-      
       <category domain="https://www.systemannounce.com/tags/cdn/">cdn</category>
       
+      <category domain="https://www.systemannounce.com/tags/%E5%9F%9F%E5%90%8D/">域名</category>
+      
       <category domain="https://www.systemannounce.com/tags/%E8%BF%9B%E9%98%B6/">进阶</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E9%81%BF%E5%9D%91/">避坑</category>
       
       
       <comments>https://www.systemannounce.com/2023/05/28/websitecourse/cdn/#disqus_thread</comments>
