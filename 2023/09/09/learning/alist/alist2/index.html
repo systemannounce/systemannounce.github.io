@@ -563,28 +563,25 @@
         </nav>
     
     
-        <link rel="stylesheet" href="/vendors/gitalk@1.7.2/dist/gitalk.css"></script>
-<div id="gitalk-container" class="post-comments lazy-load bg-image" style="padding-left:2rem; padding-right:2rem;"></div>
-<script>
-    var load_comm = () => {
-        const init = () => {
-            console.log('Gitalk loading...');
-            const gitalk = new Gitalk(Object.assign({
-                id: '/2023/09/09/learning/alist/alist2/',
-                path: '/2023/09/09/learning/alist/alist2/'
-            }, JSON.parse('{"clientID":"d9b9c3266335132738ca","clientSecret":"88510a9c8e39beec08aacc631dade7d9ad7e8304","repo":"gitalk","owner":"systemannounce","admin":["systemannounce"],"distractionFreeMode":true}')));
+        <div id="lv-container" class="post-comments lazy-load bg-image" data-id="city" data-uid="MTAyMC81ODQ3MS8zNDkzNA=="></div>
 
-            gitalk.render('gitalk-container');
-        }
-        if (typeof Gitalk === 'undefined') {
-            const src = '/vendors/gitalk@1.7.2/dist/gitalk.min.js';
-            $.getScript(src, init);
+<script>
+    window.livereOptions = {
+        refer: 'www.systemannounce.com/2023/09/09/learning/alist/alist2/',
+        site: 'https://www.systemannounce.com/2023/09/09/learning/alist/alist2/',
+        eagerLoading: true //主题会自己处理lazy load，没有必要让LiveRe的脚本再去做lazy load的处理
+    };
+    var load_comm = () => {
+        if (typeof LivereTower === 'undefined') {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            (d.head || d.body).appendChild(s);
         } else {
-            init();
+            window.LivereTower.init();
         }
     };
 </script>
-<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://github.com/gitalk/gitalk">comments powered by Gitalk.</a></noscript>
+<noscript>Please enable JavaScript to view the <a target="_blank" href="https://livere.com/" rel="nofollow noopener">comments powered by LiveRe.</a></noscript>
     
 </article>
 
