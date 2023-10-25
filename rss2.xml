@@ -9,8 +9,36 @@
     <atom:link href="https://www.systemannounce.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>你醒啦？已经到天际省了</description>
-    <pubDate>Wed, 27 Sep 2023 11:28:22 GMT</pubDate>
+    <pubDate>Wed, 25 Oct 2023 14:24:22 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>网盘文件部署本地</title>
+      <link>https://www.systemannounce.com/2023/10/25/learning/filedeploy/</link>
+      <guid>https://www.systemannounce.com/2023/10/25/learning/filedeploy/</guid>
+      <pubDate>Wed, 25 Oct 2023 12:19:19 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;你是否有遇到过文件存放在各个云盘：阿里，百度，夸克，FTP，NAS等等位置，极其分散，每一个都有独立的网站，APP等，而且还存在资源存放重合等诸多问题。&lt;/p&gt;
+&lt;p&gt;于是迫切想找一个稳定的地方进行统一管理，那么，前面讲过的Alist可以让你有个统一的平台进行管理，而结和本篇博客结合可以让你在系统中就可以在Windows中像本地文件一样对网盘文件进行操作。&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>你是否有遇到过文件存放在各个云盘：阿里，百度，夸克，FTP，NAS等等位置，极其分散，每一个都有独立的网站，APP等，而且还存在资源存放重合等诸多问题。</p><p>于是迫切想找一个稳定的地方进行统一管理，那么，前面讲过的Alist可以让你有个统一的平台进行管理，而结和本篇博客结合可以让你在系统中就可以在Windows中像本地文件一样对网盘文件进行操作。</p><span id="more"></span><h2 id="Raidrive（PC）"><a href="#Raidrive（PC）" class="headerlink" title="Raidrive（PC）"></a>Raidrive（PC）</h2><p>总所周知，市面上主流的操作系统都没有可以将网络文件很好地部署到本地的方法，所以这里我们借助第三方软件进行→<a href="//www.raidrive.com/"><strong>Raidrive官网</strong></a></p><div class="alert alert-info"><div class="icon"><i class="fa fa-info"></i></div><div class="text"><p>这个软件貌似有人做出了Mac版本，可以去看一下</p></div></div><p>因为这个软件是有收费版的，所以官方提供免费软件肯定有了一些让人不爽的地方，例如广告或者限制功能，很幸运的是，这个软件没有限制功能，就是多了广告，你们的火绒应该可以应付吧？</p><p>看在我顺便帮各位把无广告版的软件准备好了的份上，可不可以给好评？戳下面链接就可以下载了。</p><p><a href="//cloud.systemannounce.com/OneDrive_AF/Soft/RaiDrive/RaiDrive_1.7.1.exe"><strong>Raidrive无广告版下载</strong></a></p><h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>首先点击最上面的添加按钮，然后选择对应的网盘根据配置即可完成添加。</p><p><strong>如果你使用的是Alist</strong>，请点击服务类型里面的<strong>NAS</strong>，接着点击<strong>WebDAV</strong>，下面分配你的盘号和驱动器名字，<strong>然后下面账号密码根据需求选择是否填写</strong>。（如果你本来匿名就可以看到所有文件了那就不用写账号密码了）</p><p>最好是添加一个新用户来登录，不要在这里写admin的账号和密码。</p><p>下面的地址如果有域名那就写域名，有ip地址那就写ip。不过注意如果写ip地址留意一下端口号。</p><p>下面的路径统一写 <code>/dav</code> 即可。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20211212.png"></p><p>然后记得把他添加到开机启动里面去，你就可以去此电脑里面查看新多出来的文件夹了。</p><div class="alert alert-info"><div class="icon"><i class="fa fa-info"></i></div><div class="text"><p>显示是7.99EB属于显示错误，你实际有多少容量以你自己知道的数据为准</p></div></div><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20212347.png"></p><h2 id="Solid-Explorer-（Android）"><a href="#Solid-Explorer-（Android）" class="headerlink" title="Solid Explorer （Android）"></a>Solid Explorer （Android）</h2><p>本来找到好几个应用，无一例外使用WebDAV服务需要收钱，真的难顶。</p><p>好在最后还是找到了一个可以免费使用的文件管理器，照样你可以去官网看看下载，也可以来我这里，顺便帮各位准备好了。点击即可下载。</p><p><a href="//cloud.systemannounce.com/OneDrive_AF/Soft/Solid%20Explorer/pl.solidexplorer2.apk">Solid Explorer下载</a></p><h3 id="使用方法-1"><a href="#使用方法-1" class="headerlink" title="使用方法"></a>使用方法</h3><p>首先打开应用，如果提示要给权限那就给它。</p><p>点击右下角加号，选择新建一个云端连接。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/373667517670972252.jpg"></p><p><strong>如果你部署的是其他网盘，那么选择对应的网盘然后下一步继续填写相关信息即可，如果你部署的是Alist，请继续跟着教程。</strong></p><p>随后我们选择WebDAV下一步，在这里会提示我们使用HTTP还是HTTPS。</p><ol><li>如果你访问你的网盘是以IP地址的形式，那就是HTTP；</li><li>如果是网址形式，那就得分情况</li></ol><ul><li>把你的网址在浏览器打开，如果上方提示不安全，那么大概率是HTTP</li><li>如果没有提示，那么应该就是HTTPS。</li></ul><p>到了第三步需要填写服务器信息，上面远程主机名写IP地址或者你的网址，不需要带前面的 <code>http(s)://</code> 。</p><p><strong>这里要注意，如果你填的是IP地址的话，记得留意一下端口号，以免填错。</strong></p><p>下面的路径我们统一填写 <code>/dav</code> 。最下面的显示名称可以根据自己的喜好命名即可。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/547953118483893454.jpg"></p><p>下一步根据需要是否为匿名访问（如果你本来匿名就可以看到所有文件了那就不用写账号密码了）</p><p>最好是添加一个新用户来登录，不要在这里写admin的账号和密码。</p><h2 id="指定基础路径访问"><a href="#指定基础路径访问" class="headerlink" title="指定基础路径访问"></a>指定基础路径访问</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>如果你直接用admin账号来登录或者匿名登录，你会一进去首先是各个网盘文件夹，如果你想一点开就是某个网盘的某个位置的话也很简单，你可以在路径空下面填写，在你需要访问到哪个文件夹那就把响应的目录添加到 <code>/dav</code> 后面。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20215221.png"></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20215242.png"></p><h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>你可以直接创建一个用户拥有对应目录的基本路径，这样子你用该用户登录上去根目录就是你指定的目录。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20215404.png"></p><h2 id="媒体库"><a href="#媒体库" class="headerlink" title="媒体库"></a>媒体库</h2><p>如果你的网盘里面某个目录里面专门用来存放小电影，或者说全是视频，那么这里给你推荐一个APP可以快速将你网盘里面的媒体检索并且播放。</p><p><a href="//gitee.com/xyoye/DanDanPlayForAndroid/releases">弹弹playAndroid概念版下载</a></p><p>使用方法和前面几乎一样，这里不在过多赘述。</p><p>如果你更倾向与PC端的媒体库，potplayer也是一个很好地选择。</p>]]></content:encoded>
+      
+      
+      <category domain="https://www.systemannounce.com/categories/%E7%BD%91%E7%9B%98/">网盘</category>
+      
+      
+      <category domain="https://www.systemannounce.com/tags/%E6%9C%AC%E5%9C%B0/">本地</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E9%9B%86%E6%88%90/">集成</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E5%AD%98%E5%82%A8/">存储</category>
+      
+      
+      <comments>https://www.systemannounce.com/2023/10/25/learning/filedeploy/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>大学生抢课技巧</title>
@@ -77,14 +105,14 @@
       <content:encoded><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>Alist</strong>的功能在上一期讲过了，这一期不再赘述。因为上一期的render时不时抽风导致无法成功部署，所以这一期我们换一个部署平台Replit进行部署，流程和上一期没什么差别。</p><span id="more"></span><h2 id="Replit注册"><a href="#Replit注册" class="headerlink" title="Replit注册"></a>Replit注册</h2><p>我们首先来到 <a href="https://replit.com/">Replit官网</a> 注册一个账号，用什么email，Google，GitHub等等都行，注册我们选择个人账户就行，注册好之后进入主页，点击左边列表的Teams，然后在下面Friends里面点击Create your first Team，随便起一个团队名字即可。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-09%20101834.png"></p><p>在进入你刚刚创建的Team后，点击Create Team Repl创建部署环境。在左边选择环境为Blank Repl即可，名字也是随便起，然后点击创建即可。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-09%20102152.png"></p><p>保险起见我们确认一下你的环境，在左下方工具箱找到Console点击进去，输入 <code>uname -m</code> 查看输出如果你的和我一样那么接下来在Alist下载步骤你的下载包和我一样，否则就请去百度一下你需要下载什么包。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-09%20102753.png"></p><h2 id="Alist下载"><a href="#Alist下载" class="headerlink" title="Alist下载"></a>Alist下载</h2><p>进入<a href="https://github.com/alist-org/alist/releases">Alist下载界面</a>选择最新版即可，然后下载<strong>alist-linux-amd64.tar.gz</strong>即可。</p><div class="alert alert-info"><div class="icon"><i class="fa fa-info"></i></div><div class="text"><p>如果你的环境和我的不一样请自行查找该选择哪个下载</p></div></div><p>下载下来之后，请把文件名更改，把前面的alist删掉，或者改为其他名字，总之不能留有alist在文件名里面。</p><h2 id="Replit部署"><a href="#Replit部署" class="headerlink" title="Replit部署"></a>Replit部署</h2><p>然后我们将改完的文件上传到Replit。在Files的右边有上传选项。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-09%20103911.png"></p><p>然后我们解压文件，在刚刚的Console里面输入以下命令即可，注意这里 <code>tar -zxvf</code> 后面的是你改完的文件名。</p><div class="alert alert-warning"><div class="icon"><i class="fa fa-warning"></i></div><div class="text"><p>在解压完后要尽快改名，否则检测出来就寄了。</p></div></div><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf d64.tar.gz</span><br></pre></td></tr></table></figure><p>解压完成之后就可以看到左边文件列表里面多了一个alist的文件，请将这个文件尽快改名，改成什么都可以（我改成了airr），就是别留着alist在这。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-09%20104750.png"></p><p>上面都完成以后，我们点击文件列表下面的 <code>.replit</code> 文件，然后将里面的内容全部删光，输入下面的东西即可。</p><div class="alert alert-info"><div class="icon"><i class="fa fa-info"></i></div><div class="text"><p>这里的airr是你刚刚改的名字，自己换成自己改的名字即可</p></div></div><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run = <span class="string">&quot;./airr server&quot;</span></span><br></pre></td></tr></table></figure><p>然后点击上面的Run即可完成部署。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-09%20105244.png"></p><p>如果看到这个界面，恭喜你你已经成功了，用户名是admin，密码在这里生成了</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-09%20105425.png"></p><p>如果很不凑巧，你没有看到密码，可以在左下角的工具箱点击Shell应用，然后输入 <code>./airr admin</code> <strong>（再次提醒这里的airr是你刚刚改的名字，下面我不再说了）</strong>即可查看密码。不过如果你看到和我一样的界面就是说，只可以在第一次部署的时候查看密码，如果你想要重新生成一个密码请输入 <code>./airr admin random</code> 即可。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023991101.png"></p><h2 id="醒一醒"><a href="#醒一醒" class="headerlink" title="醒一醒"></a>醒一醒</h2><p>因为服务原因，render会定期休眠不活跃的服务，如果你想要你的仓库一直保持唤醒状态，也就是不管什么时候都可以访问的话，需要访问这个网站：<a href="https://uptimerobot.com/">唤醒服务</a></p><p>简单注册登录之后，就可以直接新建一个服务，内容照着这样填就行了，网址换成你自己需要唤醒的网址，名字可以随便起。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-24%20230822.png"></p><h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>接下来你只需要用刚刚出现的Webview上面的网址访问你的Alist即可。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-09%20110311.png"></p>]]></content:encoded>
       
       
-      <category domain="https://www.systemannounce.com/categories/%E7%BD%91%E7%AB%99/">网站</category>
+      <category domain="https://www.systemannounce.com/categories/%E7%BD%91%E7%9B%98/">网盘</category>
       
-      
-      <category domain="https://www.systemannounce.com/tags/%E7%BD%91%E7%9B%98/">网盘</category>
       
       <category domain="https://www.systemannounce.com/tags/%E9%9B%86%E6%88%90/">集成</category>
       
       <category domain="https://www.systemannounce.com/tags/%E5%AD%98%E5%82%A8/">存储</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E7%BD%91%E7%9B%98/">网盘</category>
       
       
       <comments>https://www.systemannounce.com/2023/09/09/learning/alist/alist2/#disqus_thread</comments>
@@ -105,14 +133,14 @@
       <content:encoded><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>Alist</strong>是一个支持多存储的文件列表程序 (官方) </p><p>适合多网盘资源汇总，你可以在你的Alist里面集成几十几百个网盘同时管理，可以做好资源备份，资源细分，避免重复资源，有效利用网盘空间。</p><span id="more"></span><p>其实这个应用程序本质上就是你给Alist你的网盘访问修改权限，在你需要查看的时候由Alist查询完成给你返回结果，下载的时候也是Alist帮你去问下载链接返还给你，所以并不能加快什么网盘下载速度。</p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>那么介绍完了Alist，接下来就该如何部署了。</p><p>由于Alist是一个需要实时查询的应用程序，所以虽然是以网页的形式呈现给你，但是很可惜，不能使用Pages服务部署。</p><p>网上有很多在线部署的网站，vercel，render，replit等等，我们这里以render作为示范，主要是方便而且稳定。</p><h3 id="Git仓库"><a href="#Git仓库" class="headerlink" title="Git仓库"></a>Git仓库</h3><p>部署我们采用docker进行，但是render的部署只能采用仓库形式进行，我们这里使用这个仓库<a href="https://github.com/alist-org/with_aria2">with_aria2</a> 进行部署。</p><p>首先先把这个仓库fork一份到自己的GitHub仓库里面，然后访问<a href="https://dashboard.render.com/">render</a>官网，最好使用你刚刚fork仓库的GitHub账户直接授权登录，可以在待会直接同步你的仓库过去部署。</p><h3 id="render部署"><a href="#render部署" class="headerlink" title="render部署"></a>render部署</h3><p>在<a href="https://dashboard.render.com/">render</a>官网登录之后在右上角的New+选择新建一个Web Service。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-24%20213918.png"></p><p>然后在仓库选项里面选择自己的GitHub仓库点击 <code>Connect</code> 进行连接。或者也可以在下面的URL栏填入远程GitHub仓库的URL也行。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-24%20215937.png"></p><p>接下来我们到了部署界面，名字可以随便起，<code>Region</code> 是指你的服务部署到什么地区，默认就行。</p><p>在创建web服务的按钮前面有个Advanced按钮，按一下进行进阶设置。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-24%20214314.png"></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-24%20215034.png"></p><p>展开高级选项后，有一个 <code>Add Environment Variable</code> 的按钮，这里是添加我们各种运行时环境变量的地方。</p><p>这个时候先不要动这个网页，我们先去另一个网站完成数据库的搭建。</p><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><p>我们直接打开<a href="https://www.elephantsql.com/">ElephantSQL</a>官网，注册登录之后我们直接选择 <code>Create new instance</code> 来创建一个服务，计划我们直接选最便宜的，不要钱。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-24%20220052.png"></p><p>名字可以随便取。</p><p>在第二步选择 <code>region</code> 的时候，我们选择日本的数据中心，对中国用户比较友好。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-24%20215754.png"></p><p>然后我们一路next就可以创建成功了，接下来回到主页，就看到多出了一个数据库了，我们点我们数据库的名字，进入细节面板。</p><p>到这里，我们数据库的创建也算成功了。</p><h3 id="web部署"><a href="#web部署" class="headerlink" title="web部署"></a>web部署</h3><p>回到刚刚部署到一半的网站，点击 <code>Add Environment Variable</code> 添加以下的变量，根据表格填写即可。</p><table><thead><tr><th>名字</th><th>值</th></tr></thead><tbody><tr><td>CDN</td><td><code>https://npm.elemecdn.com/alist-web@$version/dist</code></td></tr><tr><td>DB_HOST</td><td>Server (不要复制括号里面的内容)</td></tr><tr><td>DB_NAME</td><td>User &amp; Default database</td></tr><tr><td>DB_PASS</td><td>Password</td></tr><tr><td>DB_PORT</td><td>5432</td></tr><tr><td>DB_SSL_MODE</td><td>disable</td></tr><tr><td>DB_TYPE</td><td>postgres</td></tr><tr><td>DB_USER</td><td>User &amp; Default database</td></tr><tr><td>PORT</td><td>8080</td></tr></tbody></table><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-24%20221854.png"></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-24%20220252.png"></p><p>填写好上面的环境变量后，就可以直接开始部署了。</p><p>部署完成之后就可以在你的主页看到你的网站了，自定义域名在下面有说。</p><div class="alert alert-danger"><div class="icon"><i class="fa fa-exclamation"></i></div><div class="text"><p>如果你这里点击部署之后出现错误无法继续部署时</p><p>请看下面的内容，不然就可以看下一节自定义域名了</p></div></div><div class="panel panel-danger">    <div class="panel-title">补救措施</div>    <div class="panel-body">        <p><strong>如果你是点击部署后报错的话，那估计render检测到大量的人使用这个仓库直接封禁了这个仓库的使用权限。</strong></p><p>请返回Git仓库的那一步，将仓库克隆到你的电脑里面，然后直接强制清除Git仓库状态，然后重新将文件夹内容初始化Git仓库然后上传到你自己的GitHub仓库里面进行下面的部署操作。</p><p>具体操作如下：</p><ol><li>复制在Git仓库那一步里面的仓库克隆地址</li><li>在你的本地找到一个空文件夹，使用 <code>git clone https://github.com/alist-org/with_aria2.git</code> 命令下载全部仓库文件。</li><li>将文件夹里面的 <code>.git</code> 文件夹删掉，如果看不到就开启隐藏文件夹显示</li></ol><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-24%20225149.png"></p><ol start="4"><li>在github创建一个仓库，然后将文件夹里面所有的文件上传到github里面，如果正常你的仓库应该变成了这样。</li></ol><blockquote><p>因为这里如果要说明如何用git上传到远程仓库是在太长了，如果你会的可以直接用，我这里使用直接上传的方法。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-24%20230019.png"></p><ol start="5"><li>接下来就是用你这个新仓库重新去部署web服务了。</li></ol>    </div>    </div><h2 id="醒一醒"><a href="#醒一醒" class="headerlink" title="醒一醒"></a>醒一醒</h2><p>因为服务原因，render会定期休眠不活跃的服务，如果你想要你的仓库一直保持唤醒状态，也就是不管什么时候都可以访问的话，需要访问这个网站：<a href="https://uptimerobot.com/">唤醒服务</a></p><p>简单注册登录之后，就可以直接新建一个服务，内容照着这样填就行了，网址换成你自己需要唤醒的网址，名字可以随便起。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-24%20230822.png"></p><h2 id="自定义域名（可选）"><a href="#自定义域名（可选）" class="headerlink" title="自定义域名（可选）"></a>自定义域名（可选）</h2><p>部署好了之后在主页点击自己刚刚部署的服务，进入设置，下滑就可以找到自定义域名了，这里就不过多说明了。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-24%20223309.png"></p><p>参考资料：</p><ol><li><a href="https://alist.nn.ci/zh/">Alist文档</a></li><li><a href="https://www.bilibili.com/read/cv20064914">手机搭建的alist如何分享给朋友访问？白嫖replit服务器&amp;内网穿透！</a></li></ol><div class="alert alert-success"><div class="icon"><i class="fa fa-check"></i></div><div class="text"><p>成功通关！！</p><p>如果这个alist教程有下一期的话估计是使用服务器搭建了吧？</p></div></div>]]></content:encoded>
       
       
-      <category domain="https://www.systemannounce.com/categories/%E7%BD%91%E7%AB%99/">网站</category>
+      <category domain="https://www.systemannounce.com/categories/%E7%BD%91%E7%9B%98/">网盘</category>
       
-      
-      <category domain="https://www.systemannounce.com/tags/%E7%BD%91%E7%9B%98/">网盘</category>
       
       <category domain="https://www.systemannounce.com/tags/%E9%9B%86%E6%88%90/">集成</category>
       
       <category domain="https://www.systemannounce.com/tags/%E5%AD%98%E5%82%A8/">存储</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E7%BD%91%E7%9B%98/">网盘</category>
       
       
       <comments>https://www.systemannounce.com/2023/07/23/learning/alist/alist1/#disqus_thread</comments>
@@ -137,9 +165,9 @@
       <category domain="https://www.systemannounce.com/categories/Python/">Python</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/python/">python</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
+      
+      <category domain="https://www.systemannounce.com/tags/python/">python</category>
       
       <category domain="https://www.systemannounce.com/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">数据解析</category>
       
@@ -194,9 +222,9 @@
       <category domain="https://www.systemannounce.com/categories/Python/">Python</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/python/">python</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
+      
+      <category domain="https://www.systemannounce.com/tags/python/">python</category>
       
       <category domain="https://www.systemannounce.com/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">数据解析</category>
       
@@ -283,9 +311,9 @@
       <category domain="https://www.systemannounce.com/categories/Python/">Python</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/python/">python</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
+      
+      <category domain="https://www.systemannounce.com/tags/python/">python</category>
       
       <category domain="https://www.systemannounce.com/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">数据解析</category>
       
