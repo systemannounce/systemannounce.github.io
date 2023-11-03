@@ -9,8 +9,38 @@
     <atom:link href="https://www.systemannounce.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>你醒啦？已经到天际省了</description>
-    <pubDate>Sat, 28 Oct 2023 17:27:25 GMT</pubDate>
+    <pubDate>Fri, 03 Nov 2023 14:45:26 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>B站区域限制脚本授权失败临时解决方案</title>
+      <link>https://www.systemannounce.com/2023/11/03/other/bilibili-area-restrict/</link>
+      <guid>https://www.systemannounce.com/2023/11/03/other/bilibili-area-restrict/</guid>
+      <pubDate>Fri, 03 Nov 2023 13:43:39 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;你可能最近在使用&lt;strong&gt;解除B站区域限制&lt;/strong&gt;的脚本到时候遇到下面的情况：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20221320.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20214931.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;翻了一下脚本GitHub的issue，发现了一个临时可以使用的方法。原楼层链接放在了文章结尾。&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>你可能最近在使用<strong>解除B站区域限制</strong>的脚本到时候遇到下面的情况：</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20221320.png"></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20214931.png"></p><p>翻了一下脚本GitHub的issue，发现了一个临时可以使用的方法。原楼层链接放在了文章结尾。</p><span id="more"></span><h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>如果你仔细翻过脚本代码，或者用控制台或者开发者工具分析一下，你就可以发现下面的部分出现了问题</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20220926.png"></p><p>如果把图中的网址拿去直接访问的话，你会发现下面的提示：</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/278666274-3d275764-bceb-4cd1-839c-9a8317fac6d1.png"></p><p>估计是b站把这个授权功能给禁用了，导致脚本账号授权这关键一步获取不到 <code>access_key</code> 导致卡在授权导致脚本无法使用。</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>由于脚本获取到的是b站官方的 <code>access_key</code> ，我们可以找另外一个方法获取到 <code>access_key</code> 然后直接写进脚本的存储里面让他以为自己已经获取到了 <code>access_key</code> 就行了。</p><p>那么现在的关键就是找一个可以正常获取到b站官方 <code>access_key</code> 的应用，还得是网页的，不然我们也不能将 <code>access_key</code> 提取出来。</p><p>有大佬的发现，<a href="https://www.biliplus.com/">BiliBili Plus</a> 也是使用b站授权的，理论上来说也是有从b站那边拿到 <code>access_key</code> 才对，结果一找果真如此，于是我们可以通过<strong>BiliBili Plus</strong>的网站<strong>登录你自己的b站账号</strong>，然后按下<strong>F12</strong>进入浏览器开发者工具。</p><p>首先我们找到上面选项里面的<strong>应用</strong>（也叫<strong>Application</strong>）在下面找到<strong>Cookie</strong>一栏，点击响应的网址在下面找到 <code>access_key</code> 对应的值，<strong>复制它</strong>。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20222319.png"></p><p>然后我们回到你刚刚打不开的番剧页，按下<strong>F12</strong>打开浏览器开发者工具，找到控制台选项，在下面输入以下内容回车。</p><blockquote><p>下面代码的xxxxxxxxx替换成你自己的 <code>access_key</code> </p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">localStorage</span>.<span class="property">access_key</span> = <span class="string">&quot;XXXXXXXXXXX&quot;</span></span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20223157.png"></p><p>最后你关闭该标签页，然后再打开就会发现成功获取到视频地址就可以正常播放了。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20223643.png"></p><h2 id="原issue链接"><a href="#原issue链接" class="headerlink" title="原issue链接"></a>原issue链接</h2><ol><li><a href="https://github.com/ipcjs/bilibili-helper/issues/1249">https://github.com/ipcjs/bilibili-helper/issues/1249</a></li><li><a href="https://github.com/ipcjs/bilibili-helper/issues/1103">https://github.com/ipcjs/bilibili-helper/issues/1103</a></li></ol>]]></content:encoded>
+      
+      
+      <category domain="https://www.systemannounce.com/categories/%E6%9D%82%E9%A1%B9/">杂项</category>
+      
+      
+      <category domain="https://www.systemannounce.com/tags/bilibili/">bilibili</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E5%AE%9E%E7%94%A8/">实用</category>
+      
+      <category domain="https://www.systemannounce.com/tags/JavaScript/">JavaScript</category>
+      
+      
+      <comments>https://www.systemannounce.com/2023/11/03/other/bilibili-area-restrict/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>网盘文件部署本地</title>
@@ -59,11 +89,11 @@
       <category domain="https://www.systemannounce.com/categories/%E6%9D%82%E9%A1%B9/">杂项</category>
       
       
+      <category domain="https://www.systemannounce.com/tags/JavaScript/">JavaScript</category>
+      
       <category domain="https://www.systemannounce.com/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F/">大学生</category>
       
       <category domain="https://www.systemannounce.com/tags/python/">python</category>
-      
-      <category domain="https://www.systemannounce.com/tags/JavaScript/">JavaScript</category>
       
       
       <comments>https://www.systemannounce.com/2023/09/27/other/lesson/#disqus_thread</comments>
@@ -165,9 +195,9 @@
       <category domain="https://www.systemannounce.com/categories/Python/">Python</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/python/">python</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
+      
+      <category domain="https://www.systemannounce.com/tags/python/">python</category>
       
       <category domain="https://www.systemannounce.com/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">数据解析</category>
       
@@ -222,9 +252,9 @@
       <category domain="https://www.systemannounce.com/categories/Python/">Python</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/python/">python</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
+      
+      <category domain="https://www.systemannounce.com/tags/python/">python</category>
       
       <category domain="https://www.systemannounce.com/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">数据解析</category>
       
@@ -311,9 +341,9 @@
       <category domain="https://www.systemannounce.com/categories/Python/">Python</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/python/">python</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
+      
+      <category domain="https://www.systemannounce.com/tags/python/">python</category>
       
       <category domain="https://www.systemannounce.com/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">数据解析</category>
       
@@ -450,11 +480,11 @@
       <category domain="https://www.systemannounce.com/categories/%E7%BD%91%E7%AB%99/">网站</category>
       
       
+      <category domain="https://www.systemannounce.com/tags/%E5%AE%9E%E7%94%A8/">实用</category>
+      
       <category domain="https://www.systemannounce.com/tags/%E8%AF%AD%E6%B3%95/">语法</category>
       
       <category domain="https://www.systemannounce.com/tags/Markdown/">Markdown</category>
-      
-      <category domain="https://www.systemannounce.com/tags/%E5%AE%9E%E7%94%A8/">实用</category>
       
       
       <comments>https://www.systemannounce.com/2023/05/14/websitecourse/MarkdownText/#disqus_thread</comments>
