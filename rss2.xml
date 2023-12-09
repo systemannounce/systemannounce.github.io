@@ -9,8 +9,37 @@
     <atom:link href="https://www.systemannounce.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>你醒啦？已经到天际省了</description>
-    <pubDate>Fri, 03 Nov 2023 14:45:26 GMT</pubDate>
+    <pubDate>Sat, 09 Dec 2023 09:23:24 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>网站工具记录</title>
+      <link>https://www.systemannounce.com/2023/12/09/other/tools/</link>
+      <guid>https://www.systemannounce.com/2023/12/09/other/tools/</guid>
+      <pubDate>Sat, 09 Dec 2023 09:00:00 GMT</pubDate>
+      
+      <description>&lt;h1 id=&quot;记录本网站工具和一些自建实用网站&quot;&gt;&lt;a href=&quot;#记录本网站工具和一些自建实用网站&quot; class=&quot;headerlink&quot; title=&quot;记录本网站工具和一些自建实用网站&quot;&gt;&lt;/a&gt;记录本网站工具和一些自建实用网站&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;会不断更新，将来如果太多的话可能会将上方导航栏的TOOLS的链接重定向到这个页面&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="记录本网站工具和一些自建实用网站"><a href="#记录本网站工具和一些自建实用网站" class="headerlink" title="记录本网站工具和一些自建实用网站"></a>记录本网站工具和一些自建实用网站</h1><blockquote><p>会不断更新，将来如果太多的话可能会将上方导航栏的TOOLS的链接重定向到这个页面</p></blockquote><span id="more"></span><h1 id="Status-网页状态"><a href="#Status-网页状态" class="headerlink" title="Status 网页状态"></a>Status 网页状态</h1><p>Status : <a href="https://status.systemannounce.com/">https://status.systemannounce.com/</a></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-09%20165515.png"></p><h1 id="ChatGPT-第三方自托管无需翻墙"><a href="#ChatGPT-第三方自托管无需翻墙" class="headerlink" title="ChatGPT 第三方自托管无需翻墙"></a>ChatGPT 第三方自托管无需翻墙</h1><p>ChatGPTnext : <a href="https://gpt.systemannounce.com/">https://gpt.systemannounce.com/</a></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-09%20165538.png"></p><h1 id="MQTT服务器"><a href="#MQTT服务器" class="headerlink" title="MQTT服务器"></a>MQTT服务器</h1><blockquote><p>如果想要使用请联系博主</p></blockquote><p>MQTT Server : <a href="https://mqtt.systemannounce.com/">https://mqtt.systemannounce.com/</a></p><p>MQTT2 Server : <a href="https://mqtt2.systemannounce.com/">https://mqtt2.systemannounce.com/</a></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-09%20165608.png"></p><h1 id="碧蓝档案标题文字生成器"><a href="#碧蓝档案标题文字生成器" class="headerlink" title="碧蓝档案标题文字生成器"></a>碧蓝档案标题文字生成器</h1><p>BLueArchiveLogoGenerator : <a href="https://ba.systemannounce.com/">https://ba.systemannounce.com/</a></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-09%20165752.png"></p><h1 id="第三方网易云网页版播放器"><a href="#第三方网易云网页版播放器" class="headerlink" title="第三方网易云网页版播放器"></a>第三方网易云网页版播放器</h1><p>Third-party NetEase Cloud Player : <a href="https://music.systemannounce.com/">https://music.systemannounce.com/</a></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-09%20170205.png"></p>]]></content:encoded>
+      
+      
+      <category domain="https://www.systemannounce.com/categories/%E6%9D%82%E9%A1%B9/">杂项</category>
+      
+      
+      <category domain="https://www.systemannounce.com/tags/%E7%BD%91%E7%AB%99/">网站</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E5%AE%9E%E7%94%A8/">实用</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E5%B7%A5%E5%85%B7/">工具</category>
+      
+      
+      <comments>https://www.systemannounce.com/2023/12/09/other/tools/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>B站区域限制脚本授权失败临时解决方案</title>
@@ -31,9 +60,9 @@
       <category domain="https://www.systemannounce.com/categories/%E6%9D%82%E9%A1%B9/">杂项</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/bilibili/">bilibili</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E5%AE%9E%E7%94%A8/">实用</category>
+      
+      <category domain="https://www.systemannounce.com/tags/bilibili/">bilibili</category>
       
       <category domain="https://www.systemannounce.com/tags/JavaScript/">JavaScript</category>
       
@@ -195,9 +224,9 @@
       <category domain="https://www.systemannounce.com/categories/Python/">Python</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
-      
       <category domain="https://www.systemannounce.com/tags/python/">python</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
       
       <category domain="https://www.systemannounce.com/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">数据解析</category>
       
@@ -252,9 +281,9 @@
       <category domain="https://www.systemannounce.com/categories/Python/">Python</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
-      
       <category domain="https://www.systemannounce.com/tags/python/">python</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
       
       <category domain="https://www.systemannounce.com/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">数据解析</category>
       
@@ -341,9 +370,9 @@
       <category domain="https://www.systemannounce.com/categories/Python/">Python</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
-      
       <category domain="https://www.systemannounce.com/tags/python/">python</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
       
       <category domain="https://www.systemannounce.com/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">数据解析</category>
       
@@ -371,13 +400,13 @@
       <category domain="https://www.systemannounce.com/categories/%E7%BD%91%E7%AB%99/">网站</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/cdn/">cdn</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E5%9F%9F%E5%90%8D/">域名</category>
       
-      <category domain="https://www.systemannounce.com/tags/%E8%BF%9B%E9%98%B6/">进阶</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E9%81%BF%E5%9D%91/">避坑</category>
+      
+      <category domain="https://www.systemannounce.com/tags/cdn/">cdn</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E8%BF%9B%E9%98%B6/">进阶</category>
       
       
       <comments>https://www.systemannounce.com/2023/05/28/websitecourse/cdn/#disqus_thread</comments>
