@@ -9,8 +9,30 @@
     <atom:link href="https://www.systemannounce.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>你醒啦？已经到天际省了</description>
-    <pubDate>Mon, 11 Dec 2023 03:10:11 GMT</pubDate>
+    <pubDate>Thu, 11 Jan 2024 06:45:13 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title></title>
+      <link>https://www.systemannounce.com/2024/01/11/other/icp-stop/</link>
+      <guid>https://www.systemannounce.com/2024/01/11/other/icp-stop/</guid>
+      <pubDate>Thu, 11 Jan 2024 06:45:43 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;关于2024-1-12后服务无法访问说明&quot;&gt;&lt;a href=&quot;#关于2024-1-12后服务无法访问说明&quot; class=&quot;headerlink&quot; title=&quot;关于2024/1/12后服务无法访问说明&quot;&gt;&lt;/a&gt;关于2024/1/12后服务无法访问说明&lt;/h1&gt;&lt;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="关于2024-1-12后服务无法访问说明"><a href="#关于2024-1-12后服务无法访问说明" class="headerlink" title="关于2024/1/12后服务无法访问说明"></a>关于2024/1/12后服务无法访问说明</h1><p><strong>因为原云服务器到期，决定迁移云服务器，于是进行变更接入，因为还没有及时审核结束将导致会一段时间无法正常连接云服务器</strong></p><blockquote><p>恢复后会在这个文章下面进行说明，如果没有说明就是还没有结束。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/behind20231211/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-01-11%20144205.png"></p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://www.systemannounce.com/2024/01/11/other/icp-stop/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>免费搭建自己的ChatGPT网站</title>
