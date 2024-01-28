@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.systemannounce.com/2023/07/07/learning/Python/crawler3/images/Markdown/headimg/pythoncrawler3.png">
 <meta property="article:published_time" content="2023-07-07T09:35:01.000Z">
-<meta property="article:modified_time" content="2024-01-16T05:56:35.756Z">
+<meta property="article:modified_time" content="2024-01-28T06:07:13.886Z">
 <meta property="article:author" content="Felix_SANA">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="初阶">
@@ -472,7 +472,7 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1705384595756"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1706422033886"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -508,14 +508,14 @@
 <blockquote>
 <p>可以看到这种处于上面，在你点击登录按钮瞬间触发的数据包多半就是你需要的。请求方法也是POST</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-09%20154207.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-09%20154207.png"></p>
 <p>我们点击请求网址上面的载荷选项，就可以看到我们向服务器提交的信息了。</p>
 <blockquote>
 <p>一般情况下，我们向服务器只会提交用户名，密码，验证码之类的信息，有时候会提交我们的token，加密数据等等之类的信息。</p>
 </blockquote>
 <p>这次我们向这个网站提交的是token，用户名，密码。如下：</p>
 <p>最后一个remember是你勾选了记住密码才会有的。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-09%20164739.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-09%20164739.png"></p>
 <p>首先我们得先知道这里提交的所有资料代表什么，可不可以随机生成，这样子方便我们程序操作。</p>
 <p>比如这里的token在登录页面元素的head标签里面找到。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;csrf-token&quot;</span> <span class="attr">content</span>=<span class="string">&quot;VyP11asd089lvL1NlI7kldPh8UMtJJb9LUQffjWd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -544,7 +544,7 @@
 </li>
 </ol>
 <p>上面工作弄完后，接下来就简单了，假设你要访问某个网站，你只需要在浏览器上面登录，然后打开控制台，定位到网络选项卡监听，在你刷新一次，这样子你就可以在请求标头里面找到cookie。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-09%20175410.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-07-09%20175410.png"></p>
 <p>我们只需要在程序标头里面加上cookie即可，示例如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&#x27;user-agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;cookie&#x27;</span>: cookie</span><br><span class="line">&#125;</span><br><span class="line">requests.get(url=<span class="string">&#x27;url&#x27;</span> , headers=headers)</span><br></pre></td></tr></table></figure>
 
@@ -637,7 +637,7 @@
                     <a class="tag-none-link" href="/tags/python/" rel="tag">python</a>, <a class="tag-none-link" href="/tags/%E5%88%9D%E9%98%B6/" rel="tag">初阶</a>, <a class="tag-none-link" href="/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/" rel="tag">数据解析</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-01-16T05:56:35.756Z" itemprop="dateModified">最后编辑：2024-01-16</time>
+                    <time datetime="2024-01-28T06:07:13.886Z" itemprop="dateModified">最后编辑：2024-01-28</time>
                 </div>
             </div>
         </footer>
@@ -738,7 +738,7 @@
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
     <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E6%9D%82%E9%A1%B9/">杂项</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%9B%98/">网盘</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%AB%99/">网站</a><span class="category-list-count">5</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E6%9D%82%E9%A1%B9/">杂项</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%9B%98/">网盘</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%AB%99/">网站</a><span class="category-list-count">5</span></li></ul></li></ul>
   </aside>
 
 

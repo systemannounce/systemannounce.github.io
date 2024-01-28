@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.systemannounce.com/2023/10/25/learning/filedeploy/images/Markdown/headimg/filedeploy.png">
 <meta property="article:published_time" content="2023-10-25T12:19:19.000Z">
-<meta property="article:modified_time" content="2024-01-16T05:55:47.234Z">
+<meta property="article:modified_time" content="2024-01-28T06:07:13.886Z">
 <meta property="article:author" content="Felix_SANA">
 <meta property="article:tag" content="本地">
 <meta property="article:tag" content="集成">
@@ -472,7 +472,7 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1705384547234"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1706422033886"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -498,18 +498,18 @@
 <p>最好是添加一个新用户来登录，不要在这里写admin的账号和密码。</p>
 <p>下面的地址如果有域名那就写域名，有ip地址那就写ip。不过注意如果写ip地址留意一下端口号。</p>
 <p>下面的路径统一写 <code>/dav</code> 即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20211212.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20211212.png"></p>
 <p>然后记得把他添加到开机启动里面去，你就可以去此电脑里面查看新多出来的文件夹了。</p>
 <div class="alert alert-info"><div class="icon"><i class="fa fa-info"></i></div><div class="text"><p>显示是7.99EB属于显示错误，你实际有多少容量以你自己知道的数据为准</p>
 </div></div>
 
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20212347.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20212347.png"></p>
 <h2 id="Solid-Explorer-（Android）"><a href="#Solid-Explorer-（Android）" class="headerlink" title="Solid Explorer （Android）"></a>Solid Explorer （Android）</h2><p>本来找到好几个应用，无一例外使用WebDAV服务需要收钱，真的难顶。</p>
 <p>好在最后还是找到了一个可以免费使用的文件管理器，照样你可以去官网看看下载，也可以来我这里，顺便帮各位准备好了。点击即可下载。</p>
 <p><a target="_blank" rel="noopener" href="//cloud.systemannounce.com/OneDrive_AF/Soft/12-Solid%20Explorer/pl.solidexplorer2.apk">Solid Explorer下载</a></p>
 <h3 id="使用方法-1"><a href="#使用方法-1" class="headerlink" title="使用方法"></a>使用方法</h3><p>首先打开应用，如果提示要给权限那就给它。</p>
 <p>点击右下角加号，选择新建一个云端连接。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/373667517670972252.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/373667517670972252.jpg"></p>
 <p><strong>如果你部署的是其他网盘，那么选择对应的网盘然后下一步继续填写相关信息即可，如果你部署的是Alist，请继续跟着教程。</strong></p>
 <p>随后我们选择WebDAV下一步，在这里会提示我们使用HTTP还是HTTPS。</p>
 <ol>
@@ -523,14 +523,14 @@
 <p>到了第三步需要填写服务器信息，上面远程主机名写IP地址或者你的网址，不需要带前面的 <code>http(s)://</code> 。</p>
 <p><strong>这里要注意，如果你填的是IP地址的话，记得留意一下端口号，以免填错。</strong></p>
 <p>下面的路径我们统一填写 <code>/dav</code> 。最下面的显示名称可以根据自己的喜好命名即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/547953118483893454.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/547953118483893454.jpg"></p>
 <p>下一步根据需要是否为匿名访问（如果你本来匿名就可以看到所有文件了那就不用写账号密码了）</p>
 <p>最好是添加一个新用户来登录，不要在这里写admin的账号和密码。</p>
 <h2 id="指定基础路径访问"><a href="#指定基础路径访问" class="headerlink" title="指定基础路径访问"></a>指定基础路径访问</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>如果你直接用admin账号来登录或者匿名登录，你会一进去首先是各个网盘文件夹，如果你想一点开就是某个网盘的某个位置的话也很简单，你可以在路径空下面填写，在你需要访问到哪个文件夹那就把响应的目录添加到 <code>/dav</code> 后面。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20215221.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20215242.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20215221.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20215242.png"></p>
 <h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>你可以直接创建一个用户拥有对应目录的基本路径，这样子你用该用户登录上去根目录就是你指定的目录。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20215404.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-10-25%20215404.png"></p>
 <h2 id="媒体库"><a href="#媒体库" class="headerlink" title="媒体库"></a>媒体库</h2><p>如果你的网盘里面某个目录里面专门用来存放小电影，或者说全是视频，那么这里给你推荐一个APP可以快速将你网盘里面的媒体检索并且播放。</p>
 <p><a target="_blank" rel="noopener" href="//gitee.com/xyoye/DanDanPlayForAndroid/releases">弹弹playAndroid概念版下载</a></p>
 <p>使用方法和前面几乎一样，这里不在过多赘述。</p>
@@ -621,7 +621,7 @@
                     <a class="tag-none-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a>, <a class="tag-none-link" href="/tags/%E6%9C%AC%E5%9C%B0/" rel="tag">本地</a>, <a class="tag-none-link" href="/tags/%E9%9B%86%E6%88%90/" rel="tag">集成</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-01-16T05:55:47.234Z" itemprop="dateModified">最后编辑：2024-01-16</time>
+                    <time datetime="2024-01-28T06:07:13.886Z" itemprop="dateModified">最后编辑：2024-01-28</time>
                 </div>
             </div>
         </footer>
@@ -734,7 +734,7 @@
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
     <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E6%9D%82%E9%A1%B9/">杂项</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%9B%98/">网盘</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%AB%99/">网站</a><span class="category-list-count">5</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E6%9D%82%E9%A1%B9/">杂项</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%9B%98/">网盘</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%AB%99/">网站</a><span class="category-list-count">5</span></li></ul></li></ul>
   </aside>
 
 

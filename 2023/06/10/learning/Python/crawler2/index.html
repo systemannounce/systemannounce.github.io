@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.systemannounce.com/2023/06/10/learning/Python/crawler2/images/Markdown/headimg/pythoncrawler2.png">
 <meta property="article:published_time" content="2023-06-10T06:35:14.000Z">
-<meta property="article:modified_time" content="2024-01-16T05:56:31.605Z">
+<meta property="article:modified_time" content="2024-01-28T06:07:13.886Z">
 <meta property="article:author" content="Felix_SANA">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="初阶">
@@ -472,7 +472,7 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1705384591605"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1706422033886"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -505,25 +505,25 @@
     <div class="xContent"><div class="inner">
         <p>当你进行一次请求或者刷新操作时，网页只有一部分内容发生了变化，网址没有变化。</p>
 <p>类似于这样</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20162753.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20162753.png"></p>
 <p>或者说网址变化了，但是你用爬虫请求该网页时，发现本该出现的数据没有出现。</p>
 <p>例如</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20163632.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20163632.png"></p>
  
     </div></div>
     </div>  
 
 <p>我们先打开<a target="_blank" rel="noopener" href="http://www.kfc.com.cn/kfccda/storelist/index.aspx">肯德基餐厅信息查询</a>网站，然后打开浏览器控制台，然后在搜索框做一次请求，在网络选项卡下面就可以看到我们做的请求了，如果请求过多不好定位，可以在类别筛选里面选择<code>AJAX</code>或者叫<code>Fetch/XHR</code>来快速找到对应请求。</p>
 <p>这里可以看到我们做出查询的关键词来定位我们的请求。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20165054.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20165054.png"></p>
 <p>在响应里面可以找到服务器返回给我们的数据。</p>
 <p>因为太多这里只展示一部分。</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;Table&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;rowcount&quot;</span><span class="punctuation">:</span> <span class="number">192</span></span><br><span class="line">	<span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">	<span class="attr">&quot;Table1&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;rownum&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;storeName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;开发区上海路&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;addressDetail&quot;</span><span class="punctuation">:</span> <span class="string">&quot;开发区上海路80号利群时代超市一楼&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;pro&quot;</span><span class="punctuation">:</span> <span class="string">&quot;24小时,Wi-Fi,点唱机,店内参观,礼品卡,手机点餐&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;provinceName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;江苏省&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;cityName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;南通市&quot;</span></span><br><span class="line">	<span class="punctuation">&#125;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
 <p>接下来我们回到标头可以看到我们请求的网址，请求方法是<code>POST</code>还是<code>GET</code>，以及携带的表单，或者叫数据。这些数据向我们展示了如何规范地向服务区索取对应的数据，网址，格式，页码，参数等等。我们接下来的爬虫程序跟着做就行。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20170001.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20165926.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20170237.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20170001.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20165926.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-06-10%20170237.png"></p>
 <p>在前面的基础上面我们只需要对我们的请求加一点东西即可完成AJAX请求，可以看到，我们这次请求方法是<code>POST</code>，网址是</p>
 <p><code>http://www.kfc.com.cn/kfccda/ashx/GetStoreList.ashx?op=keyword</code>，数据如上。如果要请求相同到的东西，我们只需要写出下面的代码即可。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">kfc = <span class="string">&#x27;http://www.kfc.com.cn/kfccda/ashx/GetStoreList.ashx?op=keyword&#x27;</span></span><br><span class="line">header = &#123;</span><br><span class="line">    <span class="string">&#x27;user-agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">data = &#123;</span><br><span class="line">    cname: ,</span><br><span class="line">    pid: ,</span><br><span class="line">    keyword: 上海,</span><br><span class="line">    pageIndex: <span class="number">11</span>,</span><br><span class="line">    pageSize: <span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line">r = requests.post(url = kfc , headers = header , data = data)</span><br></pre></td></tr></table></figure>
@@ -647,7 +647,7 @@
                     <a class="tag-none-link" href="/tags/python/" rel="tag">python</a>, <a class="tag-none-link" href="/tags/%E5%88%9D%E9%98%B6/" rel="tag">初阶</a>, <a class="tag-none-link" href="/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/" rel="tag">数据解析</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-01-16T05:56:31.605Z" itemprop="dateModified">最后编辑：2024-01-16</time>
+                    <time datetime="2024-01-28T06:07:13.886Z" itemprop="dateModified">最后编辑：2024-01-28</time>
                 </div>
             </div>
         </footer>
@@ -748,7 +748,7 @@
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
     <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E6%9D%82%E9%A1%B9/">杂项</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%9B%98/">网盘</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%AB%99/">网站</a><span class="category-list-count">5</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E6%9D%82%E9%A1%B9/">杂项</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%9B%98/">网盘</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%AB%99/">网站</a><span class="category-list-count">5</span></li></ul></li></ul>
   </aside>
 
 

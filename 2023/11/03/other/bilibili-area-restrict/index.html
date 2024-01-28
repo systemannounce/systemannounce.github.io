@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.systemannounce.com/2023/11/03/other/bilibili-area-restrict/images/Markdown/headimg/bilibili_area_restrict.png">
 <meta property="article:published_time" content="2023-11-03T13:43:39.000Z">
-<meta property="article:modified_time" content="2024-01-16T05:55:21.245Z">
+<meta property="article:modified_time" content="2024-01-28T06:07:13.885Z">
 <meta property="article:author" content="Felix_SANA">
 <meta property="article:tag" content="bilibili">
 <meta property="article:tag" content="实用">
@@ -472,37 +472,37 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1705384521245"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1706422033885"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
             
             <hr />
             <div itemprop="articleBody"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>你可能最近在使用<strong>解除B站区域限制</strong>的脚本到时候遇到下面的情况：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20221320.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20214931.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20221320.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20214931.png"></p>
 <p>翻了一下脚本GitHub的issue，发现了一个临时可以使用的方法。原楼层链接放在了文章结尾。</p>
 <span id="more"></span>
 
 <h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>如果你仔细翻过脚本代码，或者用控制台或者开发者工具分析一下，你就可以发现下面的部分出现了问题</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20220926.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20220926.png"></p>
 <p>如果把图中的网址拿去直接访问的话，你会发现下面的提示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/278666274-3d275764-bceb-4cd1-839c-9a8317fac6d1.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/278666274-3d275764-bceb-4cd1-839c-9a8317fac6d1.png"></p>
 <p>估计是b站把这个授权功能给禁用了，导致脚本账号授权这关键一步获取不到 <code>access_key</code> 导致卡在授权导致脚本无法使用。</p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>由于脚本获取到的是b站官方的 <code>access_key</code> ，我们可以找另外一个方法获取到 <code>access_key</code> 然后直接写进脚本的存储里面让他以为自己已经获取到了 <code>access_key</code> 就行了。</p>
 <p>那么现在的关键就是找一个可以正常获取到b站官方 <code>access_key</code> 的应用，还得是网页的，不然我们也不能将 <code>access_key</code> 提取出来。</p>
 <p>有大佬的发现，<a target="_blank" rel="noopener" href="https://www.biliplus.com/">BiliBili Plus</a> 也是使用b站授权的，理论上来说也是有从b站那边拿到 <code>access_key</code> 才对，结果一找果真如此，于是我们可以通过<strong>BiliBili Plus</strong>的网站<strong>登录你自己的b站账号</strong>，然后按下<strong>F12</strong>进入浏览器开发者工具。</p>
 <p>首先我们找到上面选项里面的<strong>应用</strong>（也叫<strong>Application</strong>）在下面找到<strong>Cookie</strong>一栏，点击响应的网址在下面找到 <code>access_key</code> 对应的值，<strong>复制它</strong>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20222319.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20222319.png"></p>
 <p>然后我们回到你刚刚打不开的番剧页，按下<strong>F12</strong>打开浏览器开发者工具，找到控制台选项，在下面输入以下内容回车。</p>
 <blockquote>
 <p>下面代码的xxxxxxxxx替换成你自己的 <code>access_key</code> </p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">localStorage</span>.<span class="property">access_key</span> = <span class="string">&quot;XXXXXXXXXXX&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20223157.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20223157.png"></p>
 <p>最后你关闭该标签页，然后再打开就会发现成功获取到视频地址就可以正常播放了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20223643.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2023/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-03%20223643.png"></p>
 <h2 id="原issue链接"><a href="#原issue链接" class="headerlink" title="原issue链接"></a>原issue链接</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://github.com/ipcjs/bilibili-helper/issues/1249">https://github.com/ipcjs/bilibili-helper/issues/1249</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/ipcjs/bilibili-helper/issues/1103">https://github.com/ipcjs/bilibili-helper/issues/1103</a></li>
@@ -595,7 +595,7 @@
                     <a class="tag-none-link" href="/tags/JavaScript/" rel="tag">JavaScript</a>, <a class="tag-none-link" href="/tags/bilibili/" rel="tag">bilibili</a>, <a class="tag-none-link" href="/tags/%E5%AE%9E%E7%94%A8/" rel="tag">实用</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-01-16T05:55:21.245Z" itemprop="dateModified">最后编辑：2024-01-16</time>
+                    <time datetime="2024-01-28T06:07:13.885Z" itemprop="dateModified">最后编辑：2024-01-28</time>
                 </div>
             </div>
         </footer>
@@ -696,7 +696,7 @@
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
     <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E6%9D%82%E9%A1%B9/">杂项</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%9B%98/">网盘</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%AB%99/">网站</a><span class="category-list-count">5</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E6%9D%82%E9%A1%B9/">杂项</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%9B%98/">网盘</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%AB%99/">网站</a><span class="category-list-count">5</span></li></ul></li></ul>
   </aside>
 
 
