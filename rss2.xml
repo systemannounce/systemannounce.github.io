@@ -9,8 +9,41 @@
     <atom:link href="https://www.systemannounce.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>你醒啦？已经到天际省了</description>
-    <pubDate>Sun, 28 Jan 2024 06:07:13 GMT</pubDate>
+    <pubDate>Thu, 08 Feb 2024 02:13:38 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>禁止Windows自动更新和驱动更新</title>
+      <link>https://www.systemannounce.com/2024/02/08/other/ban-update/</link>
+      <guid>https://www.systemannounce.com/2024/02/08/other/ban-update/</guid>
+      <pubDate>Thu, 08 Feb 2024 01:04:35 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;本来我是真觉得更新没什么大不了的，顶多是有时候的bug，虽说影响体验但可以带来新功能，蛮不错的。直到……&lt;/p&gt;
+&lt;p&gt;我3060显卡。为什</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本来我是真觉得更新没什么大不了的，顶多是有时候的bug，虽说影响体验但可以带来新功能，蛮不错的。直到……</p><p>我3060显卡。为什么玩个CONTROL都卡的要死啊？后面试着给驱动降级，好家伙，一降就把帧率稳住了，简直是医学奇迹！</p><h1 id="禁止Windows自动更新"><a href="#禁止Windows自动更新" class="headerlink" title="禁止Windows自动更新"></a>禁止Windows自动更新</h1><p>网上关于这一点的的方法五花八门，调时间（新版已经被禁了），禁服务，关策略，等等。</p><p>等到真正需要它恢复更新时，又不知道从哪里打开。</p><p>即使不需要恢复，有时候关闭的更新服务又莫名其妙打开了。</p><p>真的有时候让人火冒三丈，嘴里嚷嚷着微软的亲吗。</p><p>到这里我就想，如果有个应用，可以快速方便将Windows更新所需的服务禁用，然后在需要的时候可以手动恢复的应用就好了。</p><p>经过我上网一番查找，找到了一个轻量级服务禁用工具，具有以上所有功能，如果你还需要它监管其他服务，也可以手动填写进去。非常方便。<a href="//cloud.systemannounce.com/OneDrive_AF/Soft/19-WindowsUpdateBlocker/Wub.zip">WindowsUpdateBlocker</a></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20093506.png"></p><h1 id="禁止驱动自动更新"><a href="#禁止驱动自动更新" class="headerlink" title="禁止驱动自动更新"></a>禁止驱动自动更新</h1><p>如果你已经执行了上面禁止Windows自动更新，那么这个就可以不用管了，只要你不是自己点进控制面板然后选择下载安装他是不会自行更新的。</p><p>或者更保险一点，装驱动的时候不装更新软件。<strong>NVIDIA</strong>就是<strong>GeForce</strong>，<strong>AMD</strong>就是<strong>Radeon Software</strong>。</p><p><em><strong>如果你只是想禁用驱动自动更新但是保留Windows更新，那么你和我一样，请看下文。</strong></em></p><h1 id="禁止驱动自动更新且保留Windows更新"><a href="#禁止驱动自动更新且保留Windows更新" class="headerlink" title="禁止驱动自动更新且保留Windows更新"></a>禁止驱动自动更新且保留Windows更新</h1><p>1、启动本地组策略编辑器</p><blockquote><p><strong>win+R</strong>快捷键打开运行，输入<strong>gpedit.msc</strong>。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20094754.png"></p><p>2、进入组策略编辑器中，依次点击左侧中的<strong>计算机配置–&gt;管理模板–&gt;Windows 组件–&gt;Windows 更新–&gt;管理从 Windows 更新提供的更新</strong>。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20094856.png"></p><p>3、然后找到右侧中的“Windows 更新不包括驱动程序”双击打开。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20095219.png"></p><p>4、最后在打开的窗口中，将左上角的“已启用”勾选上，点击确定保存就可以了。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20095302.png"></p><p>接下来只要你不去自动更新驱动，驱动版本应该是不会变了。</p>]]></content:encoded>
+      
+      
+      <category domain="https://www.systemannounce.com/categories/%E6%95%99%E7%A8%8B/">教程</category>
+      
+      <category domain="https://www.systemannounce.com/categories/%E6%95%99%E7%A8%8B/%E6%9D%82%E9%A1%B9/">杂项</category>
+      
+      
+      <category domain="https://www.systemannounce.com/tags/Windows/">Windows</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E9%A9%B1%E5%8A%A8/">驱动</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E6%9B%B4%E6%96%B0/">更新</category>
+      
+      
+      <comments>https://www.systemannounce.com/2024/02/08/other/ban-update/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>如何分辨AI绘画</title>
@@ -329,8 +362,8 @@
     
     <item>
       <title>Wallpaper Engine壁纸推荐①</title>
-      <link>https://www.systemannounce.com/2023/06/16/wallpaper/wallpapere1/</link>
-      <guid>https://www.systemannounce.com/2023/06/16/wallpaper/wallpapere1/</guid>
+      <link>https://www.systemannounce.com/2023/06/16/share/wallpaper/wallpapere1/</link>
+      <guid>https://www.systemannounce.com/2023/06/16/share/wallpaper/wallpapere1/</guid>
       <pubDate>Fri, 16 Jun 2023 05:47:04 GMT</pubDate>
       
       <description>&lt;p&gt;&lt;strong&gt;本期的壁纸分享含有的元素请见本文的的tag&lt;/strong&gt;&lt;/p&gt;
@@ -351,7 +384,7 @@
       <category domain="https://www.systemannounce.com/tags/%E9%A3%8E%E6%99%AF/">风景</category>
       
       
-      <comments>https://www.systemannounce.com/2023/06/16/wallpaper/wallpapere1/#disqus_thread</comments>
+      <comments>https://www.systemannounce.com/2023/06/16/share/wallpaper/wallpapere1/#disqus_thread</comments>
       
     </item>
     
@@ -388,8 +421,8 @@
     
     <item>
       <title>孤独摇滚图片分享</title>
-      <link>https://www.systemannounce.com/2023/06/08/img/bocchi/</link>
-      <guid>https://www.systemannounce.com/2023/06/08/img/bocchi/</guid>
+      <link>https://www.systemannounce.com/2023/06/08/share/img/bocchi/</link>
+      <guid>https://www.systemannounce.com/2023/06/08/share/img/bocchi/</guid>
       <pubDate>Thu, 08 Jun 2023 14:37:30 GMT</pubDate>
       
       <description>&lt;p&gt;你看见波奇在哪里吗？&lt;/p&gt;
@@ -412,7 +445,7 @@
       <category domain="https://www.systemannounce.com/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/">二次元</category>
       
       
-      <comments>https://www.systemannounce.com/2023/06/08/img/bocchi/#disqus_thread</comments>
+      <comments>https://www.systemannounce.com/2023/06/08/share/img/bocchi/#disqus_thread</comments>
       
     </item>
     
@@ -500,13 +533,13 @@
       <category domain="https://www.systemannounce.com/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%AB%99/">网站</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/cdn/">cdn</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E5%9F%9F%E5%90%8D/">域名</category>
       
-      <category domain="https://www.systemannounce.com/tags/%E8%BF%9B%E9%98%B6/">进阶</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E9%81%BF%E5%9D%91/">避坑</category>
+      
+      <category domain="https://www.systemannounce.com/tags/cdn/">cdn</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E8%BF%9B%E9%98%B6/">进阶</category>
       
       
       <comments>https://www.systemannounce.com/2023/05/28/websitecourse/cdn/#disqus_thread</comments>
