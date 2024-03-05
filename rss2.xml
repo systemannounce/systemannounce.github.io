@@ -9,8 +9,42 @@
     <atom:link href="https://www.systemannounce.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>你醒啦？已经到天际省了</description>
-    <pubDate>Thu, 08 Feb 2024 02:13:38 GMT</pubDate>
+    <pubDate>Tue, 05 Mar 2024 09:06:23 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>软件声卡VoiceMeeter使用简介</title>
+      <link>https://www.systemannounce.com/2024/03/05/other/vmb-introduction/</link>
+      <guid>https://www.systemannounce.com/2024/03/05/other/vmb-introduction/</guid>
+      <pubDate>Tue, 05 Mar 2024 05:01:54 GMT</pubDate>
+      
+      <description>&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;如果你想让你的连麦过程拥有不一样的体验；&lt;/p&gt;
+&lt;p&gt;如果你想共享屏幕的时候不把某些程序声音共享出去；&lt;/p&gt;
+&lt;p&gt;如果你想录视频的时候不把某些程序声音录进去；&lt;/p&gt;
+&lt;p&gt;如果你想两个设备同时发声&lt;/p&gt;
+&lt;p&gt;……&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;那么这个教程的软件VoiceMeeter可以很好地帮助你……&lt;/strong&gt;&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>如果你想让你的连麦过程拥有不一样的体验；</p><p>如果你想共享屏幕的时候不把某些程序声音共享出去；</p><p>如果你想录视频的时候不把某些程序声音录进去；</p><p>如果你想两个设备同时发声</p><p>……</p><p><strong>那么这个教程的软件VoiceMeeter可以很好地帮助你……</strong></p><span id="more"></span><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>首先当然是下载啦，你可以去网上找汉化版，但是我建议还是用官方英文版，只要了解某些按键操作就可以够日常使用了，而且还稳定。<a href="https://vb-audio.com/Voicemeeter/">VoiceMeeter官网</a></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20130954.png"></p><p>可以看到这里上面有好多个版本的VoiceMeeter，分别是本体，banana版，potato版，VBAN。</p><p>对应的是：</p><p><strong>本体</strong>：极简版，只包含最基础的东西，阉割掉了很多内容，只有两个输入和一个管道，免费。</p><p><strong>banana</strong>：基础版，拥有基础内容，有三个输入和两个管道，免费。</p><p><strong>potato</strong>：完整版，拥有最全内容，有五个输入和三个管道，收费。</p><p><strong>我们使用banana版本作为示范</strong></p><p>在网页上面选择你想要的版本，滑到下面，点击<strong>Download</strong>就可以下载压缩包了。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20131541.png"></p><p>在下载完成后解压缩，运行里面的exe执行文件就可以进行安装了。</p><p>因为我已经安装过了， 所以右下角是Remove，如果你没有安装过，应该是Install。</p><p>点击后按钮会闪烁，然后稍等一会就安装完成了。弹出一个警告弹窗经过翻译应该是让你重启的提示，如果没问题那就重启。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20131802.png"></p><p>重启完后，在你的左下角开始菜单里面应该就可以找到VoiceMeeterBanana这个应用了。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20132305.png"></p><p>点击打开，应该是这样一个界面：</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20132434.png"></p><p>如果没有问题，那么恭喜你，安装成功了。</p><h1 id="界面介绍"><a href="#界面介绍" class="headerlink" title="界面介绍"></a>界面介绍</h1><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/VMB.png"></p><p>你需要理解的是，VoiceMeeter只是一个中间设备，把声音输入给它，然后你从里面选择设备输出，所以这里的输入都是指输入VoiceMeeter，输出是指从VoiceMeeter里输出声音。</p><p>声音不能无中生有，所以你得先有输入然后有输出才行。</p><h1 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a>简单配置</h1><p>在打开后，先把所有A1，A2，A3，B1，B2的按钮全部按灭。</p><p>然后点击右上角的<strong>Menu</strong>，将任务栏托盘和开机自启打开。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/vmm.png"></p><p>然后在右下角右键声音图标，打开声音设置。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20133853.png"></p><p>打开更多声音设置。桌面音频通过这里输入VoiceMeeter。想使用哪个管道就选哪个，设置为默认设备就行。</p><p>我们这里选择左边这个不带AUX的。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20134446.png"></p><p>然后我们通过右上角的A1，A2，A3指定输出设备（可以是你的耳机，扬声器，蓝牙等等），必须至少指定一个，否则无法输出声音。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20135228.png"></p><p>在指定成功后，我们放一首歌吧。</p><p>你也可以通过我博客左下角的音乐播放器来试音。</p><p>正常情况下，你应该和我一样，这里有个小条不断跳动，但是还是没有任何声音，这是正常现象。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20135731.png"></p><p>因为我们还没有选择输出，你刚刚指定的你的扬声器，耳机，麦克风都是A几？在下面音量条的右边选择对应的输出代号你应该就可以听到声音了。</p><p>同理，你可以选择你的麦克风。只要在这里单击然后选择你的麦克风设备即可。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20140050.png"></p><p>同理，你想要听到你麦克风的声音，你只需要将对应设备下面音量条右边的输出代号按亮即可。你就可以实现听到自己说话的声音了。</p><p>当然，也可以多选，你可以让A1，A2，A3同时播放声音也行，播放不同声音也行。</p><p>至于这个B1，B2，是你的模拟麦克风，聪明的你应该猜到可以干什么了。</p><p>对，你可以将你电脑的声音接上麦克风，这样就可以在连麦软件里让别人听到你电脑里面的歌啦。</p><p>那么到这里你应该可以最基础地玩这个软件声卡啦。</p><p>更详细的部分以及<strong>VBAN</strong>部分可以自行摸索或者等我更新新的教程哦……</p>]]></content:encoded>
+      
+      
+      <category domain="https://www.systemannounce.com/categories/%E6%95%99%E7%A8%8B/">教程</category>
+      
+      <category domain="https://www.systemannounce.com/categories/%E6%95%99%E7%A8%8B/%E6%9D%82%E9%A1%B9/">杂项</category>
+      
+      
+      <category domain="https://www.systemannounce.com/tags/%E4%BB%8B%E7%BB%8D/">介绍</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E5%A3%B0%E5%8D%A1/">声卡</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E8%BD%AF%E4%BB%B6/">软件</category>
+      
+      
+      <comments>https://www.systemannounce.com/2024/03/05/other/vmb-introduction/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>禁止Windows自动更新和驱动更新</title>
@@ -18,15 +52,12 @@
       <guid>https://www.systemannounce.com/2024/02/08/other/ban-update/</guid>
       <pubDate>Thu, 08 Feb 2024 01:04:35 GMT</pubDate>
       
-        
-        
       <description>&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;本来我是真觉得更新没什么大不了的，顶多是有时候的bug，虽说影响体验但可以带来新功能，蛮不错的。直到……&lt;/p&gt;
-&lt;p&gt;我3060显卡。为什</description>
-        
+&lt;p&gt;我3060显卡。为什么玩个CONTROL都卡的要死啊？后面试着给驱动降级，好家伙，一降就把帧率稳住了，简直是医学奇迹！&lt;/p&gt;</description>
       
       
       
-      <content:encoded><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本来我是真觉得更新没什么大不了的，顶多是有时候的bug，虽说影响体验但可以带来新功能，蛮不错的。直到……</p><p>我3060显卡。为什么玩个CONTROL都卡的要死啊？后面试着给驱动降级，好家伙，一降就把帧率稳住了，简直是医学奇迹！</p><h1 id="禁止Windows自动更新"><a href="#禁止Windows自动更新" class="headerlink" title="禁止Windows自动更新"></a>禁止Windows自动更新</h1><p>网上关于这一点的的方法五花八门，调时间（新版已经被禁了），禁服务，关策略，等等。</p><p>等到真正需要它恢复更新时，又不知道从哪里打开。</p><p>即使不需要恢复，有时候关闭的更新服务又莫名其妙打开了。</p><p>真的有时候让人火冒三丈，嘴里嚷嚷着微软的亲吗。</p><p>到这里我就想，如果有个应用，可以快速方便将Windows更新所需的服务禁用，然后在需要的时候可以手动恢复的应用就好了。</p><p>经过我上网一番查找，找到了一个轻量级服务禁用工具，具有以上所有功能，如果你还需要它监管其他服务，也可以手动填写进去。非常方便。<a href="//cloud.systemannounce.com/OneDrive_AF/Soft/19-WindowsUpdateBlocker/Wub.zip">WindowsUpdateBlocker</a></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20093506.png"></p><h1 id="禁止驱动自动更新"><a href="#禁止驱动自动更新" class="headerlink" title="禁止驱动自动更新"></a>禁止驱动自动更新</h1><p>如果你已经执行了上面禁止Windows自动更新，那么这个就可以不用管了，只要你不是自己点进控制面板然后选择下载安装他是不会自行更新的。</p><p>或者更保险一点，装驱动的时候不装更新软件。<strong>NVIDIA</strong>就是<strong>GeForce</strong>，<strong>AMD</strong>就是<strong>Radeon Software</strong>。</p><p><em><strong>如果你只是想禁用驱动自动更新但是保留Windows更新，那么你和我一样，请看下文。</strong></em></p><h1 id="禁止驱动自动更新且保留Windows更新"><a href="#禁止驱动自动更新且保留Windows更新" class="headerlink" title="禁止驱动自动更新且保留Windows更新"></a>禁止驱动自动更新且保留Windows更新</h1><p>1、启动本地组策略编辑器</p><blockquote><p><strong>win+R</strong>快捷键打开运行，输入<strong>gpedit.msc</strong>。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20094754.png"></p><p>2、进入组策略编辑器中，依次点击左侧中的<strong>计算机配置–&gt;管理模板–&gt;Windows 组件–&gt;Windows 更新–&gt;管理从 Windows 更新提供的更新</strong>。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20094856.png"></p><p>3、然后找到右侧中的“Windows 更新不包括驱动程序”双击打开。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20095219.png"></p><p>4、最后在打开的窗口中，将左上角的“已启用”勾选上，点击确定保存就可以了。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20095302.png"></p><p>接下来只要你不去自动更新驱动，驱动版本应该是不会变了。</p>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本来我是真觉得更新没什么大不了的，顶多是有时候的bug，虽说影响体验但可以带来新功能，蛮不错的。直到……</p><p>我3060显卡。为什么玩个CONTROL都卡的要死啊？后面试着给驱动降级，好家伙，一降就把帧率稳住了，简直是医学奇迹！</p><span id="more"></span><h1 id="禁止Windows自动更新"><a href="#禁止Windows自动更新" class="headerlink" title="禁止Windows自动更新"></a>禁止Windows自动更新</h1><p>网上关于这一点的的方法五花八门，调时间（新版已经被禁了），禁服务，关策略，等等。</p><p>等到真正需要它恢复更新时，又不知道从哪里打开。</p><p>即使不需要恢复，有时候关闭的更新服务又莫名其妙打开了。</p><p>真的有时候让人火冒三丈，嘴里嚷嚷着微软的亲吗。</p><p>到这里我就想，如果有个应用，可以快速方便将Windows更新所需的服务禁用，然后在需要的时候可以手动恢复的应用就好了。</p><p>经过我上网一番查找，找到了一个轻量级服务禁用工具，具有以上所有功能，如果你还需要它监管其他服务，也可以手动填写进去。非常方便。<a href="//cloud.systemannounce.com/OneDrive_AF/Soft/19-WindowsUpdateBlocker/Wub.zip">WindowsUpdateBlocker</a></p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20093506.png"></p><h1 id="禁止驱动自动更新"><a href="#禁止驱动自动更新" class="headerlink" title="禁止驱动自动更新"></a>禁止驱动自动更新</h1><p>如果你已经执行了上面禁止Windows自动更新，那么这个就可以不用管了，只要你不是自己点进控制面板然后选择下载安装他是不会自行更新的。</p><p>或者更保险一点，装驱动的时候不装更新软件。<strong>NVIDIA</strong>就是<strong>GeForce</strong>，<strong>AMD</strong>就是<strong>Radeon Software</strong>。</p><p><em><strong>如果你只是想禁用驱动自动更新但是保留Windows更新，那么你和我一样，请看下文。</strong></em></p><h1 id="禁止驱动自动更新且保留Windows更新"><a href="#禁止驱动自动更新且保留Windows更新" class="headerlink" title="禁止驱动自动更新且保留Windows更新"></a>禁止驱动自动更新且保留Windows更新</h1><p>1、启动本地组策略编辑器</p><blockquote><p><strong>win+R</strong>快捷键打开运行，输入<strong>gpedit.msc</strong>。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20094754.png"></p><p>2、进入组策略编辑器中，依次点击左侧中的<strong>计算机配置–&gt;管理模板–&gt;Windows 组件–&gt;Windows 更新–&gt;管理从 Windows 更新提供的更新</strong>。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20094856.png"></p><p>3、然后找到右侧中的“Windows 更新不包括驱动程序”双击打开。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20095219.png"></p><p>4、最后在打开的窗口中，将左上角的“已启用”勾选上，点击确定保存就可以了。</p><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20095302.png"></p><p>接下来只要你不去自动更新驱动，驱动版本应该是不会变了。</p>]]></content:encoded>
       
       
       <category domain="https://www.systemannounce.com/categories/%E6%95%99%E7%A8%8B/">教程</category>
@@ -349,9 +380,9 @@
       <category domain="https://www.systemannounce.com/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/python/">python</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
+      
+      <category domain="https://www.systemannounce.com/tags/python/">python</category>
       
       <category domain="https://www.systemannounce.com/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">数据解析</category>
       
@@ -408,9 +439,9 @@
       <category domain="https://www.systemannounce.com/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/python/">python</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
+      
+      <category domain="https://www.systemannounce.com/tags/python/">python</category>
       
       <category domain="https://www.systemannounce.com/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">数据解析</category>
       
@@ -501,9 +532,9 @@
       <category domain="https://www.systemannounce.com/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/python/">python</category>
-      
       <category domain="https://www.systemannounce.com/tags/%E5%88%9D%E9%98%B6/">初阶</category>
+      
+      <category domain="https://www.systemannounce.com/tags/python/">python</category>
       
       <category domain="https://www.systemannounce.com/tags/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/">数据解析</category>
       
@@ -533,13 +564,13 @@
       <category domain="https://www.systemannounce.com/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%AB%99/">网站</category>
       
       
-      <category domain="https://www.systemannounce.com/tags/%E5%9F%9F%E5%90%8D/">域名</category>
-      
-      <category domain="https://www.systemannounce.com/tags/%E9%81%BF%E5%9D%91/">避坑</category>
-      
       <category domain="https://www.systemannounce.com/tags/cdn/">cdn</category>
       
+      <category domain="https://www.systemannounce.com/tags/%E5%9F%9F%E5%90%8D/">域名</category>
+      
       <category domain="https://www.systemannounce.com/tags/%E8%BF%9B%E9%98%B6/">进阶</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E9%81%BF%E5%9D%91/">避坑</category>
       
       
       <comments>https://www.systemannounce.com/2023/05/28/websitecourse/cdn/#disqus_thread</comments>

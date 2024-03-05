@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9JKZ3LJVCD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9JKZ3LJVCD');
+</script>
+
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="/images/ico.jpg">
+  
+  <title>软件声卡VoiceMeeter使用简介 | Felix_SANA &#39;S BLOG</title>
+  
+  <meta name="author" content="Felix_SANA" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="介绍, 声卡, 软件" />
+  
+  <meta name="description" content="前言如果你想让你的连麦过程拥有不一样的体验； 如果你想共享屏幕的时候不把某些程序声音共享出去； 如果你想录视频的时候不把某些程序声音录进去； 如果你想两个设备同时发声 …… 那么这个教程的软件VoiceMeeter可以很好地帮助你……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件声卡VoiceMeeter使用简介">
+<meta property="og:url" content="https://www.systemannounce.com/2024/03/05/other/vmb-introduction/index.html">
+<meta property="og:site_name" content="Felix_SANA &#39;S BLOG">
+<meta property="og:description" content="前言如果你想让你的连麦过程拥有不一样的体验； 如果你想共享屏幕的时候不把某些程序声音共享出去； 如果你想录视频的时候不把某些程序声音录进去； 如果你想两个设备同时发声 …… 那么这个教程的软件VoiceMeeter可以很好地帮助你……">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.systemannounce.com/2024/03/05/other/vmb-introduction/images/Markdown/headimg/VoicemeeterBanana.jpg">
+<meta property="article:published_time" content="2024-03-05T05:01:54.000Z">
+<meta property="article:modified_time" content="2024-03-05T09:06:23.973Z">
+<meta property="article:author" content="Felix_SANA">
+<meta property="article:tag" content="介绍">
+<meta property="article:tag" content="声卡">
+<meta property="article:tag" content="软件">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.systemannounce.com/2024/03/05/other/vmb-introduction/images/Markdown/headimg/VoicemeeterBanana.jpg">
+  <link rel="alternate" href="rss2.xml" type="application/atom+xml">
+  <!-- 站点验证相关 -->
+  
+    
+    
+      <meta name="baidu-site-verification" content="codeva-yy6Ea5pHMl" />
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <!-- <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/all.min.css" media="all"></script> -->
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+    
+  </style>
+  
+  
+  <link rel="stylesheet" href="/live2d/css/live2d.css" />
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JKZ3LJVCD"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9JKZ3LJVCD');
+    </script>
+    
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li>
+                                            
+                                                <a href="/">
+                                            
+                                                
+                                                    <i class="fa fa-home"></i>
+                                                
+                                                首页
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-address-book-o"></i>
+                                                
+                                                伊斯特瓦尔
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a href="/archives/">
+                                                                
+                                                                    <i class="fa fa-book"></i>
+                                                                
+                                                                总览
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/search">
+                                                                
+                                                                    <i class="fa fa-search"></i>
+                                                                
+                                                                搜索
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/2023/05/10/info/AboutME/">
+                                                                
+                                                                    <i class="fa fa-paper-plane-o"></i>
+                                                                
+                                                                关于我
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/2023/05/25/record/gamerecord/">
+                                                                
+                                                                    <i class="fa fa-gamepad"></i>
+                                                                
+                                                                游戏生涯记录
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/2023/05/25/record/animerecord/">
+                                                                
+                                                                    <i class="fa fa-tv"></i>
+                                                                
+                                                                番剧生涯记录
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-users"></i>
+                                                
+                                                友链助力
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a href="/friends/">
+                                                                
+                                                                    <i class="fa fa-address-card-o"></i>
+                                                                
+                                                                友链
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://travel.moe/go.html">
+                                                                
+                                                                    <i class="fa fa-train"></i>
+                                                                
+                                                                异次元
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-inbox"></i>
+                                                
+                                                TOOLS
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://gpt.systemannounce.com">
+                                                                
+                                                                    <i class="fa fa-comments"></i>
+                                                                
+                                                                ChatGPT
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://status.systemannounce.com">
+                                                                
+                                                                    <i class="fa fa-video-camera"></i>
+                                                                
+                                                                Status
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://ba.systemannounce.com">
+                                                                
+                                                                    <i class="fa fa-flash"></i>
+                                                                
+                                                                BAlogo
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://music.systemannounce.com">
+                                                                
+                                                                    <i class="fa fa-music"></i>
+                                                                
+                                                                MUSIC
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://mqtt.systemannounce.com">
+                                                                
+                                                                    <i class="fa fa-rss-square"></i>
+                                                                
+                                                                MQTT1
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://mqtt2.systemannounce.com">
+                                                                
+                                                                    <i class="fa fa-sellsy"></i>
+                                                                
+                                                                MQTT2
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-server"></i>
+                                                
+                                                NetDisk
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://cloud.systemannounce.com">
+                                                                
+                                                                    <i class="fa fa-hdd-o"></i>
+                                                                
+                                                                源1
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/404.html">
+                                                                
+                                                                    <i class="fa fa-cloud"></i>
+                                                                
+                                                                暂时寄了
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://drive.systemannounce.com">
+                                                                
+                                                                    <i class="fa fa-cloud-download"></i>
+                                                                
+                                                                源3
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/rss2.xml">
+                                            
+                                                
+                                                    <i class="fa fa-rss"></i>
+                                                
+                                                RSS订阅
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-link"></i>
+                                                
+                                                外链
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://github.com/systemannounce">
+                                                                
+                                                                    <i class="fa fa-github"></i>
+                                                                
+                                                                GitHub
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://music.163.com/#/user/home?id=512603380">
+                                                                
+                                                                    <i class="fa fa-music"></i>
+                                                                
+                                                                网抑云
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/systemannouncement">
+                                                                
+                                                                    <i class="fa fa-steam"></i>
+                                                                
+                                                                Steam
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://space.bilibili.com/200704172">
+                                                                
+                                                                    <i class="fa fa-youtube-play"></i>
+                                                                
+                                                                bilibili
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://bangumi.tv/user/systemannounce">
+                                                                
+                                                                    <i class="fa fa-mixcloud"></i>
+                                                                
+                                                                BGM
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">Felix_SANA &#39;S BLOG</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Felix_SANA &#39;S BLOG</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://www.systemannounce.com/2024/03/05/other/vmb-introduction/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">软件声卡VoiceMeeter使用简介</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2024-03-05T05:01:54.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-03-05</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Felix_SANA</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            1418
+                        
+                        字
+                    </li>
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1709629583973"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%95%8C%E9%9D%A2%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.</span> <span class="toc-text">界面介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">简单配置</span></a></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>如果你想让你的连麦过程拥有不一样的体验；</p>
+<p>如果你想共享屏幕的时候不把某些程序声音共享出去；</p>
+<p>如果你想录视频的时候不把某些程序声音录进去；</p>
+<p>如果你想两个设备同时发声</p>
+<p>……</p>
+<p><strong>那么这个教程的软件VoiceMeeter可以很好地帮助你……</strong></p>
+<span id="more"></span>
+
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>首先当然是下载啦，你可以去网上找汉化版，但是我建议还是用官方英文版，只要了解某些按键操作就可以够日常使用了，而且还稳定。<a target="_blank" rel="noopener" href="https://vb-audio.com/Voicemeeter/">VoiceMeeter官网</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20130954.png"></p>
+<p>可以看到这里上面有好多个版本的VoiceMeeter，分别是本体，banana版，potato版，VBAN。</p>
+<p>对应的是：</p>
+<p><strong>本体</strong>：极简版，只包含最基础的东西，阉割掉了很多内容，只有两个输入和一个管道，免费。</p>
+<p><strong>banana</strong>：基础版，拥有基础内容，有三个输入和两个管道，免费。</p>
+<p><strong>potato</strong>：完整版，拥有最全内容，有五个输入和三个管道，收费。</p>
+<p><strong>我们使用banana版本作为示范</strong></p>
+<p>在网页上面选择你想要的版本，滑到下面，点击<strong>Download</strong>就可以下载压缩包了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20131541.png"></p>
+<p>在下载完成后解压缩，运行里面的exe执行文件就可以进行安装了。</p>
+<p>因为我已经安装过了， 所以右下角是Remove，如果你没有安装过，应该是Install。</p>
+<p>点击后按钮会闪烁，然后稍等一会就安装完成了。弹出一个警告弹窗经过翻译应该是让你重启的提示，如果没问题那就重启。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20131802.png"></p>
+<p>重启完后，在你的左下角开始菜单里面应该就可以找到VoiceMeeterBanana这个应用了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20132305.png"></p>
+<p>点击打开，应该是这样一个界面：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20132434.png"></p>
+<p>如果没有问题，那么恭喜你，安装成功了。</p>
+<h1 id="界面介绍"><a href="#界面介绍" class="headerlink" title="界面介绍"></a>界面介绍</h1><p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/VMB.png"></p>
+<p>你需要理解的是，VoiceMeeter只是一个中间设备，把声音输入给它，然后你从里面选择设备输出，所以这里的输入都是指输入VoiceMeeter，输出是指从VoiceMeeter里输出声音。</p>
+<p>声音不能无中生有，所以你得先有输入然后有输出才行。</p>
+<h1 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a>简单配置</h1><p>在打开后，先把所有A1，A2，A3，B1，B2的按钮全部按灭。</p>
+<p>然后点击右上角的<strong>Menu</strong>，将任务栏托盘和开机自启打开。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/vmm.png"></p>
+<p>然后在右下角右键声音图标，打开声音设置。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20133853.png"></p>
+<p>打开更多声音设置。桌面音频通过这里输入VoiceMeeter。想使用哪个管道就选哪个，设置为默认设备就行。</p>
+<p>我们这里选择左边这个不带AUX的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20134446.png"></p>
+<p>然后我们通过右上角的A1，A2，A3指定输出设备（可以是你的耳机，扬声器，蓝牙等等），必须至少指定一个，否则无法输出声音。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20135228.png"></p>
+<p>在指定成功后，我们放一首歌吧。</p>
+<p>你也可以通过我博客左下角的音乐播放器来试音。</p>
+<p>正常情况下，你应该和我一样，这里有个小条不断跳动，但是还是没有任何声音，这是正常现象。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20135731.png"></p>
+<p>因为我们还没有选择输出，你刚刚指定的你的扬声器，耳机，麦克风都是A几？在下面音量条的右边选择对应的输出代号你应该就可以听到声音了。</p>
+<p>同理，你可以选择你的麦克风。只要在这里单击然后选择你的麦克风设备即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-03-05%20140050.png"></p>
+<p>同理，你想要听到你麦克风的声音，你只需要将对应设备下面音量条右边的输出代号按亮即可。你就可以实现听到自己说话的声音了。</p>
+<p>当然，也可以多选，你可以让A1，A2，A3同时播放声音也行，播放不同声音也行。</p>
+<p>至于这个B1，B2，是你的模拟麦克风，聪明的你应该猜到可以干什么了。</p>
+<p>对，你可以将你电脑的声音接上麦克风，这样就可以在连麦软件里让别人听到你电脑里面的歌啦。</p>
+<p>那么到这里你应该可以最基础地玩这个软件声卡啦。</p>
+<p>更详细的部分以及<strong>VBAN</strong>部分可以自行摸索或者等我更新新的教程哦……</p>
+</div>
+        </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://www.systemannounce.com/2024/03/05/other/vmb-introduction/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://www.systemannounce.com/2024/03/05/other/vmb-introduction/";
+            const title         = "「软件声卡VoiceMeeter使用简介」";
+            const excerpt       = `前言如果你想让你的连麦过程拥有不一样的体验；
+如果你想共享屏幕的时候不把某些程序声音共享出去；
+如果你想录视频的时候不把某些程序声音录进去；
+如果你想两个设备同时发声
+……
+那么这个教程的软件VoiceMeeter可以很好地帮助你……`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/%E4%BB%8B%E7%BB%8D/" rel="tag">介绍</a>, <a class="tag-none-link" href="/tags/%E5%A3%B0%E5%8D%A1/" rel="tag">声卡</a>, <a class="tag-none-link" href="/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2024-03-05T09:06:23.973Z" itemprop="dateModified">最后编辑：2024-03-05</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 禁止Windows自动更新和驱动更新" href="/2024/02/08/other/ban-update/">&lt; 上一篇</a>
+            </div>
+            
+            
+        </nav>
+    
+    
+        <link rel="stylesheet" href="/vendors/gitalk@1.7.2/dist/gitalk.css"></script>
+<div id="gitalk-container" class="post-comments lazy-load bg-image" style="padding-left:2rem; padding-right:2rem;"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            console.log('Gitalk loading...');
+            const gitalk = new Gitalk(Object.assign({
+                id: '/2024/03/05/other/vmb-introduction/',
+                path: '/2024/03/05/other/vmb-introduction/'
+            }, JSON.parse('{"clientID":"d9b9c3266335132738ca","clientSecret":"88510a9c8e39beec08aacc631dade7d9ad7e8304","repo":"gitalk","owner":"systemannounce","admin":["systemannounce"],"distractionFreeMode":false}')));
+
+            gitalk.render('gitalk-container');
+        }
+        if (typeof Gitalk === 'undefined') {
+            const src = '/vendors/gitalk@1.7.2/dist/gitalk.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://github.com/gitalk/gitalk">comments powered by Gitalk.</a></noscript>
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/66364037_p0.png" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">你醒啦？已经到天际省了</p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                25
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                7
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                39
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%95%8C%E9%9D%A2%E4%BB%8B%E7%BB%8D"><span class="toc-text">界面介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE"><span class="toc-text">简单配置</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/%E7%88%AC%E8%99%AB/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E6%9D%82%E9%A1%B9/">杂项</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%9B%98/">网盘</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%AB%99/">网站</a><span class="category-list-count">5</span></li></ul></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/AI/" style="font-size: 0.67em;">AI</a> <a href="/tags/AI%E7%BB%98%E7%94%BB/" style="font-size: 0.6em;">AI绘画</a> <a href="/tags/ChatGPT/" style="font-size: 0.6em;">ChatGPT</a> <a href="/tags/JavaScript/" style="font-size: 0.67em;">JavaScript</a> <a href="/tags/Markdown/" style="font-size: 0.6em;">Markdown</a> <a href="/tags/Steam/" style="font-size: 0.6em;">Steam</a> <a href="/tags/Windows/" style="font-size: 0.6em;">Windows</a> <a href="/tags/bilibili/" style="font-size: 0.6em;">bilibili</a> <a href="/tags/blog/" style="font-size: 0.6em;">blog</a> <a href="/tags/cdn/" style="font-size: 0.6em;">cdn</a> <a href="/tags/hexo/" style="font-size: 0.6em;">hexo</a> <a href="/tags/python/" style="font-size: 0.73em;">python</a> <a href="/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/" style="font-size: 0.6em;">二次元</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 0.6em;">人物</a> <a href="/tags/%E4%BB%8B%E7%BB%8D/" style="font-size: 0.67em;">介绍</a> <a href="/tags/%E5%88%9D%E9%98%B6/" style="font-size: 0.8em;">初阶</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 0.6em;">动漫</a> <a href="/tags/%E5%9B%BE%E7%89%87/" style="font-size: 0.67em;">图片</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2024/03/05/other/vmb-introduction/"><i class="fa  fa-book"></i> 软件声卡VoiceMeeter使用简介</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/02/08/other/ban-update/"><i class="fa  fa-book"></i> 禁止Windows自动更新和驱动更新</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/01/16/other/AIdraw/"><i class="fa  fa-book"></i> 如何分辨AI绘画</a>
+            
+          
+        
+          
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/12/11/websitecourse/chatgpt/"><i class="fa  fa-book"></i> 免费搭建自己的ChatGPT网站</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/12/09/other/tools/"><i class="fa  fa-book"></i> 网站工具记录</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
+                        
+                        <li><a href="mailto:felixsana@systemannounce.com"><i class="fa fa-envelope"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/systemannounce"><i class="fa fa-telegram"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://twitter.com/systemannounce"><i class="fa fa-twitter"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://www.facebook.com/systemannounce"><i class="fa fa-facebook-official"></i></a></li>
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/systemannounce"><i class="fa fa-github"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="/rss2.xml"><i class="fa fa-rss"></i></a></li>
+                        <!-- New links -->
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2024 Felix_SANA 'S BLOG 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Felix_SANA.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a target="_blank" rel="noopener" href="https://systemannounce.github.io">Github Pages</a>  &  <a target="_blank" rel="noopener" href="https://systemannounce.netlify.app">Netlify</a></li>
+                        </div>
+                        <div>
+                            <li><a href="https://beian.miit.gov.cn" rel="external nofollow" target="_blank"><a href="https://icp.gov.moe/?keyword=20232112" target="_blank">萌ICP备20232112号</a> | <a style="text-decoration:none;color:#55bb8a;" href="https://travel.moe/go.html?travel=on" title="异次元之旅-跃迁-我们一起去萌站成员的星球旅行吧！" target="_blank"><img src="https://travel.moe/images/icon/icon64green.png" style="width:24px;height:24px">异次元之旅</a></a></li>
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="snow-switch">
+                        <span class="fa fa-snowflake-o"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async src="/js/snow.min.js"></script>
+    </div>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="8410660170"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+        <div id="landlord" style="left:35px;bottom:75px;">
+            <div class="message" style="opacity:0"></div>
+            <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+            <div class="live_talk_input_body">
+                <div class="live_talk_input_name_body">
+                    <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+                </div>
+                <div class="live_talk_input_text_body">
+                    <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
+                    <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+                </div>
+            </div>
+            <input name="live_talk" id="live_talk" value="1" type="hidden" />
+            <div class="live_ico_box">
+                <div class="live_ico_item type_info" id="showInfoBtn"></div>
+                <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+                <div class="live_ico_item type_music" id="musicButton"></div>
+                <div class="live_ico_item type_youdu" id="youduButton"></div>
+                <div class="live_ico_item type_quit" id="hideButton"></div>
+                <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+                <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+                <input name="live2dBGM" value="音乐地址，建议别碰" type="hidden">
+                <input id="duType" value="douqilai,l2d_caihong" type="hidden">
+            </div>
+        </div>
+        <div id="open_live2d">召唤伊斯特瓦尔</div>
+
+        <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script>
+        var message_Path = '/live2d/';//资源目录，如果目录不对请更改
+        var talkAPI = "";//如果有类似图灵机器人的聊天接口请填写接口路径
+        </script>
+        <script type="text/javascript" src="/live2d/js/live2d.js"></script>
+        <script type="text/javascript" src="/live2d/js/message.js"></script>
+
+    </body>
+</html>
