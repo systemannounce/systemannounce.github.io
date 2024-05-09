@@ -15,7 +15,7 @@
   <meta charset="utf-8">
   <link rel="icon" href="/images/ico.jpg">
   
-  <title>分类: 分享 | Felix_SANA &#39;S BLOG</title>
+  <title>Windows蓝屏分析解决 | Felix_SANA &#39;S BLOG</title>
   
   <meta name="author" content="Felix_SANA" />
   <meta http-equiv="Cache-Control" content="no-transform" />
@@ -25,19 +25,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="Windows, 初阶, 蓝屏" />
   
-  <meta name="description" content="你醒啦？已经到天际省了">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类: 分享">
-<meta property="og:url" content="https://www.systemannounce.com/categories/%E5%88%86%E4%BA%AB/index.html">
+  <meta name="description" content="前言我真是被Windows的蓝屏整烦了，一蓝屏把我工作全部报废，写好的东西还要往前回溯几分钟重来，当我想要彻底解决这个问题的时候，没等我看清蓝屏代码然后就自动重启了。 最恨的事我居然还不知道它是因为什么原因产生的，某天我就想到一个问题，为什么我不能从问题的源头解决掉它呢？ 无非就是几个问题，硬件，驱动，软件等等…… 说干就干，网上找了很多资料，最后总结出了一个可以稳定发现并且解决大部分蓝屏的方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows蓝屏分析解决">
+<meta property="og:url" content="https://www.systemannounce.com/2024/05/09/learning/system/blue-screen-analysis/index.html">
 <meta property="og:site_name" content="Felix_SANA &#39;S BLOG">
-<meta property="og:description" content="你醒啦？已经到天际省了">
+<meta property="og:description" content="前言我真是被Windows的蓝屏整烦了，一蓝屏把我工作全部报废，写好的东西还要往前回溯几分钟重来，当我想要彻底解决这个问题的时候，没等我看清蓝屏代码然后就自动重启了。 最恨的事我居然还不知道它是因为什么原因产生的，某天我就想到一个问题，为什么我不能从问题的源头解决掉它呢？ 无非就是几个问题，硬件，驱动，软件等等…… 说干就干，网上找了很多资料，最后总结出了一个可以稳定发现并且解决大部分蓝屏的方法。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.systemannounce.com/images/ico.jpg">
+<meta property="og:image" content="https://www.systemannounce.com/2024/05/09/learning/system/blue-screen-analysis/images/Markdown/headimg/bluescreen.png">
+<meta property="article:published_time" content="2024-05-09T10:14:54.000Z">
+<meta property="article:modified_time" content="2024-05-09T12:03:07.612Z">
 <meta property="article:author" content="Felix_SANA">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="初阶">
+<meta property="article:tag" content="蓝屏">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.systemannounce.com/images/ico.jpg">
+<meta name="twitter:image" content="https://www.systemannounce.com/2024/05/09/learning/system/blue-screen-analysis/images/Markdown/headimg/bluescreen.png">
   <link rel="alternate" href="rss2.xml" type="application/atom+xml">
   <!-- 站点验证相关 -->
   
@@ -427,155 +432,234 @@
 
         
 
-            <!-- Breadcrumb for tag & category page -->
-
-    <article class="kratos-hentry kratos-entry-border-new clearfix">
-        <div class="kratos-breadcrumb">
-            <a href="/">
-                <i class="fa fa-home"></i>
-            </a>
-            <i class="fa fa-angle-right"></i>
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://www.systemannounce.com/2024/05/09/learning/system/blue-screen-analysis/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
             
-
-                <a href="/categories/">
-                    分类
-                </a>
-
-                
-                
-                    <i class="fa fa-angle-right"></i>
-                    <a href="/categories/%E5%88%86%E4%BA%AB/">
-                        分享
-                    </a>
-                
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">Windows蓝屏分析解决</h1>
             
             
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2024-05-09T10:14:54.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-05-09</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Felix_SANA</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            1903
+                        
+                        字
+                    </li>
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1715256187612"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%A5%E5%BF%97"><span class="toc-number">2.</span> <span class="toc-text">日志</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E4%BA%8B%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">查看事件查看器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Dump%E8%BD%AC%E5%82%A8%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">Dump转储文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%BD%AC%E5%82%A8%E6%96%87%E4%BB%B6"><span class="toc-number">3.1.</span> <span class="toc-text">配置转储文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDWinDbg%E5%B7%A5%E5%85%B7"><span class="toc-number">3.2.</span> <span class="toc-text">下载WinDbg工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5"><span class="toc-number">3.2.1.</span> <span class="toc-text">下载链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEWinDbg"><span class="toc-number">3.2.2.</span> <span class="toc-text">配置WinDbg</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8WinDbg%E5%88%86%E6%9E%90%E8%BD%AC%E5%82%A8%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.</span> <span class="toc-text">使用WinDbg分析转储文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F"><span class="toc-number">4.</span> <span class="toc-text">结束</span></a></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我真是被Windows的蓝屏整烦了，一蓝屏把我工作全部报废，写好的东西还要往前回溯几分钟重来，当我想要彻底解决这个问题的时候，没等我看清蓝屏代码然后就自动重启了。</p>
+<p>最恨的事我居然还不知道它是因为什么原因产生的，某天我就想到一个问题，为什么我不能从问题的源头解决掉它呢？</p>
+<p>无非就是几个问题，硬件，驱动，软件等等……</p>
+<p>说干就干，网上找了很多资料，<strong>最后总结出了一个可以稳定发现并且解决大部分蓝屏的方法。</strong></p>
+<span id="more"></span>
+
+<h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><p>查看日志是最简单的方法，前提是出错得很慢，经过几轮错误然后才蓝屏，这样子很方便可以从日志里面看出错误来。</p>
+<p>虽然不太稳定，但是这确实是最简单可以捕捉到最简单蓝屏的方法了。</p>
+<h2 id="查看事件查看器"><a href="#查看事件查看器" class="headerlink" title="查看事件查看器"></a>查看事件查看器</h2><p>这里我们对此电脑右键，然后在出现的菜单里面点击<strong>管理</strong>选项。</p>
+<p>如果你是Windows11可能得点击<strong>展开更多选项</strong>进行查看。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-05-09%20183249.png"></p>
+<p>我们在打开的计算机管理里面左边侧栏依次点击事件查看器→Windows日志→系统选项下面，右边的内容即是我们需要查看的系统日志。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-05-09%20183544.png"></p>
+<p>我们应该可以在中间的日志翻到刚刚蓝屏的时间点，然后应该可以看到一个名叫关键的事件，应该是指未正常关机的事件。</p>
+<p>这时候我们继续往下面翻，应该就可以找到具体出错的原因，解决对应的问题即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-05-09%20183932.png"></p>
+<p>如果你和我一样，很不幸没有，在突然蓝屏前一切正常，那也没关系，我们接下来还有另外一个方法。</p>
+<h1 id="Dump转储文件"><a href="#Dump转储文件" class="headerlink" title="Dump转储文件"></a>Dump转储文件</h1><p>Dump转储文件就相当于将错误状态时候的一些信息保存下来给开发人员排查错误用的，能查看到的信息比蓝屏界面和日志多很多。</p>
+<h2 id="配置转储文件"><a href="#配置转储文件" class="headerlink" title="配置转储文件"></a>配置转储文件</h2><p>Win＋R键打开运行窗口，输入 <code>sysdm.cpl</code> ，然后回车确认</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-05-09%20192509.png"></p>
+<p>我们在新打开的系统属性窗口里面选择高级，启动和故障恢复里面选择设置。</p>
+<p>在下面选择系统失败的时候写入日志和写入调试信息为小内存转储即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-05-09%20192643.png"></p>
+<p>下方的小转储目录即为你转储Dump文件所在的路径，你可以直接复制然后粘贴到文件资源管理器的地址栏直接回车即可打开。</p>
+<p>如果成功打开这个选项并且最近蓝屏过，保存的转储文件都会放在这里，如果你需要进行查看请把它们复制走，这里的文件会被系统自动删除。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-05-09%20193125.png"></p>
+<h2 id="下载WinDbg工具"><a href="#下载WinDbg工具" class="headerlink" title="下载WinDbg工具"></a>下载WinDbg工具</h2><p>因为下载的是特殊格式的转储文件，不是文本文件也不是二进制文件，所以不能以通用的记事本大法打开。</p>
+<p>我们需要特殊的软件进行打开，我去网上找了一堆，结果都是要我下载Windows的开发程序包和SDK包，很麻烦，占用空间又多。</p>
+<p>只不过偶然在Microsoft Store发现了这个程序官方商店居然就有提供，想起之前的自己就想笑。。。</p>
+<h3 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h3><ol>
+<li>直接在Microsoft Store搜索WinDbg即可找到。</li>
+<li>下载链接：<a target="_blank" rel="noopener" href="https://www.microsoft.com/store/productId/9PGJGD53TN86?ocid=pdpshare">https://www.microsoft.com/store/productId/9PGJGD53TN86?ocid=pdpshare</a></li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-05-09%20193723.png"></p>
+<h3 id="配置WinDbg"><a href="#配置WinDbg" class="headerlink" title="配置WinDbg"></a>配置WinDbg</h3><p>刚下载好的WinDbg还不可以马上就使用，因为缺少了微软的一些符号文件，导致这个软件无法识别出所有的特殊符号，即使打开也会报错。</p>
+<hr>
+<p>我们打开WinDbg软件，点击左上角文件。</p>
+<p>然后在新界面点击Settings→Debugging Settings。</p>
+<p>然后在Default Symbol Path的框里面输入以下内容即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">srv*https://msdl.microsoft.com/download/symbols</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-05-09%20194346.png"></p>
+<p>到这里我们的软件已经配置好了，可以正式投入使用了。</p>
+<h2 id="使用WinDbg分析转储文件"><a href="#使用WinDbg分析转储文件" class="headerlink" title="使用WinDbg分析转储文件"></a>使用WinDbg分析转储文件</h2><p>我们这里回到<strong>主页</strong>，然后点击左上角的<strong>文件</strong>，在新界面里面点击<strong>open Dump file</strong>，然后在右边的文件框里面选择你的转储文件然后点击下面<strong>open</strong>即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-05-09%20194627.png"></p>
+<p>进入Debug界面，如果是第一次进入可能得等程序自动从Microsoft官网下载符号文件，否则不能正常分析，我们耐心等着就行。</p>
+<p>在结束后我们应该可以看到我们的见面变成了这样。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-05-09%20194853.png"></p>
+<p>我们在中间指令框中输入 <code>!analyze -v</code> ，然后回车，就可以自动进行分析转储文件了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-05-09%20195103.png"></p>
+<p>在一阵等待之后我们就有了结果。</p>
+<p>可以很明显地看到我们执行指令的输出有明显不同的颜色打底，我们往下翻。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-05-09%20195319.png"></p>
+<p>在这里我们就找到了答案，前面开头的单词是 <code>Exception_record</code> ，很明显，我们需要的就是这一段的错误信息。</p>
+<p>根据标黄的<strong>错误地址程序</strong>，和标蓝的<strong>错误原因</strong>，我相信你已经知道了该怎么解决这一次蓝屏的问题了吧。</p>
+<p>我这里是nvlddmkm程序出了问题，而这个程序是NVIDIA的驱动程序，后面我去把驱动重装了一次，就再也没碰过蓝屏的问题了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-05-09%20195554.png"></p>
+<h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><p>相信你看到这里，已经有自己的想法了，那么接下来就该拯救你自己电脑的蓝屏问题了。</p>
+<p>愿这世间的电脑再无错误蓝屏。</p>
+</div>
         </div>
-    </article>
-
-
-
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-            <div class="kratos-entry-border-new clearfix">
-                
-                <div class="kratos-entry-thumb-new">
-                    <a href="/2023/06/16/share/wallpaper/wallpapere1/">
-                        
-                            <img class="kratos-entry-thumb-new-img" src="/images/Markdown/headimg/wallpapere1.png" alt="">
-                        
-                    </a>
-                </div>
-                <div class="kratos-post-inner-new">
-                    <header class="kratos-entry-header-new">
-                            <a class="label-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a>
-                        <h2 class="kratos-entry-title-new"><a href="/2023/06/16/share/wallpaper/wallpapere1/" itemprop="mainEntityOfPage"><span itemprop="name headline">Wallpaper Engine壁纸推荐①</span></a>
-                    </header>
-                    <div class="kratos-entry-content-new">
-                        <p itemProp="description">
-                            
-                                本期的壁纸分享含有的元素请见本文的的tag
-由于是第一次尝试本系列，如果有考虑不周情况请各位指出，谢谢。
-                            
-                        </p>
-                    </div>
-                </div>
-                <footer class="kratos-post-meta-new">
-                    <span class="pull-left">
-                        <time datetime="2023-06-16T05:47:04.000Z" itemprop="datePublished">
-                            <a><i class="fa fa-calendar"></i> 2023-06-16</a>
-                        </time>
-                        <a>
-                            
-                                <i class="fa fa-tags"></i>
-                                <a class="tag-none-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a>, <a class="tag-none-link" href="/tags/%E5%8A%A8%E6%BC%AB/" rel="tag">动漫</a>, <a class="tag-none-link" href="/tags/%E9%A3%8E%E6%99%AF/" rel="tag">风景</a>
-                            
-                        </a>
-                        
-                            <!-- 当前仅支持valine/waline自带的统计功能 -->
-                            
-                        
-                        
-                            <!-- 当前仅支持waline自带的统计功能 -->
-                            
-                        
-                    </span>
-                    <span class="pull-right">
-                        <a class="read-more" href="/2023/06/16/share/wallpaper/wallpapere1/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-                    </span>
-                </footer>
-            </div>
-        </article>
-    
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-            <div class="kratos-entry-border-new clearfix">
-                
-                <div class="kratos-entry-thumb-new">
-                    <a href="/2023/06/08/share/img/bocchi/">
-                        
-                            <img class="kratos-entry-thumb-new-img" src="/images/Markdown/headimg/bocchi.jpg" alt="">
-                        
-                    </a>
-                </div>
-                <div class="kratos-post-inner-new">
-                    <header class="kratos-entry-header-new">
-                            <a class="label-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a>
-                        <h2 class="kratos-entry-title-new"><a href="/2023/06/08/share/img/bocchi/" itemprop="mainEntityOfPage"><span itemprop="name headline">孤独摇滚图片分享</span></a>
-                    </header>
-                    <div class="kratos-entry-content-new">
-                        <p itemProp="description">
-                            
-                                你看见波奇在哪里吗？
-哦，她并没有失踪，我只是想让你们都看看可爱的波奇酱。
-本文作为第一篇图片分享系列，可能有许多照顾不到的画风或者风格，抱歉。
-如果分享的图片侵犯了你的利益，请联系我。
-                            
-                        </p>
-                    </div>
-                </div>
-                <footer class="kratos-post-meta-new">
-                    <span class="pull-left">
-                        <time datetime="2023-06-08T14:37:30.000Z" itemprop="datePublished">
-                            <a><i class="fa fa-calendar"></i> 2023-06-08</a>
-                        </time>
-                        <a>
-                            
-                                <i class="fa fa-tags"></i>
-                                <a class="tag-none-link" href="/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/" rel="tag">二次元</a>, <a class="tag-none-link" href="/tags/%E5%9B%BE%E7%89%87/" rel="tag">图片</a>, <a class="tag-none-link" href="/tags/%E6%B5%81%E9%87%8F%E8%AD%A6%E5%91%8A/" rel="tag">流量警告</a>
-                            
-                        </a>
-                        
-                            <!-- 当前仅支持valine/waline自带的统计功能 -->
-                            
-                        
-                        
-                            <!-- 当前仅支持waline自带的统计功能 -->
-                            
-                        
-                    </span>
-                    <span class="pull-right">
-                        <a class="read-more" href="/2023/06/08/share/img/bocchi/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-                    </span>
-                </footer>
-            </div>
-        </article>
-    
-
-
-
-
-
-    <div class="hidden">
-        <!-- 加载文章阅读对应的统计功能，评论自带的那种 -->
         
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
     </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://www.systemannounce.com/2024/05/09/learning/system/blue-screen-analysis/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://www.systemannounce.com/2024/05/09/learning/system/blue-screen-analysis/";
+            const title         = "「Windows蓝屏分析解决」";
+            const excerpt       = `前言我真是被Windows的蓝屏整烦了，一蓝屏把我工作全部报废，写好的东西还要往前回溯几分钟重来，当我想要彻底解决这个问题的时候，没等我看清蓝屏代码然后就自动重启了。
+最恨的事我居然还不知道它是因为什么原因产生的，某天我就想到一个问题，为什么我不能从问题的源头解决掉它呢？
+无非就是几个问题，硬件，驱动，软件等等……
+说干就干，网上找了很多资料，最后总结出了一个可以稳定发现并且解决大部分蓝屏的方法。`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/Windows/" rel="tag">Windows</a>, <a class="tag-none-link" href="/tags/%E5%88%9D%E9%98%B6/" rel="tag">初阶</a>, <a class="tag-none-link" href="/tags/%E8%93%9D%E5%B1%8F/" rel="tag">蓝屏</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2024-05-09T12:03:07.612Z" itemprop="dateModified">最后编辑：2024-05-09</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" (无标题)" href="/2024/05/06/dynamic/recent240505/">&lt; 上一篇</a>
+            </div>
+            
+            
+        </nav>
+    
+    
+        <link rel="stylesheet" href="/vendors/gitalk@1.7.2/dist/gitalk.css"></script>
+<div id="gitalk-container" class="post-comments lazy-load bg-image" style="padding-left:2rem; padding-right:2rem;"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            console.log('Gitalk loading...');
+            const gitalk = new Gitalk(Object.assign({
+                id: '/2024/05/09/learning/system/blue-screen-analysis/',
+                path: '/2024/05/09/learning/system/blue-screen-analysis/'
+            }, JSON.parse('{"clientID":"d9b9c3266335132738ca","clientSecret":"88510a9c8e39beec08aacc631dade7d9ad7e8304","repo":"gitalk","owner":"systemannounce","admin":["systemannounce"],"distractionFreeMode":false}')));
 
-
+            gitalk.render('gitalk-container');
+        }
+        if (typeof Gitalk === 'undefined') {
+            const src = '/vendors/gitalk@1.7.2/dist/gitalk.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://github.com/gitalk/gitalk">comments powered by Gitalk.</a></noscript>
+    
+</article>
 
         
 
@@ -588,8 +672,6 @@
 
 <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
     <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
-    
-        <div class="sticky-area">
     
     
                 <aside id="krw-about" class="widget widget-kratos-about clearfix">
@@ -630,6 +712,20 @@
     </div>
 </aside>
             
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%A5%E5%BF%97"><span class="toc-text">日志</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E4%BA%8B%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%99%A8"><span class="toc-text">查看事件查看器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Dump%E8%BD%AC%E5%82%A8%E6%96%87%E4%BB%B6"><span class="toc-text">Dump转储文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%BD%AC%E5%82%A8%E6%96%87%E4%BB%B6"><span class="toc-text">配置转储文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDWinDbg%E5%B7%A5%E5%85%B7"><span class="toc-text">下载WinDbg工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5"><span class="toc-text">下载链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEWinDbg"><span class="toc-text">配置WinDbg</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8WinDbg%E5%88%86%E6%9E%90%E8%BD%AC%E5%82%A8%E6%96%87%E4%BB%B6"><span class="toc-text">使用WinDbg分析转储文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F"><span class="toc-text">结束</span></a></li></ol>
+    </div>
+</aside>
+                
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
     <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
