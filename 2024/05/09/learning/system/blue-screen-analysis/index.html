@@ -27,16 +27,16 @@
   
     <meta name="keywords" content="Windows, 初阶, 蓝屏" />
   
-  <meta name="description" content="前言我真是被Windows的蓝屏整烦了，一蓝屏把我工作全部报废，写好的东西还要往前回溯几分钟重来，当我想要彻底解决这个问题的时候，没等我看清蓝屏代码然后就自动重启了。 最恨的事我居然还不知道它是因为什么原因产生的，某天我就想到一个问题，为什么我不能从问题的源头解决掉它呢？ 无非就是几个问题，硬件，驱动，软件等等…… 说干就干，网上找了很多资料，最后总结出了一个可以稳定发现并且解决大部分蓝屏的方法。">
+  <meta name="description" content="前言我真是被Windows的蓝屏整烦了，一蓝屏把我工作全部报废，写好的东西还要往前回溯几分钟重来，当我想要彻底解决这个问题的时候，没等我看清蓝屏代码然后就自动重启了。 最恨的事我居然还不知道它是因为什么原因产生的，某天我就想到一个问题，为什么我不能从问题的源头解决掉它呢？ 无非就是几个问题，硬件，驱动，软件等等…… 说干就干，网上找了很多资料，最后总结出了两个可以稳定发现并且解决大部分蓝屏的方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows蓝屏分析解决">
 <meta property="og:url" content="https://www.systemannounce.com/2024/05/09/learning/system/blue-screen-analysis/index.html">
 <meta property="og:site_name" content="Felix_SANA &#39;S BLOG">
-<meta property="og:description" content="前言我真是被Windows的蓝屏整烦了，一蓝屏把我工作全部报废，写好的东西还要往前回溯几分钟重来，当我想要彻底解决这个问题的时候，没等我看清蓝屏代码然后就自动重启了。 最恨的事我居然还不知道它是因为什么原因产生的，某天我就想到一个问题，为什么我不能从问题的源头解决掉它呢？ 无非就是几个问题，硬件，驱动，软件等等…… 说干就干，网上找了很多资料，最后总结出了一个可以稳定发现并且解决大部分蓝屏的方法。">
+<meta property="og:description" content="前言我真是被Windows的蓝屏整烦了，一蓝屏把我工作全部报废，写好的东西还要往前回溯几分钟重来，当我想要彻底解决这个问题的时候，没等我看清蓝屏代码然后就自动重启了。 最恨的事我居然还不知道它是因为什么原因产生的，某天我就想到一个问题，为什么我不能从问题的源头解决掉它呢？ 无非就是几个问题，硬件，驱动，软件等等…… 说干就干，网上找了很多资料，最后总结出了两个可以稳定发现并且解决大部分蓝屏的方法。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.systemannounce.com/2024/05/09/learning/system/blue-screen-analysis/images/Markdown/headimg/bluescreen.png">
 <meta property="article:published_time" content="2024-05-09T10:14:54.000Z">
-<meta property="article:modified_time" content="2024-05-09T12:03:07.612Z">
+<meta property="article:modified_time" content="2024-05-15T15:41:10.219Z">
 <meta property="article:author" content="Felix_SANA">
 <meta property="article:tag" content="Windows">
 <meta property="article:tag" content="初阶">
@@ -472,7 +472,7 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1715256187612"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1715787670219"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -485,7 +485,7 @@
             <div itemprop="articleBody"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我真是被Windows的蓝屏整烦了，一蓝屏把我工作全部报废，写好的东西还要往前回溯几分钟重来，当我想要彻底解决这个问题的时候，没等我看清蓝屏代码然后就自动重启了。</p>
 <p>最恨的事我居然还不知道它是因为什么原因产生的，某天我就想到一个问题，为什么我不能从问题的源头解决掉它呢？</p>
 <p>无非就是几个问题，硬件，驱动，软件等等……</p>
-<p>说干就干，网上找了很多资料，<strong>最后总结出了一个可以稳定发现并且解决大部分蓝屏的方法。</strong></p>
+<p>说干就干，网上找了很多资料，<strong>最后总结出了两个可以稳定发现并且解决大部分蓝屏的方法。</strong></p>
 <span id="more"></span>
 
 <h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><p>查看日志是最简单的方法，前提是出错得很慢，经过几轮错误然后才蓝屏，这样子很方便可以从日志里面看出错误来。</p>
@@ -607,7 +607,7 @@
             const excerpt       = `前言我真是被Windows的蓝屏整烦了，一蓝屏把我工作全部报废，写好的东西还要往前回溯几分钟重来，当我想要彻底解决这个问题的时候，没等我看清蓝屏代码然后就自动重启了。
 最恨的事我居然还不知道它是因为什么原因产生的，某天我就想到一个问题，为什么我不能从问题的源头解决掉它呢？
 无非就是几个问题，硬件，驱动，软件等等……
-说干就干，网上找了很多资料，最后总结出了一个可以稳定发现并且解决大部分蓝屏的方法。`;
+说干就干，网上找了很多资料，最后总结出了两个可以稳定发现并且解决大部分蓝屏的方法。`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -629,7 +629,7 @@
                     <a class="tag-none-link" href="/tags/Windows/" rel="tag">Windows</a>, <a class="tag-none-link" href="/tags/%E5%88%9D%E9%98%B6/" rel="tag">初阶</a>, <a class="tag-none-link" href="/tags/%E8%93%9D%E5%B1%8F/" rel="tag">蓝屏</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-05-09T12:03:07.612Z" itemprop="dateModified">最后编辑：2024-05-09</time>
+                    <time datetime="2024-05-15T15:41:10.219Z" itemprop="dateModified">最后编辑：2024-05-15</time>
                 </div>
             </div>
         </footer>
