@@ -155,23 +155,40 @@ if(!norunFlag){
 		showHitokoto();
 	},15000);
 	
-	function showHitokoto(){
-		if(sessionStorage.getItem("Sleepy")!=="1"){
-			if(!AITalkFlag){
-				$.getJSON('https://v1.hitokoto.cn/',function(result){
-					talkValTimer();
-					showMessage(result.hitokoto, 0);
-				});
+	// 一言接口处
+	let timer = null; // 定义全局计时器变量
+	let cachedHitokoto = null; // 定义缓存变量
+
+	function showHitokoto() {
+	if (sessionStorage.getItem("Sleepy") !== "1") {
+		if (!AITalkFlag) {
+		// 判断timer是否为null
+		if (timer === null) {
+			$.getJSON('https://yiyan.systemannounce.cn/', function(result) {
+			talkValTimer();
+			cachedHitokoto = result.hitokoto; // 将返回内容缓存
+			showMessage(cachedHitokoto, 0);
+			// 设置5秒钟后将timer重置为null
+			timer = setTimeout(() => {
+				timer = null;
+			}, 5000);
+			});
+		} else {
+			// console.log('在禁止调用的时间段内');
+			if (cachedHitokoto !== null) {
+			showMessage(cachedHitokoto, 0); // 显示缓存内容
 			}
-		}else{
-			hideMessage(0);
-			if(sleepTimer_==null){
-				sleepTimer_ = setInterval(function(){
-					checkSleep();
-				},200);
-			}
-			console.log(sleepTimer_);
 		}
+		}
+	} else {
+		hideMessage(0);
+		if (sleepTimer_ == null) {
+		sleepTimer_ = setInterval(function() {
+			checkSleep();
+		}, 200);
+		}
+		console.log(sleepTimer_);
+	}
 	}
 	
 	function checkSleep(){
