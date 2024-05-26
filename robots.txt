@@ -4,6 +4,11 @@ Disallow: /2023/05/10/info/AboutME/
 Disallow: /live2d/
 Disallow: /download/
 Disallow: /Ali/
+Disallow: /Baidu/
+Disallow: /Gallery/
 Disallow: /OneDrive/
 Disallow: /OneDrive_AF/
 Disallow: /Surfing/
+Disallow: /album/
+Disallow: /playlist/
+Disallow: /mv/
