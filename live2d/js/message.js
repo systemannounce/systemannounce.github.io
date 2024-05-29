@@ -164,7 +164,7 @@ if(!norunFlag){
 		if (!AITalkFlag) {
 		// 判断timer是否为null
 		if (timer === null) {
-			$.getJSON('https://yiyan.systemannounce.cn/', function(result) {
+			$.getJSON('https://yiyan.systemannounce.com/', function(result) {
 			talkValTimer();
 			cachedHitokoto = result.hitokoto; // 将返回内容缓存
 			showMessage(cachedHitokoto, 0);
