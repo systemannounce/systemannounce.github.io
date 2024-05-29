@@ -358,6 +358,16 @@ if(!norunFlag){
 			}
 			sessionStorage.setItem("live2dBGM_WindowClose" , '1');
 			$('#musicButton').on('click',function(){
+				if ($('.aplayer-button').hasClass('aplayer-pause')) {
+					// 元素具有 aplayer-button 类和 aplayer-pause 类
+					$('.aplayer-button.aplayer-pause').click();
+				} else if ($('.aplayer-button').hasClass('aplayer-play')) {
+					// 元素具有 aplayer-button 类和 aplayer-play 类
+					$('.aplayer-button.aplayer-play').click();
+				} else {
+					// 元素没有符合条件的类
+					console.log('Element does not have the expected classes');
+				}
 				if($('#musicButton').hasClass('play')){
 					$('#live2d_bgm')[0].pause();
 					$('#musicButton').removeClass('play');
@@ -393,7 +403,7 @@ if(!norunFlag){
 			document.getElementById('live2d_bgm').addEventListener("error", function(){
 				$('#live2d_bgm')[0].pause();
 				$('#musicButton').removeClass('play');
-				showMessage('音乐似乎加载不出来了呢！',0);
+				showMessage('请看左下角的播放器哦~~~~',0);
 			});
 		}
 		//获取用户名
