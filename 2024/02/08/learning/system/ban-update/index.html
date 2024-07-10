@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <link rel="icon" href="/images/ico.webp">
   
-  <title>强制删除某些不存在的文件/文件夹 | Felix_SANA &#39;S BLOG</title>
+  <title>禁止Windows自动更新和驱动更新 | Felix_SANA &#39;S BLOG</title>
   
   <meta name="author" content="Felix_SANA" />
   <meta http-equiv="Cache-Control" content="no-transform" />
@@ -26,24 +26,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="Document, Windows, 进阶" />
+    <meta name="keywords" content="Windows, 更新, 驱动" />
   
-  <meta name="description" content="前言我在编辑项目文件的时候，遇到了新建项目文件出错的问题，然后去资源目录查看，结果文件夹直接打不开，但是文件夹实际还在那里。 然后尝试删除但是又提示找不到项目，确定不了位置，简直快把我强迫症逼疯了。实际情况如下图。">
+  <meta name="description" content="前言本来我是真觉得更新没什么大不了的，顶多是有时候的bug，虽说影响体验但可以带来新功能，蛮不错的。直到…… 我3060显卡。为什么玩个CONTROL都卡的要死啊？后面试着给驱动降级，好家伙，一降就把帧率稳住了，简直是医学奇迹！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="强制删除某些不存在的文件&#x2F;文件夹">
-<meta property="og:url" content="https://www.systemannounce.com/2024/07/07/other/force-delete-document/index.html">
+<meta property="og:title" content="禁止Windows自动更新和驱动更新">
+<meta property="og:url" content="https://www.systemannounce.com/2024/02/08/learning/system/ban-update/index.html">
 <meta property="og:site_name" content="Felix_SANA &#39;S BLOG">
-<meta property="og:description" content="前言我在编辑项目文件的时候，遇到了新建项目文件出错的问题，然后去资源目录查看，结果文件夹直接打不开，但是文件夹实际还在那里。 然后尝试删除但是又提示找不到项目，确定不了位置，简直快把我强迫症逼疯了。实际情况如下图。">
+<meta property="og:description" content="前言本来我是真觉得更新没什么大不了的，顶多是有时候的bug，虽说影响体验但可以带来新功能，蛮不错的。直到…… 我3060显卡。为什么玩个CONTROL都卡的要死啊？后面试着给驱动降级，好家伙，一降就把帧率稳住了，简直是医学奇迹！">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.systemannounce.com/2024/07/07/other/force-delete-document/images/Markdown/headimg/folder.png">
-<meta property="article:published_time" content="2024-07-07T07:12:00.000Z">
-<meta property="article:modified_time" content="2024-07-07T07:08:05.779Z">
+<meta property="og:image" content="https://www.systemannounce.com/2024/02/08/learning/system/ban-update/images/Markdown/headimg/wub.webp">
+<meta property="article:published_time" content="2024-02-08T01:04:35.000Z">
+<meta property="article:modified_time" content="2024-05-22T09:03:34.988Z">
 <meta property="article:author" content="Felix_SANA">
 <meta property="article:tag" content="Windows">
-<meta property="article:tag" content="进阶">
-<meta property="article:tag" content="Document">
+<meta property="article:tag" content="驱动">
+<meta property="article:tag" content="更新">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.systemannounce.com/2024/07/07/other/force-delete-document/images/Markdown/headimg/folder.png">
+<meta name="twitter:image" content="https://www.systemannounce.com/2024/02/08/learning/system/ban-update/images/Markdown/headimg/wub.webp">
   <link rel="alternate" href="rss2.xml" type="application/atom+xml">
   <!-- 站点验证相关 -->
   
@@ -435,15 +435,15 @@
 
             <article itemscope itemtype="https://schema.org/Article">
     
-    <link itemprop="mainEntityOfPage" href="https://www.systemannounce.com/2024/07/07/other/force-delete-document/">
+    <link itemprop="mainEntityOfPage" href="https://www.systemannounce.com/2024/02/08/learning/system/ban-update/">
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
-                <h1 class="kratos-entry-title text-center" itemprop="name headline">强制删除某些不存在的文件/文件夹</h1>
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">禁止Windows自动更新和驱动更新</h1>
             
             
             <ul class="kratos-post-meta text-center">
-                <li><time datetime="2024-07-07T07:12:00.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-07-07</time></li>
+                <li><time datetime="2024-02-08T01:04:35.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-02-08</time></li>
                 <li itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <i class="fa fa-user"></i> 作者 <span itemprop="name">Felix_SANA</span>
                 </li>
@@ -452,7 +452,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            1539
+                            826
                         
                         字
                     </li>
@@ -464,58 +464,42 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1720336085779"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1716368614988"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
             
                 <div class="kratos-post-inner-toc toc-div-class" >
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%8F%E8%BF%87"><span class="toc-number">2.</span> <span class="toc-text">经过</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3"><span class="toc-number">3.</span> <span class="toc-text">解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E8%8E%B7%E5%8F%96%E7%9F%AD%E8%B7%AF%E5%BE%84%E5%90%8D%E5%B9%B6%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">3.0.1.</span> <span class="toc-text">使用命令提示符获取短路径名并删除文件夹</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A6%81%E6%AD%A2Windows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-number">2.</span> <span class="toc-text">禁止Windows自动更新</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A6%81%E6%AD%A2%E9%A9%B1%E5%8A%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-number">3.</span> <span class="toc-text">禁止驱动自动更新</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A6%81%E6%AD%A2%E9%A9%B1%E5%8A%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E4%B8%94%E4%BF%9D%E7%95%99Windows%E6%9B%B4%E6%96%B0"><span class="toc-number">4.</span> <span class="toc-text">禁止驱动自动更新且保留Windows更新</span></a></li></ol>
                 </div>
             
             <hr />
-            <div itemprop="articleBody"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我在编辑项目文件的时候，遇到了新建项目文件出错的问题，然后去资源目录查看，结果文件夹直接打不开，但是文件夹实际还在那里。</p>
-<p>然后尝试删除但是又提示找不到项目，确定不了位置，简直快把我强迫症逼疯了。实际情况如下图。</p>
+            <div itemprop="articleBody"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本来我是真觉得更新没什么大不了的，顶多是有时候的bug，虽说影响体验但可以带来新功能，蛮不错的。直到……</p>
+<p>我3060显卡。为什么玩个CONTROL都卡的要死啊？后面试着给驱动降级，好家伙，一降就把帧率稳住了，简直是医学奇迹！</p>
 <span id="more"></span>
 
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-07-07%20132924.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-07-07%20133320.png"></p>
-<h1 id="经过"><a href="#经过" class="headerlink" title="经过"></a>经过</h1><p>在网上找了许多方法，什么文件夹无法删除，文件夹不存在，文件夹不在此位置之类的等等许多问题，和我这里这个情况都没有任何关系。</p>
-<p>后面我某种机缘巧合之下，想起了一个方法，想试试用管理员权限的<strong>Terminal</strong>进行删除试试，结果可想而知，当然以失败告终，连 <code>del</code> ， <code>rm</code> ， <code>rd</code> ， <code>Remove-Item -Path &quot;XXX&quot; -Recurse -Force</code>  等命令都直接提示报错。你使用 <code>ls</code> ， <code>Get-ChildItem</code> 还是可以显示出该文件的文件夹信息，但是就是删除不掉。</p>
-<p><strong>以下为中间尝试 <code>rd</code> 命令时候的报错信息，其他的命令基本都差不多。。。</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; rd <span class="string">&quot;C:\Users\xxxxx\AppData\LocalLow\foxxlight\AzureArchive\data\projects\KeiEnd-War Never Changes&quot;</span></span><br><span class="line">rd : Cannot find path <span class="string">&#x27;C:\Users\xxxxx\AppData\LocalLow\foxxlight\AzureArchive\data\projects\KeiEnd-War Never Changes&#x27;</span> b</span><br><span class="line">ecause it does not exist.</span><br><span class="line">At line:1 char:1</span><br><span class="line">+ rd <span class="string">&quot;C:\Users\xxxxxx\AppData\LocalLow\foxxlight\AzureArchive\data\proje ...</span></span><br><span class="line"><span class="string">+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span><br><span class="line"><span class="string">    + CategoryInfo          : ObjectNotFound: (C:\Users\xxxxxx\...r Never Changes:String) [Remove-Item], ItemNotFoundEx</span></span><br><span class="line"><span class="string">   ception</span></span><br><span class="line"><span class="string">    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.RemoveItemCommand</span></span><br></pre></td></tr></table></figure>
-
-<p>……</p>
-<p>经过了一段时间的挣扎，我放弃了…………</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>才怪……！！！</p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><h3 id="使用命令提示符获取短路径名并删除文件夹"><a href="#使用命令提示符获取短路径名并删除文件夹" class="headerlink" title="使用命令提示符获取短路径名并删除文件夹"></a>使用命令提示符获取短路径名并删除文件夹</h3><ol>
-<li><p>打开命令提示符（CMD）：</p>
-<p>按 <code>Win + R</code>，输入 <code>cmd</code>，然后按 <code>Enter</code>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-07-07%20141741.png"></p>
-</li>
-<li><p>导航到目标文件夹的上一级文件夹：</p>
+<h1 id="禁止Windows自动更新"><a href="#禁止Windows自动更新" class="headerlink" title="禁止Windows自动更新"></a>禁止Windows自动更新</h1><p>网上关于这一点的的方法五花八门，调时间（新版已经被禁了），禁服务，关策略，等等。</p>
+<p>等到真正需要它恢复更新时，又不知道从哪里打开。</p>
+<p>即使不需要恢复，有时候关闭的更新服务又莫名其妙打开了。</p>
+<p>真的有时候让人火冒三丈，嘴里嚷嚷着微软的亲吗。</p>
+<p>到这里我就想，如果有个应用，可以快速方便将Windows更新所需的服务禁用，然后在需要的时候可以手动恢复的应用就好了。</p>
+<p>经过我上网一番查找，找到了一个轻量级服务禁用工具，具有以上所有功能，如果你还需要它监管其他服务，也可以手动填写进去。非常方便。<a target="_blank" rel="noopener" href="//cloud.systemannounce.com/OneDrive_AF/Soft/19-WindowsUpdateBlocker/Wub.zip">WindowsUpdateBlocker</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20093506.png"></p>
+<h1 id="禁止驱动自动更新"><a href="#禁止驱动自动更新" class="headerlink" title="禁止驱动自动更新"></a>禁止驱动自动更新</h1><p>如果你已经执行了上面禁止Windows自动更新，那么这个就可以不用管了，只要你不是自己点进控制面板然后选择下载安装他是不会自行更新的。</p>
+<p>或者更保险一点，装驱动的时候不装更新软件。<strong>NVIDIA</strong>就是<strong>GeForce</strong>，<strong>AMD</strong>就是<strong>Radeon Software</strong>。</p>
+<p><em><strong>如果你只是想禁用驱动自动更新但是保留Windows更新，那么你和我一样，请看下文。</strong></em></p>
+<h1 id="禁止驱动自动更新且保留Windows更新"><a href="#禁止驱动自动更新且保留Windows更新" class="headerlink" title="禁止驱动自动更新且保留Windows更新"></a>禁止驱动自动更新且保留Windows更新</h1><p>1、启动本地组策略编辑器</p>
 <blockquote>
-<p>我这里是这个目录，你记得cd到你自己那个文件夹无法删除的目录那里。</p>
+<p><strong>win+R</strong>快捷键打开运行，输入<strong>gpedit.msc</strong>。</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> C:\Users\xxxxxx\AppData\LocalLow\foxxlight\AzureArchive\data\projects</span><br></pre></td></tr></table></figure></li>
-<li><p>使用 <code>dir /x</code> 命令列出文件夹内容，并查看目标文件夹的短路径名：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dir</span> /x</span><br></pre></td></tr></table></figure>
-
-<p>你应该会看到类似这样的输出，其中包含短路径名：</p>
-<p>中间的 <code>KEIEEE~1</code> 就是</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2024/07/07  13:28    &lt;DIR&gt;          KEIEEE~1     KeiEEEEEE-War Never Changes.</span><br></pre></td></tr></table></figure></li>
-<li><p>使用短路径名删除文件夹。例如，如果短路径名是 <code>KEIEEE~1</code>，则使用以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rd /s /q KEIEEE~1</span><br></pre></td></tr></table></figure></li>
-</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20094754.png"></p>
+<p>2、进入组策略编辑器中，依次点击左侧中的<strong>计算机配置–&gt;管理模板–&gt;Windows 组件–&gt;Windows 更新–&gt;管理从 Windows 更新提供的更新</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20094856.png"></p>
+<p>3、然后找到右侧中的“Windows 更新不包括驱动程序”双击打开。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20095219.png"></p>
+<p>4、最后在打开的窗口中，将左上角的“已启用”勾选上，点击确定保存就可以了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-02-08%20095302.png"></p>
+<p>接下来只要你不去自动更新驱动，驱动版本应该是不会变了。</p>
 </div>
         </div>
         
@@ -569,7 +553,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "https://www.systemannounce.com/2024/07/07/other/force-delete-document/",
+                text: "https://www.systemannounce.com/2024/02/08/learning/system/ban-update/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -581,10 +565,10 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "https://www.systemannounce.com/2024/07/07/other/force-delete-document/";
-            const title         = "「强制删除某些不存在的文件/文件夹」";
-            const excerpt       = `前言我在编辑项目文件的时候，遇到了新建项目文件出错的问题，然后去资源目录查看，结果文件夹直接打不开，但是文件夹实际还在那里。
-然后尝试删除但是又提示找不到项目，确定不了位置，简直快把我强迫症逼疯了。实际情况如下图。`;
+            const hostUrl       = "https://www.systemannounce.com/2024/02/08/learning/system/ban-update/";
+            const title         = "「禁止Windows自动更新和驱动更新」";
+            const excerpt       = `前言本来我是真觉得更新没什么大不了的，顶多是有时候的bug，虽说影响体验但可以带来新功能，蛮不错的。直到……
+我3060显卡。为什么玩个CONTROL都卡的要死啊？后面试着给驱动降级，好家伙，一降就把帧率稳住了，简直是医学奇迹！`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -603,10 +587,10 @@
             <div class="footer-tag clearfix">
                 <div class="pull-left">
                 <i class="fa fa-tags"></i>
-                    <a class="tag-none-link" href="/tags/Document/" rel="tag">Document</a>, <a class="tag-none-link" href="/tags/Windows/" rel="tag">Windows</a>, <a class="tag-none-link" href="/tags/%E8%BF%9B%E9%98%B6/" rel="tag">进阶</a>
+                    <a class="tag-none-link" href="/tags/Windows/" rel="tag">Windows</a>, <a class="tag-none-link" href="/tags/%E6%9B%B4%E6%96%B0/" rel="tag">更新</a>, <a class="tag-none-link" href="/tags/%E9%A9%B1%E5%8A%A8/" rel="tag">驱动</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-07-07T07:08:05.779Z" itemprop="dateModified">最后编辑：2024-07-07</time>
+                    <time datetime="2024-05-22T09:03:34.988Z" itemprop="dateModified">最后编辑：2024-05-22</time>
                 </div>
             </div>
         </footer>
@@ -615,12 +599,12 @@
         <nav class="navigation post-navigation clearfix" role="navigation">
             
             <div class="nav-previous clearfix">
-                <a title=" 我们终于得知那天取关我们的粉丝的名字" href="/2024/06/02/learning/Python/bili-fans/">&lt; 上一篇</a>
+                <a title=" 如何分辨AI绘画" href="/2024/01/16/other/AIdraw/">&lt; 上一篇</a>
             </div>
             
             
             <div class="nav-next clearfix">
-                <a title=" (无标题)" href="/2024/07/07/dynamic/test-finished240707/">下一篇 &gt;</a>
+                <a title=" 软件声卡VoiceMeeter使用简介" href="/2024/03/05/other/vmb-introduction/">下一篇 &gt;</a>
             </div>
             
         </nav>
@@ -633,8 +617,8 @@
         const init = () => {
             console.log('Gitalk loading...');
             const gitalk = new Gitalk(Object.assign({
-                id: '/2024/07/07/other/force-delete-document/',
-                path: '/2024/07/07/other/force-delete-document/'
+                id: '/2024/02/08/learning/system/ban-update/',
+                path: '/2024/02/08/learning/system/ban-update/'
             }, JSON.parse('{"clientID":"d9b9c3266335132738ca","clientSecret":"88510a9c8e39beec08aacc631dade7d9ad7e8304","repo":"gitalk","owner":"systemannounce","admin":["systemannounce"],"distractionFreeMode":false}')));
 
             gitalk.render('gitalk-container');
@@ -680,7 +664,7 @@
                 文章
             </span>
             <span class="count">
-                32
+                33
             </span>
         </a>
         <a class="meta-item" href="/categories/">
@@ -712,7 +696,7 @@
         <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%8F%E8%BF%87"><span class="toc-text">经过</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3"><span class="toc-text">解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E8%8E%B7%E5%8F%96%E7%9F%AD%E8%B7%AF%E5%BE%84%E5%90%8D%E5%B9%B6%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">使用命令提示符获取短路径名并删除文件夹</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A6%81%E6%AD%A2Windows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-text">禁止Windows自动更新</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A6%81%E6%AD%A2%E9%A9%B1%E5%8A%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="toc-text">禁止驱动自动更新</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A6%81%E6%AD%A2%E9%A9%B1%E5%8A%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E4%B8%94%E4%BF%9D%E7%95%99Windows%E6%9B%B4%E6%96%B0"><span class="toc-text">禁止驱动自动更新且保留Windows更新</span></a></li></ol>
     </div>
 </aside>
                 
@@ -745,7 +729,10 @@
         
           
           
-            <a class="list-group-item" href="/2024/07/07/other/force-delete-document/"><i class="fa  fa-book"></i> 强制删除某些不存在的文件/文件夹</a>
+        
+          
+          
+            <a class="list-group-item" href="/2024/07/07/learning/system/force-delete-document/"><i class="fa  fa-book"></i> 强制删除某些不存在的文件/文件夹</a>
             
           
         
