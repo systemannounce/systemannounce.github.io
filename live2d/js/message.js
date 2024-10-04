@@ -164,7 +164,7 @@ if(!norunFlag){
 		if (!AITalkFlag) {
 		// 判断timer是否为null
 		if (timer === null) {
-			$.getJSON('https://yiyan.systemannounce.com/', function(result) {
+			$.getJSON('https://yiyan.systemannounce.cn/', function(result) {
 			talkValTimer();
 			cachedHitokoto = result.hitokoto; // 将返回内容缓存
 			showMessage(cachedHitokoto, 0);
@@ -473,10 +473,10 @@ if(!norunFlag){
 	}
 	$(document).ready(function() {
 		var AIimgSrc = [
-			home_Path + message_Path + "model/histoire/histoire.1024/texture_00.png",
-			home_Path + message_Path + "model/histoire/histoire.1024/texture_01.png",
-			home_Path + message_Path + "model/histoire/histoire.1024/texture_02.png",
-			home_Path + message_Path + "model/histoire/histoire.1024/texture_03.png"
+			home_Path + message_Path + "model/histoire/histoire.1024/texture_00.webp",
+			home_Path + message_Path + "model/histoire/histoire.1024/texture_01.webp",
+			home_Path + message_Path + "model/histoire/histoire.1024/texture_02.webp",
+			home_Path + message_Path + "model/histoire/histoire.1024/texture_03.webp"
 		]
 		var images = [];
 		var imgLength = AIimgSrc.length;

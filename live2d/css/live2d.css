@@ -189,22 +189,22 @@
 	background-size:15px;
 }
 .live_ico_item.type_talk{
-	background-image:url(../images/talk.png);
+	background-image:url(../images/talk.webp);
 }
 .live_ico_item.type_quit{
-	background-image:url(../images/quite.png);
+	background-image:url(../images/quite.webp);
 }
 .live_ico_item.type_info{
-	background-image:url(../images/info.png);
+	background-image:url(../images/info.webp);
 }
 .live_ico_item.type_music{
-	background-image:url(../images/music.png);
+	background-image:url(../images/music.webp);
 }
 .live_ico_item.type_youdu{
-	background-image:url(../images/youdu.png);
+	background-image:url(../images/youdu.webp);
 }
 .live_ico_item.type_music.play{
-	background-image:url(../images/pasue.png);
+	background-image:url(../images/pasue.webp);
 }
 .live_ico_item.type_youdu.doudong{
     -webkit-animation-name: shake-little;
