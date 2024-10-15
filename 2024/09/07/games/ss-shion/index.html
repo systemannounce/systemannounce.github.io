@@ -42,7 +42,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.systemannounce.com/2024/09/07/games/ss-shion/images/Markdown/headimg/shion.webp">
 <meta property="article:published_time" content="2024-09-06T16:36:46.000Z">
-<meta property="article:modified_time" content="2024-09-06T16:10:30.134Z">
+<meta property="article:modified_time" content="2024-10-15T03:03:57.914Z">
 <meta property="article:author" content="Felix_SANA">
 <meta property="article:tag" content="SlayTheSpire">
 <meta property="article:tag" content="剧透">
@@ -521,7 +521,7 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1725639030134"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1728961437914"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -549,8 +549,8 @@
 <p>在轮回的无尽战斗中，掌握你的力量，探索故事的真相吧</p>
 <p>在这一切的尽头，时空的魔神在等待</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/shion2.jfif"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/shion1.jfif"></p>
+<p><img src="https://images.systemannounce.com/github/2024/shion2.jfif"></p>
+<p><img src="https://images.systemannounce.com/github/2024/shion1.jfif"></p>
 <h1 id="寻找破解方法"><a href="#寻找破解方法" class="headerlink" title="寻找破解方法"></a>寻找破解方法</h1><p>最简单的当然是自己打通所有的内容，然后吧存档发出来…………</p>
 <p>可惜我在网上找了一堆关于这个模组的内容，可是并没有放任何关于这个模组的破解或者是存档的方法，于是，没办法，只能自己单干了。</p>
 <p>我最先想到的是模组怎么保存自己的内容，怎么记录每个用户的进度，同时还得做到跟随steam云同步。</p>
@@ -558,24 +558,24 @@
 <blockquote>
 <p>具体在：steam客服→我的账户→您steam账户的相关数据→steam云</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/image-20240906221442947.png" alt="steam云"></p>
+<p><img src="https://images.systemannounce.com/github/2024/image-20240906221442947.png" alt="steam云"></p>
 <p>这里前面的文件名已经提示了你存档文件放在了哪里，不过如果你还是找不到的话，可以去百度一下杀戮尖塔的存档目录在哪里。</p>
 <p>我们来到游戏的存档文件夹里面，看到下面的内容</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/image-20240906221628772.png" alt="本地存档文件夹"></p>
+<p><img src="https://images.systemannounce.com/github/2024/image-20240906221628772.png" alt="本地存档文件夹"></p>
 <p>可以看到我们的存档文件夹里面的文件和我们刚刚在steam云里面看到文件<strong>基本一致</strong>，那就没问题了。</p>
 <p>这些类型为文件的文件都是可以用<strong>文本编辑器</strong>打开的。</p>
 <p>我试想过最糟糕的情况是我要从这个一个个文件里面找到数据都存放在哪里，那真的头大了。</p>
 <p>不过，如果让我做开发者，我肯定将游戏的进度信息全部存放在一个文本文件里面，方便调试。</p>
 <p>当然，这个开发者也是这么想的，我就在存档目录里面找到了名为 <code>VUPShionSaves.properties</code> 的文件。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/image-20240906222112141.png" alt="VUPShionSaves.properties文件内容"></p>
+<p><img src="https://images.systemannounce.com/github/2024/image-20240906222112141.png" alt="VUPShionSaves.properties文件内容"></p>
 <p>如果图片里面的文本内容和你的不一样，那别慌，因为现在的内容是我已经改好以后的文件。</p>
 <p>可以看到，文件里面一堆等于号，我就知道我找对了。</p>
 <h1 id="如何改文件"><a href="#如何改文件" class="headerlink" title="如何改文件"></a>如何改文件</h1><p>总所周知，找到存档文件只是第一步，我们还得弄懂这一堆赋值的意义到底是什么，不然找到了也不会改，乱改只会导致游戏的崩溃。</p>
 <p>现在我们只需要把这个文件改个名，然后重新启动一次游戏，它就会自动生成一份最初的 <code>VUPShionSaves.properties</code> 文件给我们</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/image-20240906223112976.png" alt="VUPShionSaves.properties文件最初内容"></p>
+<p><img src="https://images.systemannounce.com/github/2024/image-20240906223112976.png" alt="VUPShionSaves.properties文件最初内容"></p>
 <p>可以看到，相比最初的文件，少了好多内容，而且感觉这些都和我们需要的没有关系，这样子来了，恐怕真的没人会直接根据最初的文件来修改了，于是我们适当加入一些内容进去，嗯，就是简单的试错。</p>
 <p>这里提示各位visual studio code有个很方便的比对</p>
-<p><img src="https://cdn.jsdelivr.net/gh/systemannounce/piceeimg/2024/image-20240906223843446.png" alt="visual studio code比对"></p>
+<p><img src="https://images.systemannounce.com/github/2024/image-20240906223843446.png" alt="visual studio code比对"></p>
 <p>一开始我是将<strong>Achievement</strong>从00解锁到09，结果，没有任何作用，猜想，这个项估计只是管你的游戏进程，并不管你的角色解锁。</p>
 <p>于是，我将目光投向了角色名字，经过搜索，得到了 <code>Aqua角色名</code> 和 <code>Ori角色名</code> 两个模式，进行逐一尝试。</p>
 <p>然后发现ori确实是解锁角色的变量，但是，游戏存在某些校验机制，导致如果使用空号直接修改这个值会导致失效。</p>
@@ -678,7 +678,7 @@
                     <a class="tag-none-link" href="/tags/SlayTheSpire/" rel="tag">SlayTheSpire</a>, <a class="tag-none-link" href="/tags/%E4%BD%8E%E9%98%B6/" rel="tag">低阶</a>, <a class="tag-none-link" href="/tags/%E5%89%A7%E9%80%8F/" rel="tag">剧透</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-09-06T16:10:30.134Z" itemprop="dateModified">最后编辑：2024-09-07</time>
+                    <time datetime="2024-10-15T03:03:57.914Z" itemprop="dateModified">最后编辑：2024-10-15</time>
                 </div>
             </div>
         </footer>
@@ -752,7 +752,7 @@
                 文章
             </span>
             <span class="count">
-                41
+                42
             </span>
         </a>
         <a class="meta-item" href="/categories/">
@@ -811,6 +811,9 @@
   <div class="tab-content">
       <ul class="list-group">
         
+        
+          
+          
         
           
           
