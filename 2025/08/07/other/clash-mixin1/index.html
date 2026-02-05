@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YEVC4N3B1F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YEVC4N3B1F');
+  </script>
+
+  <!-- 错误图片 -->
+   <script src="/js/error-img.js"></script>
+
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  
+  <!-- ba字体文件 -->
+  <link rel="stylesheet" href="https://bafont.systemannounce.com/Blueaka/Blueaka.css" referrerpolicy="no-referrer-when-downgrade" />
+  <link rel="stylesheet" href="https://bafont.systemannounce.com/Blueaka_Bold/Blueaka_Bold.css" referrerpolicy="no-referrer-when-downgrade" />
+      
+      
+  <link rel="icon" href="/images/ico.webp">
+  
+  <title>使用clash的mixin功能进行自定义规则 | Felix_SANA &#39;S BLOG</title>
+  
+  <meta name="author" content="Felix_SANA" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="clash, 国外, 进阶" />
+  
+  <meta name="description" content="前言由于某些原因，规避了一些敏感内容，请自行脑补。 因为在使用过程中会使用各种不同的机场和网站，由于各个网站质量和规则参差不齐，导致切换不同的配置进行上网体验不佳。不过好在clash有mixin功能，可以进行自定义规则组，实现不同机场同样的上网体验。 本篇的演示为clash Premium版本。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用clash的mixin功能进行自定义规则">
+<meta property="og:url" content="https://www.systemannounce.com/2025/08/07/other/clash-mixin1/index.html">
+<meta property="og:site_name" content="Felix_SANA &#39;S BLOG">
+<meta property="og:description" content="前言由于某些原因，规避了一些敏感内容，请自行脑补。 因为在使用过程中会使用各种不同的机场和网站，由于各个网站质量和规则参差不齐，导致切换不同的配置进行上网体验不佳。不过好在clash有mixin功能，可以进行自定义规则组，实现不同机场同样的上网体验。 本篇的演示为clash Premium版本。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.systemannounce.com/2025/08/07/other/clash-mixin1/images/Markdown/headimg/clash.png">
+<meta property="article:published_time" content="2025-08-07T12:48:48.000Z">
+<meta property="article:modified_time" content="2025-08-08T12:39:46.000Z">
+<meta property="article:author" content="Felix_SANA">
+<meta property="article:tag" content="clash">
+<meta property="article:tag" content="国外">
+<meta property="article:tag" content="进阶">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.systemannounce.com/2025/08/07/other/clash-mixin1/images/Markdown/headimg/clash.png">
+  <link rel="alternate" href="rss2.xml" type="application/atom+xml">
+  <!-- 站点验证相关 -->
+  
+    
+    
+      <meta name="baidu-site-verification" content="codeva-OBi5eE1lmE" />
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+
+
+  <style>
+    
+    
+    
+
+    .kratos-cover.kratos-cover-2.text-center {
+    font-family: 'Blueaka', sans-serif;
+    font-weight: 700; /* 使用粗体字体 */
+  }
+
+    .textwidget {
+    font-family: 'Blueaka', sans-serif;
+    font-weight: 300;
+    }
+
+    .kratos-topnav {
+    font-family: 'Blueaka', sans-serif;
+    font-weight: 100;
+    }
+
+    .message {
+    font-family: 'Blueaka', sans-serif;
+    font-weight: 100;
+    }
+
+    .aplayer-lrc {
+  font-family: 'Blueaka', sans-serif;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.9); /* 透明度稍低的白色 */
+  text-shadow: 
+    0 0 5px black; /* 单一模糊阴影 */
+  }
+
+  /* .aplayer.aplayer-withlist.aplayer-fixed {
+    font-family: 'Blueaka', sans-serif;
+    font-weight: 10;
+  } */
+
+  .kratos-copyright {
+    font-family: 'Blueaka', sans-serif;
+    font-weight: 100;
+  }
+
+  .post-comments.lazy-load {
+    font-family: 'Blueaka', sans-serif;
+    font-weight: 100;
+  }
+
+  .linkpage {
+    font-family: 'Blueaka', sans-serif;
+    font-weight: 100;
+  }
+  /* 下面是手机的调整 */
+  .offcanvas-menu {
+    font-family: 'Blueaka', sans-serif;
+    font-weight: 100;
+  }
+  .kratos-mobile-topnav {
+    font-family: 'Blueaka', sans-serif;
+    font-weight: 100;
+  }
+
+  </style>
+  
+
+
+  <link rel="stylesheet" href="/live2d/css/live2d.css" />
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li>
+                                            
+                                                <a href="/">
+                                            
+                                                
+                                                    <i class="fa fa-home"></i>
+                                                
+                                                首页
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-address-book-o"></i>
+                                                
+                                                伊斯特瓦尔
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a href="/archives/">
+                                                                
+                                                                    <i class="fa fa-book"></i>
+                                                                
+                                                                总览
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/search/">
+                                                                
+                                                                    <i class="fa fa-search"></i>
+                                                                
+                                                                搜索
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/2023/05/10/info/AboutME/">
+                                                                
+                                                                    <i class="fa fa-paper-plane-o"></i>
+                                                                
+                                                                关于我
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/2023/05/25/record/gamerecord/">
+                                                                
+                                                                    <i class="fa fa-gamepad"></i>
+                                                                
+                                                                游戏生涯记录
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/2023/05/25/record/animerecord/">
+                                                                
+                                                                    <i class="fa fa-tv"></i>
+                                                                
+                                                                番剧生涯记录
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-users"></i>
+                                                
+                                                友链助力
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a href="/friends/">
+                                                                
+                                                                    <i class="fa fa-address-card-o"></i>
+                                                                
+                                                                友链
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://travel.moe/go.html">
+                                                                
+                                                                    <i class="fa fa-train"></i>
+                                                                
+                                                                异次元
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-inbox"></i>
+                                                
+                                                TOOLS
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://gpt.systemannounce.com">
+                                                                
+                                                                    <i class="fa fa-comments"></i>
+                                                                
+                                                                ChatGPT
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://ba.systemannounce.com">
+                                                                
+                                                                    <i class="fa fa-flash"></i>
+                                                                
+                                                                BAlogo
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://status.systemannounce.com">
+                                                                
+                                                                    <i class="fa fa-arrow-circle-o-up"></i>
+                                                                
+                                                                Status
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/2023/12/09/other/tools/">
+                                                                
+                                                                    <i class="fa fa-arrow-down"></i>
+                                                                
+                                                                MORE
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-server"></i>
+                                                
+                                                NetDisk
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://cloud.systemannounce.com">
+                                                                
+                                                                    <i class="fa fa-hdd-o"></i>
+                                                                
+                                                                源1
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/404.html/">
+                                                                
+                                                                    <i class="fa fa-cloud"></i>
+                                                                
+                                                                暂时寄了
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://drive.systemannounce.com">
+                                                                
+                                                                    <i class="fa fa-cloud-download"></i>
+                                                                
+                                                                源3
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/rss2.xml">
+                                            
+                                                
+                                                    <i class="fa fa-rss"></i>
+                                                
+                                                RSS订阅
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-link"></i>
+                                                
+                                                外链
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://github.com/systemannounce">
+                                                                
+                                                                    <i class="fa fa-github"></i>
+                                                                
+                                                                GitHub
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://music.163.com/#/user/home?id=512603380">
+                                                                
+                                                                    <i class="fa fa-music"></i>
+                                                                
+                                                                NEM
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://www.last.fm/user/systemannounce">
+                                                                
+                                                                    <i class="fa fa-play-circle"></i>
+                                                                
+                                                                LastFM
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://steamcommunity.com/id/systemannouncement">
+                                                                
+                                                                    <i class="fa fa-steam"></i>
+                                                                
+                                                                Steam
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://www.youtube.com/@systemannounce">
+                                                                
+                                                                    <i class="fa fa-youtube-play"></i>
+                                                                
+                                                                YouTube
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://space.bilibili.com/200704172">
+                                                                
+                                                                    <i class="fa fa-video-camera"></i>
+                                                                
+                                                                bilibili
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://bangumi.tv/user/systemannounce">
+                                                                
+                                                                    <i class="fa fa-mixcloud"></i>
+                                                                
+                                                                BGM
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">Felix_SANA &#39;S BLOG</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Felix_SANA &#39;S BLOG</h2> <br />
+                        <span>Beyond your heart and light</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://www.systemannounce.com/2025/08/07/other/clash-mixin1/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">使用clash的mixin功能进行自定义规则</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2025-08-07T12:48:48.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2025-08-07</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Felix_SANA</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~13.18K
+                        
+                        字
+                    </li>
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1754656786000"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mixin%E5%8A%9F%E8%83%BD%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">Mixin功能简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">简单使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E7%9B%96%E5%8D%B3%E7%94%A8%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">开盖即用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">深度自定义法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89"><span class="toc-number">3.3.</span> <span class="toc-text">如何自定义</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text">结语</span></a></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由于某些原因，规避了一些敏感内容，请自行脑补。</p>
+<p>因为在使用过程中会使用各种不同的机场和网站，由于各个网站质量和规则参差不齐，导致切换不同的配置进行上网体验不佳。不过好在clash有mixin功能，可以进行自定义规则组，实现不同机场同样的上网体验。</p>
+<p>本篇的演示为clash Premium版本。</p>
+<span id="more"></span>
+
+<h1 id="Mixin功能简介"><a href="#Mixin功能简介" class="headerlink" title="Mixin功能简介"></a>Mixin功能简介</h1><p>由于众所周知的原因，官网现在已不可查，所以介绍我就尽可能简短，毕竟这篇博客是一个应用文不是原理文。</p>
+<p><img src="https://images.systemannounce.com/i/1/2025/08/image-20250807210425883.webp" alt="mixin官网"></p>
+<p>mixin功能说白了就和很多的软件一样，可以用你的自定义规则覆盖clash原有的配置，包括各个机场的规则组。</p>
+<p>基于这个功能，我们只需要写一套规则组，然后用mixin功能覆盖各个机场的配置文件规则组即可。</p>
+<h1 id="简单使用方法"><a href="#简单使用方法" class="headerlink" title="简单使用方法"></a>简单使用方法</h1><p>首先我们来到clash的首页，点击混合代理右边的齿轮。</p>
+<p><img src="https://images.systemannounce.com/i/1/2025/08/image-20250807210853477.webp" alt="mixin配置处"></p>
+<p><strong>由于mixin文件书写的缩进很重要，所以请注意缩进的格式！！</strong></p>
+<p>下面是我目前使用的mixin配置：<strong>「请不要直接复制过去使用！需要进行进阶配置！！」</strong></p>
+<p>我的配置文件使用并参考了了此<a target="_blank" rel="noopener" href="https://github.com/Loyalsoldier/clash-rules">GitHub项目</a>，再次感谢各位开源作者们。</p>
+<blockquote>
+<p>我不会对该配置文件做详细解释，有需求的请自行Google</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mixin:</span> <span class="comment"># object</span></span><br><span class="line">    <span class="attr">dns:</span></span><br><span class="line">        <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">listen:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">:53</span></span><br><span class="line">        <span class="attr">ipv6:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">default-nameserver:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="number">1.1</span><span class="number">.1</span><span class="number">.1</span></span><br><span class="line">            <span class="bullet">-</span> <span class="number">8.8</span><span class="number">.8</span><span class="number">.8</span></span><br><span class="line">        <span class="attr">enhanced-mode:</span> <span class="string">fake-ip</span></span><br><span class="line">        <span class="attr">fake-ip-range:</span> <span class="number">198.18</span><span class="number">.0</span><span class="number">.1</span><span class="string">/16</span></span><br><span class="line">        <span class="attr">nameserver:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://doh.pub/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://dns.alidns.com/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://1.1.1.1/dns-query</span></span><br><span class="line">        <span class="attr">fallback:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://max.rethinkdns.com/</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://sky.rethinkdns.com/</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://doh.dns.sb/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://dns.cloudflare.com/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://dns.twnic.tw/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">tls://8.8.4.4:853</span></span><br><span class="line">        <span class="attr">fallback-filter:</span></span><br><span class="line">            <span class="attr">geoip:</span> <span class="literal">true</span></span><br><span class="line">            <span class="attr">geoip-code:</span> <span class="string">CN</span></span><br><span class="line">            <span class="attr">ipcidr:</span></span><br><span class="line">                <span class="bullet">-</span> <span class="number">240.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">/4</span></span><br><span class="line">            <span class="attr">domain:</span></span><br><span class="line">                <span class="bullet">-</span> <span class="string">&#x27;-bing.com&#x27;</span></span><br><span class="line">                <span class="bullet">-</span> <span class="string">&#x27;+systemannounce.com&#x27;</span></span><br><span class="line">    <span class="attr">rule-providers:</span></span><br><span class="line">        <span class="attr">reject:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/reject.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">icloud:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/icloud.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">apple:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/apple.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">google:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/google.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">proxy:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/proxy.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">direct:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/direct.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">private:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/private.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">gfw:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/gfw.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">tld-not-cn:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/tld-not-cn.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">telegramcidr:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">ipcidr</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/telegramcidr.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">cncidr:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">ipcidr</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/cncidr.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">lancidr:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">ipcidr</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/lancidr.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">applications:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">classical</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/applications.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="attr">rules:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,applications,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">DOMAIN,clash.razord.top,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">DOMAIN,yacd.haishan.me,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,private,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,reject,REJECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,icloud,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,apple,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,google,🚀</span> <span class="string">节点选择</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,proxy,🚀</span> <span class="string">节点选择</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,direct,DIRECT</span></span><br><span class="line">        <span class="comment"># - RULE-SET,lancidr,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,cncidr,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,telegramcidr,🚀</span> <span class="string">节点选择</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">GEOIP,LAN,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">GEOIP,CN,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">MATCH,🚀</span> <span class="string">节点选择</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="开盖即用法"><a href="#开盖即用法" class="headerlink" title="开盖即用法"></a>开盖即用法</h2><p>将下面的配置文件复制进你的mixin配置文件处，然后用你当前机场的订阅组名称替换掉 <code>REPLACE</code> 即可。</p>
+<blockquote>
+<p>什么叫当前订阅组名称？请看：</p>
+<p><img src="https://images.systemannounce.com/i/1/2025/08/image-20250807212659790.webp" alt="订阅组名称"></p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mixin:</span> <span class="comment"># object</span></span><br><span class="line">    <span class="attr">dns:</span></span><br><span class="line">        <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">listen:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">:53</span></span><br><span class="line">        <span class="attr">ipv6:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">default-nameserver:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="number">1.1</span><span class="number">.1</span><span class="number">.1</span></span><br><span class="line">            <span class="bullet">-</span> <span class="number">8.8</span><span class="number">.8</span><span class="number">.8</span></span><br><span class="line">        <span class="attr">enhanced-mode:</span> <span class="string">fake-ip</span></span><br><span class="line">        <span class="attr">fake-ip-range:</span> <span class="number">198.18</span><span class="number">.0</span><span class="number">.1</span><span class="string">/16</span></span><br><span class="line">        <span class="attr">nameserver:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://doh.pub/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://dns.alidns.com/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://1.1.1.1/dns-query</span></span><br><span class="line">        <span class="attr">fallback:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://max.rethinkdns.com/</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://sky.rethinkdns.com/</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://doh.dns.sb/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://dns.cloudflare.com/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://dns.twnic.tw/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">tls://8.8.4.4:853</span></span><br><span class="line">        <span class="attr">fallback-filter:</span></span><br><span class="line">            <span class="attr">geoip:</span> <span class="literal">true</span></span><br><span class="line">            <span class="attr">geoip-code:</span> <span class="string">CN</span></span><br><span class="line">            <span class="attr">ipcidr:</span></span><br><span class="line">                <span class="bullet">-</span> <span class="number">240.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">/4</span></span><br><span class="line">            <span class="attr">domain:</span></span><br><span class="line">                <span class="bullet">-</span> <span class="string">&#x27;-bing.com&#x27;</span></span><br><span class="line">                <span class="bullet">-</span> <span class="string">&#x27;+systemannounce.com&#x27;</span></span><br><span class="line">    <span class="attr">rule-providers:</span></span><br><span class="line">        <span class="attr">reject:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt&quot;</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./ruleset/reject.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">icloud:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt&quot;</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./ruleset/icloud.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">apple:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt&quot;</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./ruleset/apple.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">google:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt&quot;</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./ruleset/google.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">proxy:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt&quot;</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./ruleset/proxy.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">direct:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt&quot;</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./ruleset/direct.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">private:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt&quot;</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./ruleset/private.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">gfw:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt&quot;</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./ruleset/gfw.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">tld-not-cn:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt&quot;</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./ruleset/tld-not-cn.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">telegramcidr:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">ipcidr</span></span><br><span class="line">            <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt&quot;</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./ruleset/telegramcidr.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">cncidr:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">ipcidr</span></span><br><span class="line">            <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt&quot;</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./ruleset/cncidr.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">lancidr:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">ipcidr</span></span><br><span class="line">            <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt&quot;</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./ruleset/lancidr.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">applications:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">classical</span></span><br><span class="line">            <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt&quot;</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./ruleset/applications.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="attr">rules:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,applications,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">DOMAIN,clash.razord.top,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">DOMAIN,yacd.haishan.me,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,private,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,reject,REJECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,icloud,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,apple,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,google,REPLACE</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,proxy,REPLACE</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,direct,DIRECT</span></span><br><span class="line">        <span class="comment"># - RULE-SET,lancidr,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,cncidr,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,telegramcidr,REPLACE</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">GEOIP,LAN,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">GEOIP,CN,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">MATCH,REPLACE</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="深度自定义法"><a href="#深度自定义法" class="headerlink" title="深度自定义法"></a>深度自定义法</h2><p>那么如果这个开源项目的规则组还是不能满足你的需求，有些网站还是被误杀了，访问不了，请看接下来的方法。</p>
+<p>这里需要注意你的clash的资料夹路径，这个路径可以在设置中查找到：</p>
+<p><img src="https://images.systemannounce.com/i/1/2025/08/image-20250807213015725.webp" alt="clash资料夹路径"></p>
+<p>在你的资料夹文件夹下面创建一个local文件夹，然后再在local文件夹下面创建一个rule文件夹，下载这个<a href="/download/mixin.7z">压缩包</a>，解压缩在rule文件夹下即可，完成后路径和文件夹如下所示：</p>
+<p><img src="https://images.systemannounce.com/i/1/2025/08/image-20250807214033596.webp" alt="rule文件夹"></p>
+<p>然后将下面的配置文件复制进你的mixin配置文件处，然后用你当前机场的订阅组名称替换掉 <code>REPLACE</code> 即可。</p>
+<blockquote>
+<p>什么叫当前订阅组名称？请看：</p>
+<p><img src="https://images.systemannounce.com/i/1/2025/08/image-20250807212659790.webp" alt="订阅组名称"></p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mixin:</span> <span class="comment"># object</span></span><br><span class="line">    <span class="attr">dns:</span></span><br><span class="line">        <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">listen:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">:53</span></span><br><span class="line">        <span class="attr">ipv6:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">default-nameserver:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="number">1.1</span><span class="number">.1</span><span class="number">.1</span></span><br><span class="line">            <span class="bullet">-</span> <span class="number">8.8</span><span class="number">.8</span><span class="number">.8</span></span><br><span class="line">        <span class="attr">enhanced-mode:</span> <span class="string">fake-ip</span></span><br><span class="line">        <span class="attr">fake-ip-range:</span> <span class="number">198.18</span><span class="number">.0</span><span class="number">.1</span><span class="string">/16</span></span><br><span class="line">        <span class="attr">nameserver:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://doh.pub/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://dns.alidns.com/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://1.1.1.1/dns-query</span></span><br><span class="line">        <span class="attr">fallback:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://max.rethinkdns.com/</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://sky.rethinkdns.com/</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://doh.dns.sb/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://dns.cloudflare.com/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">https://dns.twnic.tw/dns-query</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">tls://8.8.4.4:853</span></span><br><span class="line">        <span class="attr">fallback-filter:</span></span><br><span class="line">            <span class="attr">geoip:</span> <span class="literal">true</span></span><br><span class="line">            <span class="attr">geoip-code:</span> <span class="string">CN</span></span><br><span class="line">            <span class="attr">ipcidr:</span></span><br><span class="line">                <span class="bullet">-</span> <span class="number">240.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">/4</span></span><br><span class="line">            <span class="attr">domain:</span></span><br><span class="line">                <span class="bullet">-</span> <span class="string">&#x27;-bing.com&#x27;</span></span><br><span class="line">                <span class="bullet">-</span> <span class="string">&#x27;+systemannounce.com&#x27;</span></span><br><span class="line">    <span class="attr">rule-providers:</span></span><br><span class="line">        <span class="attr">reject:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/reject.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">icloud:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/icloud.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">apple:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/apple.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">google:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/google.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">proxy:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/proxy.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">direct:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/direct.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">private:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/private.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">gfw:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/gfw.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">tld-not-cn:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/tld-not-cn.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">telegramcidr:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">ipcidr</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/telegramcidr.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">cncidr:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">ipcidr</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/cncidr.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">lancidr:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">ipcidr</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/lancidr.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">        <span class="attr">applications:</span></span><br><span class="line">            <span class="attr">type:</span> <span class="string">file</span></span><br><span class="line">            <span class="attr">behavior:</span> <span class="string">classical</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">./local/rule/applications.yaml</span></span><br><span class="line">            <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="attr">rules:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,applications,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">DOMAIN,clash.razord.top,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">DOMAIN,yacd.haishan.me,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,private,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,reject,REJECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,icloud,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,apple,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,google,REPLACE</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,proxy,REPLACE</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,direct,DIRECT</span></span><br><span class="line">        <span class="comment"># - RULE-SET,lancidr,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,cncidr,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">RULE-SET,telegramcidr,REPLACE</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">GEOIP,LAN,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">GEOIP,CN,DIRECT</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">MATCH,REPLACE</span></span><br></pre></td></tr></table></figure>
+
+<p>随后我们将混合配置的开关给打开就会发现我们下面多了一个提供的选项窗口，点击进入发现类似于这样就成功了。</p>
+<p><img src="https://images.systemannounce.com/i/1/2025/08/image-20250807214324748.webp" alt="rule providers"></p>
+<h2 id="如何自定义"><a href="#如何自定义" class="headerlink" title="如何自定义"></a>如何自定义</h2><p>文件是配置好了，如果再次遇到规则配置错网站那该怎么办呢？</p>
+<p>首先我们打开clash的日志页，将日志的信息呈现调成「详细」和「信息」。</p>
+<p>再次打开我们需要调整的网站，我们会在日志里面看到该请求所使用的规则组，使用的代理还有状态。</p>
+<p><img src="https://images.systemannounce.com/i/1/2025/08/image-20250807215608533.webp" alt="如何看懂日志"></p>
+<p>比如，我们一个 <code>www.systemannounce.com</code> 的请求错误使用了代理组proxy，而我们想让它直连，那我们首先来到clash刚刚新多出来的提供选项窗口，找到proxy代理组，点击右边的edit file，找到 <code>systemannounce.com</code> 类似的请求，然后删除，再把域名加到direct代理组里即可。</p>
+<p><img src="https://images.systemannounce.com/i/1/2025/08/image-20250807215934815.webp" alt="clash更改代理组1"></p>
+<p><img src="https://images.systemannounce.com/i/1/2025/08/image-20250807220055479.webp" alt="clash更改代理组2"></p>
+<p>需要说明的是，这前面的 <code>+.</code> 的意思是匹配当前域名下的所有小一级域名。比如 <code>+.example.com</code> ，表示匹配任何以 <code>example.com</code> 结尾的域名，包括 <code>ww1.example.com</code> ， <code>mail.example.com</code> 等等。但是不匹配 <code>aexample.com</code> ， <code>ww1.aexample.com</code> 等域名。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>到目前为止，你已经掌握了自定义规则组的能力，虽然本文还有很多没说到的内容，但是相信凭借你的聪明才知一定可以攻破难关。</p>
+<p>比如相信你已经发现了：</p>
+<p><img src="https://images.systemannounce.com/i/1/2025/08/image-20250807220618457.webp" alt="rules"></p>
+<p>这里的意思是，将applications，private，icloud等规则组文件内的域名全部直连，将Google和proxy文件内的域名全部代理，走🚀 节点选择这个规则组下的节点。</p>
+<p>好了让我们下次再见。</p>
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://www.systemannounce.com/2025/08/07/other/clash-mixin1/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://www.systemannounce.com/2025/08/07/other/clash-mixin1/";
+            const title         = "「使用clash的mixin功能进行自定义规则」";
+            const excerpt       = `前言由于某些原因，规避了一些敏感内容，请自行脑补。
+因为在使用过程中会使用各种不同的机场和网站，由于各个网站质量和规则参差不齐，导致切换不同的配置进行上网体验不佳。不过好在clash有mixin功能，可以进行自定义规则组，实现不同机场同样的上网体验。
+本篇的演示为clash Premium版本。`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/clash/" rel="tag">clash</a>, <a class="tag-none-link" href="/tags/%E5%9B%BD%E5%A4%96/" rel="tag">国外</a>, <a class="tag-none-link" href="/tags/%E8%BF%9B%E9%98%B6/" rel="tag">进阶</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2025-08-08T12:39:46.000Z" itemprop="dateModified">最后编辑：2025-08-08</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 毕业旅行？（bushi" href="/2025/05/29/share/img/graduation/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" (无标题)" href="/2026/01/31/dynamic/2024birthday/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+        <link rel="stylesheet" href="/vendors/gitalk@1.7.2/dist/gitalk.css"></script>
+<div id="gitalk-container" class="post-comments lazy-load" style="padding-left:2rem; padding-right:2rem;"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            console.log('Gitalk loading...');
+            const gitalk = new Gitalk(Object.assign({
+                id: '/2025/08/07/other/clash-mixin1/',
+                path: '/2025/08/07/other/clash-mixin1/'
+            }, JSON.parse('{"clientID":"d9b9c3266335132738ca","clientSecret":"88510a9c8e39beec08aacc631dade7d9ad7e8304","repo":"gitalk","owner":"systemannounce","admin":["systemannounce"],"distractionFreeMode":false}')));
+
+            gitalk.render('gitalk-container');
+        }
+        if (typeof Gitalk === 'undefined') {
+            const src = '/vendors/gitalk@1.7.2/dist/gitalk.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://github.com/gitalk/gitalk">comments powered by Gitalk.</a></noscript>
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/66364037_p0.webp" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">I linger not within your heart, but wander on its outskirts, perhaps in a realm untouched by your light.</p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                49
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                8
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                61
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mixin%E5%8A%9F%E8%83%BD%E7%AE%80%E4%BB%8B"><span class="toc-text">Mixin功能简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">简单使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E7%9B%96%E5%8D%B3%E7%94%A8%E6%B3%95"><span class="toc-text">开盖即用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%95"><span class="toc-text">深度自定义法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89"><span class="toc-text">如何自定义</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-text">结语</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><span class="category-list-count">21</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/Python/">Python</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E6%9D%82%E9%A1%B9/">杂项</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%9B%98/">网盘</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/%E7%BD%91%E7%AB%99/">网站</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a><span class="category-list-count">4</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/AI/" style="font-size: 0.67em;">AI</a> <a href="/tags/AI%E7%BB%98%E7%94%BB/" style="font-size: 0.6em;">AI绘画</a> <a href="/tags/Blue-Archive/" style="font-size: 0.73em;">Blue Archive</a> <a href="/tags/ChatGPT/" style="font-size: 0.6em;">ChatGPT</a> <a href="/tags/Document/" style="font-size: 0.6em;">Document</a> <a href="/tags/Github/" style="font-size: 0.6em;">Github</a> <a href="/tags/JavaScript/" style="font-size: 0.67em;">JavaScript</a> <a href="/tags/Markdown/" style="font-size: 0.6em;">Markdown</a> <a href="/tags/PT/" style="font-size: 0.6em;">PT</a> <a href="/tags/Python/" style="font-size: 0.8em;">Python</a> <a href="/tags/SlayTheSpire/" style="font-size: 0.6em;">SlayTheSpire</a> <a href="/tags/Steam/" style="font-size: 0.67em;">Steam</a> <a href="/tags/Windows/" style="font-size: 0.73em;">Windows</a> <a href="/tags/bilibili/" style="font-size: 0.67em;">bilibili</a> <a href="/tags/blog/" style="font-size: 0.6em;">blog</a> <a href="/tags/cdn/" style="font-size: 0.6em;">cdn</a> <a href="/tags/clash/" style="font-size: 0.6em;">clash</a> <a href="/tags/git/" style="font-size: 0.6em;">git</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            <a class="list-group-item" href="/2025/08/07/other/clash-mixin1/"><i class="fa  fa-book"></i> 使用clash的mixin功能进行自定义规则</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2025/05/29/share/img/graduation/"><i class="fa  fa-book"></i> 毕业旅行？（bushi</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/11/12/share/software/rime1/"><i class="fa  fa-book"></i> 放弃搜狗输入法后，我选择了它</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/10/11/learning/Python/SteamFriends/"><i class="fa  fa-book"></i> 找到Steam突然消失的好友（预防）</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2024/09/16/learning/git/git-undo-commmit/"><i class="fa  fa-book"></i> git强制修改提交历史</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
+                        
+                        <li><a href="mailto:felixsana@systemannounce.com"><i class="fa fa-envelope"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/systemannounce"><i class="fa fa-telegram"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://twitter.com/systemannounce"><i class="fa fa-twitter"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://www.facebook.com/systemannounce"><i class="fa fa-facebook-official"></i></a></li>
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/systemannounce"><i class="fa fa-github"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="/rss2.xml"><i class="fa fa-rss"></i></a></li>
+                        <!-- New links -->
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2026 Felix_SANA 'S BLOG 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by Felix_SANA.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a target="_blank" rel="noopener" href="https://systemannounce.github.io">Github Pages</a>  &  <a target="_blank" rel="noopener" href="https://systemannounce.netlify.app">Netlify</a></li>
+                            <li> | <a href="/private.html" target="_blank" rel="nofollow">Privacy Policy</a></li>
+                        </div>
+                        <div>
+                            <li><a href="https://beian.miit.gov.cn" rel="external nofollow" target="_blank"><a href="https://icp.gov.moe/?keyword=20232112" target="_blank">萌ICP备20232112号</a> | <a style="text-decoration:none;color:#55bb8a;" href="https://travel.moe/go.html?travel=on" title="异次元之旅-跃迁-我们一起去萌站成员的星球旅行吧！" target="_blank"><img src="https://travel.moe/images/icon/icon64green.png" style="width:24px;height:24px">异次元之旅</a></a></li>
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="snow-switch">
+                        <span class="fa fa-snowflake-o"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async src="/js/snow.min.js"></script>
+    </div>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="8410660170"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+        
+        <div id="landlord" style="left:35px;bottom:75px;">
+            <div class="message" style="opacity:0"></div>
+            <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+            <div class="live_talk_input_body">
+                <div class="live_talk_input_name_body">
+                    <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+                </div>
+                <div class="live_talk_input_text_body">
+                    <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
+                    <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+                </div>
+            </div>
+            <input name="live_talk" id="live_talk" value="1" type="hidden" />
+            <div class="live_ico_box">
+                <div class="live_ico_item type_info" id="showInfoBtn"></div>
+                <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+                <div class="live_ico_item type_music" id="musicButton"></div>
+                <div class="live_ico_item type_youdu" id="youduButton"></div>
+                <div class="live_ico_item type_quit" id="hideButton"></div>
+                <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+                <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+                <input name="live2dBGM" value="音乐地址，建议别碰" type="hidden">
+                <input id="duType" value="douqilai,l2d_caihong" type="hidden">
+            </div>
+        </div>
+        <div id="open_live2d">召唤伊斯特瓦尔</div>
+
+        <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script>
+        var message_Path = '/live2d/';//资源目录，如果目录不对请更改
+        var talkAPI = "";//如果有类似图灵机器人的聊天接口请填写接口路径
+        </script>
+        <script type="text/javascript" src="/live2d/js/live2d.js"></script>
+        <script type="text/javascript" src="/live2d/js/message.js"></script>
+    </body>
+</html>
