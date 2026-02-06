@@ -9,8 +9,38 @@
     <atom:link href="https://www.systemannounce.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>I linger not within your heart, but wander on its outskirts, perhaps in a realm untouched by your light.</description>
-    <pubDate>Tue, 15 Oct 2024 03:03:58 GMT</pubDate>
+    <pubDate>Fri, 06 Feb 2026 05:50:15 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>关于我的新电脑</title>
+      <link>https://www.systemannounce.com/2026/02/06/other/2026new-pc/</link>
+      <guid>https://www.systemannounce.com/2026/02/06/other/2026new-pc/</guid>
+      <pubDate>Fri, 06 Feb 2026 00:57:09 GMT</pubDate>
+      
+      <description>&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;本篇是关于我组装个人电脑的一些趣事和经验经历&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其实我装电脑这个想法从好多年前的高中就开始计划了，想攒钱买一台自己的个人电脑，然后最终决定工作一年以后也就是2026年年初购买，但是，你都知道发生了什么。&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote><p>本篇是关于我组装个人电脑的一些趣事和经验经历</p></blockquote><p>其实我装电脑这个想法从好多年前的高中就开始计划了，想攒钱买一台自己的个人电脑，然后最终决定工作一年以后也就是2026年年初购买，但是，你都知道发生了什么。</p><span id="more"></span><p><img src="https://images.systemannounce.com/i/1/2026/02/image-20260206120945941.webp" alt="我的主机"></p><h1 id="悲惨的配件购买之路"><a href="#悲惨的配件购买之路" class="headerlink" title="悲惨的配件购买之路"></a>悲惨的配件购买之路</h1><h2 id="内存涨价"><a href="#内存涨价" class="headerlink" title="内存涨价"></a>内存涨价</h2><p>刚好2025年开始打工开始，内存的价格莫名其妙就开始上升，只不过那个时候我没关注这方面，想着年底再买，到时候时间多得很慢慢挑一次配齐，这碰巧就是悲剧的开始……</p><p><img src="https://images.systemannounce.com/i/1/2026/02/image-20260206115920455.webp" alt="内存涨价曲线"></p><h2 id="最后挽救的机会"><a href="#最后挽救的机会" class="headerlink" title="最后挽救的机会"></a>最后挽救的机会</h2><p>中间碰巧我同学再十月多的时候想装机，由于我是他圈子里面最懂电脑的，来找我想让我给他看看配置，我欣然同意，让他自己先挑配置我再看。</p><p>中途他找我说内存的价格怎么这么贵……我不以为然，以为只是平常618还有11&#x2F;11的正常价格起伏，就没关注，这时候我还没有引起注意，只是上去看了一下，内存的价格确实贵了很多，比平常贵了大概500左右，我想的是我反正到年底才买，到时候再看价格吧。</p><h2 id="悲剧"><a href="#悲剧" class="headerlink" title="悲剧"></a>悲剧</h2><p>在十二月的时候我再看价格，那时候才知道什么星际之门，奥特曼，AI，之类的冲击内存市场还有导购……</p><p>可惜以及无法挽回了。我这时候脑海中有两个想法：</p><ol><li>继续等，到明年再看看价格，说不定只是初期黄牛囤货，过不了一两个月就会降下来。</li><li>马上入手，毕竟我打算一月份就配一台主机，这点时间真的能降低下来吗？</li></ol><p>最后我选择了后者，在48G套条比平常贵了1500的情况下含泪入手。</p><h2 id="其他配件"><a href="#其他配件" class="headerlink" title="其他配件"></a>其他配件</h2><p>买了内存后，我后面天天都在看我想要购买的配件，先做初期计划看看想要买哪些东西。然后就发现<strong>显存</strong>这个东西，貌似，好像，应该，也许会受到内存价格影响，果不其然，过了几天，我想买的显卡直接涨价500。</p><p>没法等一点，我赶紧找到第三方店铺买了较低价格的七彩虹RTX 5080 Ultra W OC 16GB，当时是8999买的，到我写这篇的时候，已经涨到了10499（京东自营）……</p><p><img src="https://images.systemannounce.com/i/1/2026/02/image-20260206122017736.webp" alt="七彩虹显卡商品页"></p><p>其他的配件还有固态硬盘也水涨船高，机械也跟风涨价，其他的就没什么了，下面是我的配置：</p><h2 id="详细配置"><a href="#详细配置" class="headerlink" title="详细配置"></a>详细配置</h2><table><thead><tr><th>配件</th><th>型号</th><th>价格</th></tr></thead><tbody><tr><td>CPU</td><td>AMD 9950X</td><td>板U套装</td></tr><tr><td>主板</td><td>华硕ROG B850-A WIFI S 吹雪</td><td>套装5415</td></tr><tr><td>GPU</td><td>七彩虹RTX 5080</td><td>8999</td></tr><tr><td>内存</td><td>阿斯加特24GBx2 DDR5 6000 C28</td><td>2788</td></tr><tr><td>硬盘1</td><td>致态 TiPro 9000 2TB</td><td>1775</td></tr><tr><td>硬盘2</td><td>致态 Ti 7100s 4TB</td><td>2826</td></tr><tr><td>硬盘3</td><td>西数蓝盘 6TB</td><td>955</td></tr><tr><td>水冷</td><td>瓦尔基里 B360</td><td>574</td></tr><tr><td>电源</td><td>长城1000W F10</td><td>699</td></tr><tr><td>机箱</td><td>爱国者 星璨霄</td><td>429</td></tr><tr><td>机箱风扇</td><td>利民 TLM12QW   <strong>*8</strong></td><td>280</td></tr><tr><td>声卡</td><td>PRESONUS Audio Box GO</td><td>571</td></tr><tr><td>桌面音响</td><td>漫步者MR3BT</td><td>434</td></tr><tr><td>键盘</td><td>ATK A98Pro</td><td>330</td></tr><tr><td>鼠标</td><td>漫步者G3M</td><td>179</td></tr><tr><td>显示器</td><td>RedMi G PRO 27U</td><td>2500</td></tr><tr><td>耳机</td><td>Sony WH-1000XM5</td><td>1682</td></tr><tr><td><strong>总价</strong></td><td><strong>不包含其他装饰性用品</strong></td><td><strong>30436</strong></td></tr></tbody></table><h1 id="平平无奇的装机"><a href="#平平无奇的装机" class="headerlink" title="平平无奇的装机"></a>平平无奇的装机</h1><h2 id="装机前置"><a href="#装机前置" class="headerlink" title="装机前置"></a>装机前置</h2><p>因为我已经装过三四台电脑了， 所以这方面的经验我是用有的。</p><p>第一台电脑是我在2019年装的<strong>2060+2600x</strong>，后面上大学以后卖给别人了。</p><p>后面几台电脑都是帮别人的新电脑装机的，<strong>没有收费</strong>。</p><p>在十二月份买了配件以后我一直在等年底请假回家装机，没想到最后的结果是辞职回家了，不过也好，换个环境再试吧。</p><h2 id="装机"><a href="#装机" class="headerlink" title="装机"></a>装机</h2><p>装机的过程吗？没有什么特别的，你真的装过机的话就会感觉像是搭积木，小白不用怕，只要别傻大粗大力出奇迹很难装坏的。</p><p><strong>就是……别买利民的机箱风扇！！</strong></p><p>扭个风扇螺丝能把我的手给整残废，但是不用力又扭不紧，唉。</p><p>有条件买个螺丝套装，比单个没法改头的螺丝刀要好用很多，在装机上。</p><h2 id="装系统"><a href="#装系统" class="headerlink" title="装系统"></a>装系统</h2><p>有条件的话还是买个U盘辅助安装比较好，刷个微PE下一个Windows的安装包就可以了。如果未来各位有需求的话我也可以出一个教程。。</p><p>**注意⚠️：**在初次进入Windows 11的时候，会让你联网，如果你实在没有网络的话，可以在联网的界面按下Shift+F10进入命令提示符，然后输入 <code>OOBE\BYPASSNRO</code> ，然后等待重启即可，然后再就可以在联网界面看到下面有个 <code>我没有Internet</code> 的按钮，点击即可跳过联网验证和账户登录。</p><p><strong>！！！！很重要！！！！</strong><br><strong>如果你跳过了联网验证，或者是你微软绑定的邮箱里面有中文或者其他不属于ASCII码字符范围的字符的话，请一定要多做一点操作。</strong></p><p><strong>换绑邮箱  或者  在上面跳过联网的后续操作中输入的名字一定不要有中文！！！！</strong></p><p><img src="https://images.systemannounce.com/i/1/2026/02/feb7dfa3257b796a196eb.webp" alt="Windows 11输入姓名页面"></p><p>其实你上面有中文也无所谓，只不过后面如果你要用很古老的软件或者一些很偏执的软件，他必须要保存数据到你的用户文件夹里面，而你的名字有中文，同时它又不支持非ASCII字符的话，那你就死活装不上。</p><h1 id="配置电脑"><a href="#配置电脑" class="headerlink" title="配置电脑"></a>配置电脑</h1><h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>装完电脑才是开始，接下来初始配置才是重头戏，如果配置不好那就可能会伴随你使用电脑一辈子了（除非你随时随地都可以重装系统），反正我是不行，电脑里面的项目和博客还有很多软件的配置很麻烦的，配置一次就得好久，尤其是PotPlayer，终端，还有编程的环境。</p><p>well，由于详细的配置方面超出了本文的范围，故在这里只详细一些简单的操作，复杂的操作一笔带过，如果有这方面的需求可以催更。</p><h2 id="激活系统"><a href="#激活系统" class="headerlink" title="激活系统"></a>激活系统</h2><p>上来第一件事当然是激活系统了，这里有很方便的工程，而且微软基本默许的<a href="https://massgrave.dev/">MAS</a></p><p>里面都有详细的操作指南和系统的下载链接🔗，很方便，看看的话能解决你不少问题。</p><h2 id="关闭索引"><a href="#关闭索引" class="headerlink" title="关闭索引"></a>关闭索引</h2><p>这个索引除非你真的有很偏门的需求，不然都建议将Windows自带的索引关掉，会让你的文件管理器又卡又慢，至于怎么卡怎么慢，请看bilibili。</p><p>那你就要问了，不是，那我想找某个文件找不到了怎么办？</p><p>请用<a href="https://www.voidtools.com/zh-cn/"><strong>Everything</strong></a>：</p><p><img src="https://images.systemannounce.com/i/1/2026/02/image-20260206133215253.webp" alt="Everything官网"></p><p>至于怎么关闭Windows索引？请看下面一图流</p><p><img src="https://images.systemannounce.com/i/1/2026/02/image-20260206133517349.webp" alt="关闭Windows索引"></p><ol><li>win+R打开运行窗口，输入 <code>services.msc</code> 然后回车，打开服务窗口。</li><li>在里面找到 <code>Windows Search</code> 然后双击。</li><li>在打开的窗口中将启动类型改为禁用，然后点击下面的停止，最后点击右下角的应用和确定即可。</li></ol><h2 id="其他优化操作"><a href="#其他优化操作" class="headerlink" title="其他优化操作"></a>其他优化操作</h2><p>其他还有蛮多的，什么</p><ol><li>桌面图标只有回收站（不是哥们，我的此电脑呢？）</li><li>任务栏透明（这个看具体需求）</li><li>任务栏资讯关闭（谁喜欢广告？）</li><li>Windows动态壁纸（好看）</li><li>关闭Windows休眠（如果你C盘空间足够而且耐艹那就没事）</li><li>HDR优化（仅限HDR显示器）</li><li>色彩调整（对于颜色敏感用户，饱和度战士不要管！）</li><li>根据你的硬件更新和安装驱动</li><li>AND MORE…</li></ol>]]></content:encoded>
+      
+      
+      <category domain="https://www.systemannounce.com/categories/%E5%88%86%E4%BA%AB/">分享</category>
+      
+      
+      <category domain="https://www.systemannounce.com/tags/PC/">PC</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E5%86%85%E5%AD%98/">内存</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E8%A3%85%E6%9C%BA/">装机</category>
+      
+      
+      <comments>https://www.systemannounce.com/2026/02/06/other/2026new-pc/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title></title>
