@@ -9,8 +9,35 @@
     <atom:link href="https://www.systemannounce.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>I linger not within your heart, but wander on its outskirts, perhaps in a realm untouched by your light.</description>
-    <pubDate>Fri, 06 Feb 2026 06:12:16 GMT</pubDate>
+    <pubDate>Mon, 15 Jun 2026 07:21:53 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>入夏后网络间歇性卡顿……</title>
+      <link>https://www.systemannounce.com/2026/06/15/other/new-onu/</link>
+      <guid>https://www.systemannounce.com/2026/06/15/other/new-onu/</guid>
+      <pubDate>Mon, 15 Jun 2026 06:29:30 GMT</pubDate>
+      
+      <description>&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;进入夏天，我的电脑网络越来越不稳定，之前还是偶尔断线，而且之前没有在玩高强度联机游戏，最近开始玩 &lt;code&gt;HELLDIVERS 2&lt;/code&gt; 开始以后发现这种断线问题，而且到了最近是一局都没有做完全是中途被卡出游戏实在受不了了，于是有了这个分析帖。&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>进入夏天，我的电脑网络越来越不稳定，之前还是偶尔断线，而且之前没有在玩高强度联机游戏，最近开始玩 <code>HELLDIVERS 2</code> 开始以后发现这种断线问题，而且到了最近是一局都没有做完全是中途被卡出游戏实在受不了了，于是有了这个分析帖。</p><span id="more"></span><h1 id="开始分析"><a href="#开始分析" class="headerlink" title="开始分析"></a>开始分析</h1><p>最开始察觉到这个问题的时候是大概五月底，几乎每一局游戏都是以这样的提示结尾，然后被踢出游戏。</p><p><img src="https://images.systemannounce.com/i/1/2026/06/20260615_145023.webp"></p><p>然后去测试长ping延迟发现这样的状况：</p><p><img src="https://images.systemannounce.com/i/1/2026/06/20260615_145045.webp"></p><p>丢包是没有丢，但是这延迟认真的吗？平时连接这个服务器一般<strong>10ms</strong>不到，现在都抖到差不多<strong>800ms</strong>了， 很明显是哪里出了问题，我与是在凌晨的时候又测试了一次，结果大同小异。</p><p><img src="https://images.systemannounce.com/i/1/2026/06/20260615_145744.webp"></p><p>最后我又去电信测速工具测了一次速度，结果我光猫趴窝了，断网了十几分钟还是没有恢复，于是去手动重启，就恢复了，这让我更加确定了，就是<strong>光猫出问题了</strong>，于是直接上电信APP预约了师傅上门修理。</p><p><img src="https://images.systemannounce.com/i/1/2026/06/20260615_145842.webp"></p><h1 id="上门"><a href="#上门" class="headerlink" title="上门"></a>上门</h1><p>上门以后师傅先看了一下我路由器的地方，这里给各位做个提醒，<strong>如果你在利用电信网络跑PCDN，搭建服务器等一些违规的操作</strong>，请先把你的设备稍微挡一下或者暂时下线，被一些师傅看到后会上报然后取消你某些特权比如公网IP，限制上传速度等等之类的东西。（血的教训）</p><p>师傅上门后会首先问你问题在哪里，你这时候不要回答上网速度不够，或者是网络卡顿的回答，他会直接进行测速如果达标就不进行更多的维修。</p><p>后续也没什么好说的，找找线，换光猫，然后就结束了，然后测速也没有问题了。</p><p>这里提醒一点，如果你的光猫用的不是桥接（就是不是由你的路由器进行拨号上网）的，可以顺便让师傅给你改成桥接，因为运营商给的光猫性能都很一般，如果同时承担光信号转换和拨号上网的功能很可能会承受不住，建议把拨号这个非必要功能放给路由器，这个换起来也更方便；毕竟没有多少人的路由器是真的用到坏吧，但是光猫是真的用到出问题才会换。</p><p><img src="https://images.systemannounce.com/i/1/2026/06/20260615_151105.webp"></p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>有的光猫的工作环境十分恶劣，如果你换过光猫还是不行建议可以给光猫换个通风一点的工作环境，说不定会有改善哦，其实你最开始也可以检查一下是不是散热不了导致的网卡。</p>]]></content:encoded>
+      
+      
+      <category domain="https://www.systemannounce.com/categories/%E5%88%86%E4%BA%AB/">分享</category>
+      
+      
+      <category domain="https://www.systemannounce.com/tags/%E7%BD%91%E7%BB%9C/">网络</category>
+      
+      <category domain="https://www.systemannounce.com/tags/ISP/">ISP</category>
+      
+      <category domain="https://www.systemannounce.com/tags/%E5%85%89%E7%8C%AB/">光猫</category>
+      
+      
+      <comments>https://www.systemannounce.com/2026/06/15/other/new-onu/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title></title>
